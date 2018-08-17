@@ -1,0 +1,51 @@
+.c-post {
+  margin-bottom: 3em;
+
+  &:not(.c-post--preview) {
+    .c-post__date {
+      @apply .mb-1 .text-sm;
+      color: #aaa;
+    }
+  }
+}
+
+@screen lg {
+  .c-post {
+    &:not(.c-post--preview) {
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.c-post--preview {
+  margin-bottom: 0;
+}
+
+.c-post__date {
+  @apply .block;
+  min-width: 70px;
+}
+
+.c-post__title--preview {
+  @apply .m-0;
+}
+
+.c-post__title-link {
+  @apply .text-primary .no-underline;
+
+  &:hover {
+    @apply .text-secondary;
+  }
+}
+
+@screen md {
+  .c-post-preview__heading {
+    @apply .flex .items-center;
+
+    .c-post__date {
+      @apply .mr-2;
+    }
+  }
+}

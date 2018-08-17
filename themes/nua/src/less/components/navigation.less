@@ -1,0 +1,153 @@
+//======= Nav =======//
+
+.c-nav {
+  @apply .flex .items-center .justify-between .flex-wrap .bg-white .p-4;
+  flex-direction: column;
+
+  &.is-fixed {
+    @apply .absolute .pin-t .pin-l;
+    z-index: 3;
+    background: transparent;
+    width: 100%;
+  }
+}
+
+@screen sm {
+  .c-nav {
+    flex-direction: row;
+  }
+}
+
+@screen md {
+  .c-nav {
+    display: grid;
+    grid-template-columns: 100px auto;
+  }
+}
+
+//======= Nav Logo =======//
+
+.c-nav__logo {
+  @apply .bg-primary .block;
+  width: 35px;
+  height: 35px;
+  -webkit-clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    25% 100%,
+    14% 14%,
+    75% 25%,
+    86% 85%,
+    21% 75%,
+    25% 100%,
+    100% 100%,
+    100% 0%
+  );
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    25% 100%,
+    14% 14%,
+    75% 25%,
+    86% 85%,
+    21% 75%,
+    25% 100%,
+    100% 100%,
+    100% 0%
+  );
+  transition: clip-path ease 0.3s;
+
+  .is-fixed & {
+    @apply .bg-white;
+  }
+}
+
+.c-nav__logo-container {
+  display: block;
+
+  &:hover .c-nav__logo {
+    -webkit-clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      25% 100%,
+      25% 25%,
+      75% 25%,
+      75% 75%,
+      25% 75%,
+      25% 100%,
+      100% 100%,
+      100% 0%
+    );
+    clip-path: polygon(
+      0% 0%,
+      0% 100%,
+      25% 100%,
+      25% 25%,
+      75% 25%,
+      75% 75%,
+      25% 75%,
+      25% 100%,
+      100% 100%,
+      100% 0%
+    );
+  }
+}
+
+//======= Nav Title =======//
+
+.c-nav__title-container {
+  @apply .text-white .mr-6;
+}
+
+//======= Nav Inner =======//
+
+.c-nav__inner {
+  @apply .flex .flex-grow .items-center .mt-4;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@screen sm {
+  .c-nav__inner {
+    width: auto;
+    margin-top: 0;
+    flex-grow: initial;
+    justify-content: initial;
+  }
+}
+
+//======= Nav Icon =======//
+
+.c-nav__icon {
+  position: relative;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+//======= Nav Link =======//
+
+.c-nav__link {
+  @apply .block .text-primary .no-underline;
+
+  .is-fixed & {
+    @apply .text-white;
+  }
+
+  .is-fixed & {
+    &:after {
+      @apply .bg-white;
+    }
+  }
+
+  &:hover,
+  &.is-active {
+    text-decoration: underline;
+  }
+}
+
+@screen sm {
+  .c-nav__link {
+    @apply .mr-4;
+  }
+}

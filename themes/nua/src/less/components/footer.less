@@ -1,0 +1,43 @@
+.c-footer {
+  @apply .bg-black .text-white .text-center;
+}
+
+.c-footer__link {
+  @apply .text-white .block .px-4;
+}
+
+.c-footer__icon {
+  @apply .text-white;
+  width: 25px;
+  height: 25px;
+  transition: color ease 0.3s;
+}
+
+.c-footer__icons {
+  @apply .relative .flex .justify-center .mt-3;
+  top: 6px;
+}
+
+.c-footer__link {
+  @apply .text-white .no-underline;
+
+  &:hover {
+    .c-footer__icon {
+      @apply .text-primary;
+    }
+  }
+}
+
+@screen sm {
+  .c-footer {
+    @apply .text-left;
+  }
+
+  .c-footer__inner {
+    @apply .flex .justify-between .items-center;
+  }
+
+  .c-footer__icons {
+    @apply .mt-0;
+  }
+}
