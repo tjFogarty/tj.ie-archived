@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "assets/js/chunks/" + ({"microlight":"microlight","vendors~basicscroll":"vendors~basicscroll","vendors~focus-trap":"vendors~focus-trap","vendors~search":"vendors~search"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "assets/js/chunks/" + ({"microlight":"microlight"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -210,18 +210,6 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 
 /***/ }),
 
-/***/ "./src/js/intro.js":
-/*!*************************!*\
-  !*** ./src/js/intro.js ***!
-  \*************************/
-/*! exports provided: Intro */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Intro\", function() { return Intro; });\nconst Intro = {\n  hero: document.querySelector('.c-hero'),\n\n  init() {\n    if (this.hero) {\n      this.loadBasicScroll()\n      this.registerWorklet()\n    }\n  },\n\n  async loadBasicScroll() {\n    let {\n      create\n      // @ts-ignore\n    } = await __webpack_require__.e(/*! import() | basicscroll */ \"vendors~basicscroll\").then(__webpack_require__.t.bind(null, /*! basicscroll */ \"./node_modules/basicscroll/dist/basicScroll.min.js\", 7))\n\n    const instance = create({\n      elem: this.hero,\n      from: '0',\n      to: '300px',\n      props: {\n        '--hero-position-y': {\n          from: '0%',\n          to: '5%'\n        }\n      }\n    })\n\n    instance.start()\n  },\n\n  async registerWorklet() {\n    // @ts-ignore\n    if ('paintWorklet' in window.CSS) {\n      // @ts-ignore\n      await window.CSS.paintWorklet.addModule('/paint/separator.js')\n      this.hero.setAttribute(\n        'style',\n        '--separator-shape:curve-right; --separator-size: 35px;'\n      )\n      this.hero.classList.add('is-loaded')\n    }\n  }\n}\n\n\n//# sourceURL=webpack:///./src/js/intro.js?");
-
-/***/ }),
-
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
@@ -230,7 +218,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/js/utils.js\");\n/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search */ \"./src/js/search.js\");\n/* harmony import */ var _page_visibility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./page-visibility */ \"./src/js/page-visibility.js\");\n/* harmony import */ var _intro__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./intro */ \"./src/js/intro.js\");\n\n\n\n\n\nObject(_utils__WEBPACK_IMPORTED_MODULE_0__[\"ready\"])(async () => {\n  // Search.init()\n  _page_visibility__WEBPACK_IMPORTED_MODULE_2__[\"PageVisibility\"].init()\n  _intro__WEBPACK_IMPORTED_MODULE_3__[\"Intro\"].init()\n\n  Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"showDeveloperMessage\"])()\n\n  if (document.querySelector('pre')) {\n    let codeBlocks = document.querySelectorAll('pre')\n    // @ts-ignore\n    let microlight = await __webpack_require__.e(/*! import() | microlight */ \"microlight\").then(__webpack_require__.t.bind(null, /*! microlight */ \"./node_modules/microlight/microlight.js\", 7))\n\n    codeBlocks.forEach(block => block.classList.add('microlight'))\n\n    microlight.reset()\n  }\n})\n\nif ('serviceWorker' in navigator && Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"env\"])() === 'production') {\n  window.addEventListener('load', () => {\n    navigator.serviceWorker.register('/sw.js').catch(registrationError => {\n      console.log('SW registration failed: ', registrationError)\n    })\n  })\n}\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/js/utils.js\");\n/* harmony import */ var _page_visibility__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./page-visibility */ \"./src/js/page-visibility.js\");\n\n\n\nObject(_utils__WEBPACK_IMPORTED_MODULE_0__[\"ready\"])(async () => {\n  _page_visibility__WEBPACK_IMPORTED_MODULE_1__[\"PageVisibility\"].init()\n\n  Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"showDeveloperMessage\"])()\n\n  if (document.querySelector('pre')) {\n    let codeBlocks = document.querySelectorAll('pre')\n    // @ts-ignore\n    let microlight = await __webpack_require__.e(/*! import() | microlight */ \"microlight\").then(__webpack_require__.t.bind(null, /*! microlight */ \"./node_modules/microlight/microlight.js\", 7))\n\n    codeBlocks.forEach(block => block.classList.add('microlight'))\n\n    microlight.reset()\n  }\n})\n\nif ('serviceWorker' in navigator && Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"env\"])() === 'production') {\n  window.addEventListener('load', () => {\n    navigator.serviceWorker.register('/sw.js').catch(registrationError => {\n      console.log('SW registration failed: ', registrationError)\n    })\n  })\n}\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ }),
 
@@ -243,18 +231,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"PageVisibility\", function() { return PageVisibility; });\nconst PageVisibility = {\n  asleepEmoji: '💤',\n  originalTitle: document.title,\n\n  init () {\n    if (typeof document.hidden === 'undefined') return\n\n    this.handleVisibilityChange = this.handleVisibilityChange.bind(this)\n\n    document.addEventListener('visibilitychange', this.handleVisibilityChange, false)\n  },\n\n  handleVisibilityChange () {\n    let title = this.originalTitle\n\n    if (document.hidden) {\n      title = `${this.asleepEmoji} ${title}`\n    }\n\n    document.title = title\n  }\n}\n\n\n//# sourceURL=webpack:///./src/js/page-visibility.js?");
-
-/***/ }),
-
-/***/ "./src/js/search.js":
-/*!**************************!*\
-  !*** ./src/js/search.js ***!
-  \**************************/
-/*! exports provided: Search */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Search\", function() { return Search; });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/js/utils.js\");\n\n\nconst Search = {\n  trigger: document.querySelectorAll('.js-search'),\n  input: document.querySelector('.js-search-input'),\n  container: document.querySelector('.js-search-container'),\n  resultsContainer: document.querySelector('.js-search-results'),\n  focusTrap: null,\n  body: document.body,\n  index: null,\n\n  init() {\n    this.handleTriggerClick = this.handleTriggerClick.bind(this)\n    this.performSearch = this.performSearch.bind(this)\n\n    document.addEventListener('keyup', e => {\n      if (e.keyCode === 27) {\n        this.container.classList.remove('is-open')\n        this.resetSearch()\n      }\n    })\n\n    this.trigger.forEach(trigger => {\n      trigger.addEventListener('click', this.handleTriggerClick)\n    })\n\n    this.input.addEventListener('keyup', this.performSearch)\n  },\n\n  async performSearch(event) {\n    if (!this.index) return\n\n    let { hits } = await this.index.search({ query: event.target.value })\n\n    if (!hits || !hits.length) return this.displayNoResults()\n\n    this.displayResults(hits)\n  },\n\n  resetSearch() {\n    this.body.style.overflow = ''\n    // @ts-ignore\n    this.input.value = ''\n    this.focusTrap.deactivate()\n    this.emptyResultContainer()\n  },\n\n  showSearch() {\n    this.body.style.overflow = 'hidden'\n    // @ts-ignore\n    this.input.focus()\n    this.focusTrap.activate()\n  },\n\n  async handleTriggerClick(e) {\n    e.preventDefault()\n    this.container.classList.toggle('is-open')\n\n    let createFocusTrap = await __webpack_require__.e(/*! import() | focus-trap */ \"vendors~focus-trap\").then(__webpack_require__.t.bind(null, /*! focus-trap */ \"./node_modules/focus-trap/index.js\", 7))\n\n    this.focusTrap = createFocusTrap.default('#search-dialog')\n\n    if (this.container.classList.contains('is-open')) {\n      this.showSearch()\n    } else {\n      this.resetSearch()\n    }\n\n    this.loadSearchClient()\n  },\n\n  async loadSearchClient() {\n    let algoliasearch = await __webpack_require__.e(/*! import() | search */ \"vendors~search\").then(__webpack_require__.t.bind(null, /*! algoliasearch/lite */ \"./node_modules/algoliasearch/src/browser/builds/algoliasearchLite.js\", 7))\n\n    let client = algoliasearch.default(\n      'B5ZTA540XE',\n      '5760522b641a5ab4334c5a2806c4aa67'\n    )\n\n    this.index = client.initIndex(\n      Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"env\"])() === 'development' ? 'dev_posts' : 'prod_posts'\n    )\n  },\n\n  displayResults(results) {\n    this.emptyResultContainer()\n\n    results.forEach(result => {\n      let resultLink = this.getResultLink(result)\n      this.resultsContainer.appendChild(resultLink)\n    })\n  },\n\n  emptyResultContainer() {\n    while (this.resultsContainer.firstChild) {\n      this.resultsContainer.removeChild(this.resultsContainer.firstChild)\n    }\n  },\n\n  getResultLink(result) {\n    let link = document.createElement('a')\n    let title = document.createElement('h4')\n\n    link.setAttribute('class', 'no-underline block mb-6')\n    link.setAttribute('href', result.url)\n\n    title.setAttribute('class', 'hover:text-primary')\n    title.innerText = result.title\n\n    link.appendChild(title)\n\n    return link\n  },\n\n  displayNoResults() {\n    this.resultsContainer.innerHTML = `<h3>No results found</h3>`\n  }\n}\n\n\n//# sourceURL=webpack:///./src/js/search.js?");
 
 /***/ }),
 

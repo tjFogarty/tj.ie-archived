@@ -1,6 +1,7 @@
 ---
 title: "Foundation 5.5"
 date: 2014-12-14T11:00:00+00:00
+slug: "foundation-5-5"
 draft: false
 categories: 
 - JavaScript

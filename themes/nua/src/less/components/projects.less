@@ -24,20 +24,4 @@
   .c-projects__item-image {
     @apply .mt-0;
   }
-
-  .c-projects__item {
-    @apply .flex;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 20px;
-    align-items: center;
-
-    &.is-flipped {
-      flex-direction: row-reverse;
-      
-      .c-projects__item-image {
-        grid-row: 1;
-      }
-    }
-  }
 }

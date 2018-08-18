@@ -65,7 +65,5 @@ style="--c-primary: {{ theme['primary'] }}; --c-secondary: {{ theme['secondary']
 <p>One approach to avoid this might be to set a cookie with the name of the chosen theme. On the next page load you could check if the new randomly chosen one is the same as the one in the cookie. If so, try again, and repeat until you have a new one, and set that in the cookie.</p>
 <p>If you&#8217;re using JavaScript, you can use the following to update custom properties:</p>
 <pre><code class="language-javascript">document.querySelector('html').style.setProperty('--c-primary', 'purple');</code></pre>
-<p>Here&#8217;s what my site ended up looking like:</p>
-<video src="https://tj-craft.test/uploads/random-themes.mp4" controls autoplay loop type="video/mp4" style="width: 100%; height: 200px;"></video>
 <h2 id="conclusion">Conclusion <a class="anchor" href="#conclusion" title="Conclusion">#</a></h2>
 <p>There&#8217;s a range of ways you can approach this, and the easiest in some cases might be to do this with JavaScript if you don&#8217;t have access to the server code side of things. Custom Properties absolutely opens up a world of dynamicism on the web, and you can do a whole lot more than theme with them. I usually pick a new feature such as this and try apply it to my own work, be it existing or new, to have a play with it. And what&#8217;s code if it&#8217;s not playful at times?</p>

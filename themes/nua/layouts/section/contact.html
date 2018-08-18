@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="l-container">
+  <div class="c-post">
+    <h1 class="mt-0">{{.Title}}</h1>
+  
+    <p>If you have any questions, or just want to say hi, feel free to drop me a message via the form below. I’ll get back to you as soon as I can.</p>
+  
+    <p>Alternatively, you can <a href="https://twitter.com/tj_fogarty" rel="noopener" target="_blank">find me on Twitter</a>.</p>
+  
+    <form method="post" action="https://usebasin.com/f/efb8ce44c505" class="max-w-md mt-4" accept-charset="UTF-8">
+      <label for="from-name">Your Name</label>
+      <input id="from-name" type="text" name="fromName" value="">
+  
+      <label for="from-email">Your Email (required)</label>
+      <input id="from-email" type="email" name="fromEmail" value="" required>
+  
+      <label for="subject">Subject</label>
+      <input id="subject" type="text" name="subject" value="">
+  
+      <label for="message">Message (required)</label>
+      <textarea rows="10" cols="40" id="message" name="message" required></textarea>
+  
+      <button type="submit" value="Send" class="c-btn c-btn-primary">Send</button>
+    </form>
+  </div>
+</div>
+{{ end }}

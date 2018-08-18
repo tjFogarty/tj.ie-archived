@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="l-container">
+  <article class="c-post" itemscope itemtype="http://schema.org/Article">
+    <time class="c-post__date" itemprop="datePublished" datetime="{{ .PublishDate }}">
+      {{ .PublishDate.Format "2 January 2006" }}
+    </time>
+
+    <h1 itemprop="name headline">{{ .Title }}</h1>
+
+    {{ .Content }}
+
+    <div class="c-share-container">
+    
+    {{ if .Params.Categories }}
+      <div>
+        <small>Categories:</small>
+        <ul class="list-reset inline-flex mb-6 md:mb-2">
+          {{ range .Params.Categories }}
+          <li class="mr-3">
+            <a href="/category/{{ . | urlize }}">
+              <small>{{ . }}</small>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+    </div>
+    
+    {{ with .NextInSection }}
+    <p>Next: <a class="mt-5" href="{{ .Permalink }}">{{ .Title }}</a></p>
+    {{ end }}
+  </article>
+</div>
+{{ end }}

@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/assets/css/app.css">
+    
+    <meta name="theme-color" content="#197b8f" />
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <link rel="preload" href="/assets/css/app.css" as="style" crossorigin="crossorigin">
+    
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
 </head>
 <body>
+    
+    {{ partial "header.html" . }}
+    {{ partial "icons.html" . }}
+    
     <main class="content" role="main">
         {{ block "main" . }}{{ end }}
     </main>
+    
+     {{ partial "footer.html" . }}
+    
+    <script src="/assets/js/main.js" async></script>
 </body>
 </html>

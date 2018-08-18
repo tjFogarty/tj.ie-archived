@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="l-container">
+  <div>
+    <h1>{{.Title}}</h1>
+    
+    <p>I write about
+      {{ range $key, $value := .Site.Taxonomies.categories }}
+      <a href="/category/{{ $key | urlize  }}">{{ $key }}</a> ({{ len $value }})
+      {{ end }}
+    </p>
+
+    {{ range (where .Site.RegularPages "Section" "posts").GroupByDate "2006" }}
+    <div class="c-sticky-list">
+      <h2 class="c-sticky-list__title">{{ .Key }}</h2>
+      <ul class="l-post-list">
+        {{ range (where .Pages "Section" "posts") }}
+        <li class="l-post-list__item">
+          <div class="c-post c-post--preview">
+            <div class="c-post-preview__heading">
+              <time class="c-post__date" datetime="{{ .PublishDate }}">
+                 {{ .PublishDate.Format "2 Jan" }}
+              </time>
+          
+              <h3 class="c-post__title c-post__title--preview">
+                <a class="c-post__title-link" href="{{ .Permalink }}">{{ .Title }}</a>
+              </h3>
+            </div>
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

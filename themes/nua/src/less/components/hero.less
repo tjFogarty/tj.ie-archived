@@ -1,52 +1,12 @@
 .c-hero {
-  @apply .text-white .flex .items-end;
+  @apply .flex .items-end;
   position: relative;
-  height: 45vh;
-  min-height: 280px;
   overflow: hidden;
-  background-color: var(--c-secondary);
-  border-bottom: 1px solid transparent;
-  border-image-slice: 0 0 100% 0;
-  border-image-width: var(--separator-size);
-  border-image-outset: var(--separator-size);
-  --separator-shape: curve-left;
-  --separator-size: 1px;
-  --separator-shadow: 1;
-  --separator-shadow-color: var(--c-primary);
-  transition: all ease 0.5s;
-
-  &.is-loaded {
-    border-image-source: paint(separator);
-  }
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      0deg,
-      var(--c-hero-secondary) 0%,
-      var(--c-hero-primary) 100%
-    );
-  }
-}
-
-.c-hero__title {
-  @apply .text-white;
 }
 
 @screen lg {
-  .c-hero {
-    height: 50vh;
-    min-height: 300px;
-  }
-
   .c-hero__title {
     font-size: 4em;
-    font-weight: 200;
   }
 }
 
@@ -54,20 +14,6 @@
   position: relative;
   z-index: 1;
   width: 100%;
-}
-
-.c-hero__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 100% var(--hero-position-y);
-  opacity: 0.3;
-  filter: blur(4px);
-  transition: object-position ease 0.1s;
-  will-change: object-position;
 }
 
 @supports (mix-blend-mode: soft-light) {

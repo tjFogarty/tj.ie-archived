@@ -211,7 +211,6 @@ export const Search = {
   }
 }</code></pre>
 <p>With that, you can call <code>Search.init()</code> to kick it all off.</p>
-<p>Have a click/tap to see the live result on this site:</p>
-<button type="button" class="js-search c-btn c-btn-primary">Search</button>
+
 <h2 id="lost-and-found">Lost and Found <a class="anchor" href="#lost-and-found" title="Lost and Found">#</a></h2>
 <p>No longer do your quality posts need to be buried pages deep, never to be seen again. We&#8217;ve gone through using the lite client to save on file size, but you can use other full-fledged solutions for the framework of your choice for a more out-of-the-box experience.</p>

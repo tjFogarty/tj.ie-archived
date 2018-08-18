@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 let env = process.env.NODE_ENV
 let isDev = env === 'development'
@@ -59,6 +58,7 @@ if (!isDev) {
     new PurgecssPlugin({
       paths: glob.sync([
         `${__dirname}/**/*.html`,
+        `${__dirname}/**/*.md`,
         `${__dirname}/src/**/*.js`
       ])
     })

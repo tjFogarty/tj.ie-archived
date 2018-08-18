@@ -1,12 +1,8 @@
 import { ready, showDeveloperMessage, env } from './utils'
-import { Search } from './search'
 import { PageVisibility } from './page-visibility'
-import { Intro } from './intro'
 
 ready(async () => {
-  // Search.init()
   PageVisibility.init()
-  Intro.init()
 
   showDeveloperMessage()
 
