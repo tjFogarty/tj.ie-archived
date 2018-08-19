@@ -2,6 +2,11 @@
 title: "A Signal in the Static"
 date: 2018-08-19T16:28:24+01:00
 draft: false
+categories:
+  - CMS
+  - JavaScript
+  - PHP
+  - Craft
 ---
 
 About a year ago I set out to rebuild my site, and being rared on PHP I opted to go for Craft CMS while it was in beta. I figured it'd be interesting to learn it while it was still in development, and maybe create my own plugins. 
