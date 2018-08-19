@@ -4,8 +4,6 @@ import { PageVisibility } from './page-visibility'
 ready(async () => {
   PageVisibility.init()
 
-  // showDeveloperMessage()
-
   if (document.querySelector('pre')) {
     let codeBlocks = document.querySelectorAll('pre')
     // @ts-ignore

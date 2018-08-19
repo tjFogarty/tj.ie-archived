@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd themes/nua && npm run production"
+    "build": "cd ./themes/nua && npm install && npm run production"
   },
   "repository": {
     "type": "git",
