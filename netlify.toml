@@ -36,3 +36,7 @@ to = "/archive/"
 [[redirects]]
 from = "/posts/"
 to = "/archive/"
+
+[[redirects]]
+from = "/feed.rss"
+to = "/index.xml"
