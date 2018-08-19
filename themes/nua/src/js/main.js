@@ -1,10 +1,10 @@
-import { ready, showDeveloperMessage, env } from './utils'
+import { ready, env } from './utils'
 import { PageVisibility } from './page-visibility'
 
 ready(async () => {
   PageVisibility.init()
 
-  showDeveloperMessage()
+  // showDeveloperMessage()
 
   if (document.querySelector('pre')) {
     let codeBlocks = document.querySelectorAll('pre')

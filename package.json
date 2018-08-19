@@ -1,0 +1,20 @@
+{
+  "name": "tj.ie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd themes/nua && npm run production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjFogarty/tj.ie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjFogarty/tj.ie/issues"
+  },
+  "homepage": "https://github.com/tjFogarty/tj.ie#readme"
+}
