@@ -1,18 +1,10 @@
 import { ready, env } from './utils'
 import { PageVisibility } from './page-visibility'
+import { CodeHighlight } from './code-highlight'
 
 ready(async () => {
   PageVisibility.init()
-
-  if (document.querySelector('pre')) {
-    let codeBlocks = document.querySelectorAll('pre')
-    // @ts-ignore
-    let microlight = await import(/* webpackChunkName: "microlight" */ 'microlight')
-
-    codeBlocks.forEach(block => block.classList.add('microlight'))
-
-    microlight.reset()
-  }
+  CodeHighlight.init()
 })
 
 // if ('serviceWorker' in navigator && env() === 'production') {
