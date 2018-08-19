@@ -19,7 +19,12 @@ module.exports = {
   },
 
   fonts: {
+    serif: [
+      'Alegreya',
+      'serif'
+    ],
     sans: [
+      'Alegreya Sans',
       '-apple-system',
       'BlinkMacSystemFont',
       'Segoe UI',

@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alegreya Regular'), local('Alegreya-Regular'), url(/fonts/alegreya.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alegreya Regular Sans'), local('Alegreya-Regular-Sans'), url(/fonts/alegreya-sans.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
   --c-primary: #ac3b61;
   --c-secondary: #123c69;
@@ -9,11 +25,11 @@
 }
 
 html {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
 body {
-  @apply .font-sans .bg-white .text-black;
+  @apply .font-serif .bg-white .text-black;
   font-weight: 300;
   line-height: 1.45;
 }
