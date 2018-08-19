@@ -28,3 +28,11 @@ HUGO_VERSION = "0.47"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+from = "/category/"
+to = "/archive/"
+
+[[redirects]]
+from = "/posts/"
+to = "/archive/"
