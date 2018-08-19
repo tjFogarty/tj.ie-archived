@@ -2,11 +2,10 @@ import microlight from 'microlight'
 
 export const CodeHighlight = {
   init() {
-    if (document.querySelector('pre')) {
-      let codeBlocks = document.querySelectorAll('pre')
-
+    let codeBlocks = document.querySelectorAll('pre')
+    console.log(codeBlocks);
+    if (codeBlocks.length) {
       codeBlocks.forEach(block => block.classList.add('microlight'))
-
       microlight.reset()
     }
   }

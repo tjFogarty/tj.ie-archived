@@ -1,5 +1,5 @@
 export function ready(fn) {
-  document.addEventListener('DOMContentLoaded', fn)
+  document.addEventListener('DOMContentLoaded', fn, false)
 }
 
 export function env() {
@@ -8,18 +8,4 @@ export function env() {
   }
 
   return 'production'
-}
-
-export function showDeveloperMessage() {
-  console.log(
-    '%c Howdy, looking for the source? https://github.com/tjFogarty/personal-site',
-    'color: #ac3b61'
-  )
-}
-
-// https://developer.mozilla.org/en-US/docs/Web/API/Navigator/doNotTrack
-export function hasDoNotTrackEnabled() {
-  let doNotTrack = navigator.doNotTrack || window.doNotTrack
-
-  return doNotTrack === '1'
 }
