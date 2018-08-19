@@ -40,3 +40,7 @@ to = "/archive/"
 [[redirects]]
 from = "/feed.rss"
 to = "/index.xml"
+
+[[redirects]]
+from = "https://awesome-northcutt-12634b.netlify.com/*"
+to = "https://tj.ie/:splat"
