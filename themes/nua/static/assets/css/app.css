@@ -919,8 +919,10 @@ pre {
   overflow: hidden;
 }
 
-.c-hero__title {
-  margin-bottom: 0;
+@media (min-width: 768px) {
+  .c-hero__title {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 992px) {
