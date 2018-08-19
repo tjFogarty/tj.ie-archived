@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
 let env = process.env.NODE_ENV
 let isDev = env === 'development'
@@ -61,6 +62,16 @@ if (!isDev) {
         `${__dirname}/**/*.md`,
         `${__dirname}/src/**/*.js`
       ])
+    }),
+    new SWPrecacheWebpackPlugin({
+      cacheId: 'tj-ie',
+      filename: 'sw.js',
+      minify: true,
+      stripPrefix: 'static',
+      staticFileGlobs: [
+        'static/fonts/*.woff2',
+        'static/assets/js/main.js'
+      ]
     })
   )
 }
