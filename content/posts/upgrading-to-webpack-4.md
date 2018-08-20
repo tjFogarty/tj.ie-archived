@@ -6,7 +6,11 @@ categories:
 - JavaScript
 ---
 <p>It&#8217;s no big secret that I love <a href="https://github.com/JeffreyWay/laravel-mix/" target="_blank" rel="noopener noreferrer">Laravel Mix</a>. It&#8217;s handy enough to throw into most projects, and I had been using it with WordPress sites for a long while as it made onboarding new devs a lot easier. Babel and Sass? Done.</p>
-<pre><code class="language-javascript">mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');</code></pre>
+
+{{< highlight javascript >}}
+mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
+{{< / highlight >}}
+
 <p>It abstracts away all the webpack wizardry so you can spend less time setting up. It&#8217;s an amazing tool and I have no problem recommending it to people. You can inject your own configuration if you need to extend it as well so you&#8217;re not locked out of anything.</p>
 <p>On the flipside I&#8217;m a divil for tinkering, so a one-liner is not conducive to my mischief. After seeing the victories achieved by the webpack team on version 4 I was eager to explore it, plus Laravel Mix is on webpack 3 (<a href="https://github.com/JeffreyWay/laravel-mix/pull/1495" target="_blank" rel="noopener noreferrer">soon to be version 4 by the looks of it</a>). </p>
 <p>Here&#8217;s the list of things I needed to do:</p>
@@ -104,7 +108,11 @@ module.exports = {
 <h3 id="miscellaneous">Miscellaneous <a class="anchor" href="#miscellaneous" title="Miscellaneous">#</a></h3>
 <p>Another thing I wanted to do was clear out the assets folder on each run in case I added some extra files, like unnamed chunks so I didn&#8217;t have a folder full of <code>1..n.js</code> files.</p>
 <p>For that I appended the following to the plugins array:</p>
-<pre><code class="language-javascript">new CleanWebpackPlugin(['web/assets'])</code></pre>
+
+{{< highlight javascript >}}
+new CleanWebpackPlugin(['web/assets'])
+{{< / highlight >}}
+
 <h2 id="production-only">Production-only <a class="anchor" href="#production-only" title="Production-only">#</a></h2>
 <h3 id="minify">Minify <a class="anchor" href="#minify" title="Minify">#</a></h3>
 <p>I only wanted to minify in production, so with that I added a condition to append to the webpack if it wasn&#8217;t in development mode:</p>
