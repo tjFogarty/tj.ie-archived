@@ -11,3 +11,19 @@ pre {
   max-width: 100%;
   font-size: 0.9em;
 }
+
+.highlight {
+  position: relative;
+  
+  &:before {
+    content: '';
+    background-color: #282a36;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+  }
+}
