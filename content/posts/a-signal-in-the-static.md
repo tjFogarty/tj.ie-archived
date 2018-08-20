@@ -79,18 +79,18 @@ I needed to run `sudo node index.js` on that as it needed to create files, but I
 
 Once that was done, I skipped on over to <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a> and hooked it up. I needed to do some configuration before everything would work. Mainly this was down to my assets living in a theme which was in a subfolder. To let Netlify know about it, I had to create a new `package.json` in the root with a `build` command that did the following:
 
-```
+{{< highlight toml >}}
 [build]
 publish = "public"
 command = "hugo --minify && npm run build"
-```
+{{< / highlight >}}
 
 Then the build command in my root `package.json` dug into the folder it needed and ran some more commands:
 
-```
+{{< highlight json >}}
 "scripts": {
   "build": "cd ./themes/nua && npm install && npm run production"
 }
-```
+{{< / highlight >}}
 
 After that, it was smooth sailing. Limerick just won the All-Ireland senior hurling final so I'm gonna grab a beer. That makes two victories today. Cheers, agus Luimneach Abú!!!
