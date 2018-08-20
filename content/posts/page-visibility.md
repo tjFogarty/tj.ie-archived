@@ -8,8 +8,6 @@ categories:
 <p>The Page Visibility API lets you detect when a page is visible or in focus for a user. The page is deemed no longer visible if they switch to another tab or when the window is minimized.</p>
 <p>So what is it good for? The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API" target="_blank" rel="noopener">MDN Docs</a> do a great job of explaining this API and its potential uses. For example, you could use it to pause a video or a game, or hold off on any background requests you might be making.</p>
 <p>My cases are far less noble and exciting. Yes, I&#8217;m using it to show an emoji in the document title. Go ahead, switch to a different tab. Do come back though. Please. The link to the MDN Docs gives an example of how to implement the API, along with affordances for older browsers that support a vendor prefixed version. I&#8217;m going to outline a barebones script for my implementation.</p>
-<p>Here&#8217;s the result in case it&#8217;s removed or changed.</p>
-<img src="https://tj-craft.test/uploads/page-visibility.gif" alt="Page visibility example" />
 
 {{< highlight javascript >}}
 const PageVisibility = {
