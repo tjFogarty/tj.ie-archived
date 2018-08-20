@@ -2,6 +2,7 @@ baseURL = "https://tj.ie/"
 languageCode = "en-ie"
 title = "TJ Fogarty | Web Developer"
 theme = "nua"
+pygmentsStyle = "dracula"
 [permalinks]
   posts = "/:slug"
   categories = "/category/:slug"

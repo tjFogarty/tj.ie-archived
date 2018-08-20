@@ -17,7 +17,7 @@ I was also using Laravel Forge to automatically deploy whenever I pushed any cha
 
 That's where the allure of a static site generator comes in. As far as the site goes, everything is in one place. Content lives in Markdown files which makes things pretty portable. I landed on using <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> after seeing some recommendations for it, and in about a day I had my entire site copied over, including CSS and JS. To copy the content I took advantage of the <a href="https://github.com/craftcms/element-api" rel="noopener noreferrer" target="_blank">Element API</a> plugin for Craft to get a JSON object of all my posts. The config file for the plugin looked like this:
 
-```
+{{< highlight php >}}
 <?php
 
 use craft\elements\Entry;
@@ -41,11 +41,11 @@ return [
     ]
   ]
 ];
-```
+{{< / highlight >}}
 
 So when it hit `https://my-site.com/posts.json` it returned everything I needed. I saved this to a file to quickly generate markdown versions like so:
 
-```
+{{< highlight javascript >}}
 const posts = require('./data.json')
 const fs = require('fs')
 
@@ -73,7 +73,7 @@ posts.data.forEach(post => {
     console.log("The file was saved!");
   }); 
 })
-```
+{{< / highlight >}}
 
 I needed to run `sudo node index.js` on that as it needed to create files, but I didn't have to touch the generated markdown files once they were in the right folder.
 

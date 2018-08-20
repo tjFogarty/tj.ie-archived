@@ -17,42 +17,48 @@ categories:
 <li>Corresponding <code>id</code> on our nav element which corresponds with <code>data-nav-id</code></li>
 </ul>
 <p>Our script watches <code>js-nav-toggle</code> for a click, and figures out the navigation from it&#8217;s <code>data-nav-id</code> attribute.</p>
-<pre><code class="language-html">&lt;div class="container"&gt;
 
-  &lt;a href="#" data-nav-id="main-nav" class="c-nav--trigger js-nav-toggle"&gt;Primary Menu&lt;/a&gt;
+{{< highlight html >}}
+<div class="container"></div>
 
-  &lt;nav class="c-nav--main" role="navigation" id="main-nav"&gt;
+  <a href="#" data-nav-id="main-nav" class="c-nav--trigger js-nav-toggle">Primary Menu</a>
 
-    &lt;ul class="c-nav__list"&gt;
-      &lt;li class="c-nav__item"&gt;&lt;a class="c-nav__link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-      &lt;li class="c-nav__item"&gt;&lt;a class="c-nav__link" href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
-      &lt;li class="c-nav__item"&gt;&lt;a class="c-nav__link" href="#"&gt;Clients&lt;/a&gt;&lt;/li&gt;
-      &lt;li class="c-nav__item"&gt;&lt;a class="c-nav__link" href="#"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+  <nav class="c-nav--main" role="navigation" id="main-nav">
 
-  &lt;/nav&gt;
+    <ul class="c-nav__list">
+      <li class="c-nav__item"><a class="c-nav__link" href="#">Home</a></li>
+      <li class="c-nav__item"><a class="c-nav__link" href="#">About</a></li>
+      <li class="c-nav__item"><a class="c-nav__link" href="#">Clients</a></li>
+      <li class="c-nav__item"><a class="c-nav__link" href="#">Contact Us</a></li>
+    </ul>
 
-  &lt;a href="#" data-nav-id="secondary-nav" class="c-nav--trigger js-nav-toggle"&gt;Secondary Menu&lt;/a&gt;
+  </nav>
 
-  &lt;nav class="c-nav--secondary" role="navigation" id="secondary-nav"&gt;
+  <a href="#" data-nav-id="secondary-nav" class="c-nav--trigger js-nav-toggle">Secondary Menu</a>
 
-    &lt;ul class="c-nav__list"&gt;
-      &lt;li class="c-nav__item"&gt;&lt;a class="c-nav__link" href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-      &lt;li class="c-nav__item"&gt;&lt;a class="c-nav__link" href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
-      &lt;li class="c-nav__item"&gt;&lt;a class="c-nav__link" href="#"&gt;Clients&lt;/a&gt;&lt;/li&gt;
-      &lt;li class="c-nav__item"&gt;&lt;a class="c-nav__link" href="#"&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+  <nav class="c-nav--secondary" role="navigation" id="secondary-nav">
 
-  &lt;/nav&gt;
+    <ul class="c-nav__list">
+      <li class="c-nav__item"><a class="c-nav__link" href="#">Home</a></li>
+      <li class="c-nav__item"><a class="c-nav__link" href="#">About</a></li>
+      <li class="c-nav__item"><a class="c-nav__link" href="#">Clients</a></li>
+      <li class="c-nav__item"><a class="c-nav__link" href="#">Contact Us</a></li>
+    </ul>
 
-  &lt;h3&gt;Title&lt;/h3&gt;
+  </nav>
 
-  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid sunt rerum dignissimos voluptatem ex blanditiis nisi consequatur repudiandae quisquam quos error quam optio, dicta nesciunt neque, et reiciendis omnis.&lt;/p&gt;
+  <h3>Title</h3>
 
-&lt;/div&gt;</code></pre>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquid sunt rerum dignissimos voluptatem ex blanditiis nisi consequatur repudiandae quisquam quos error quam optio, dicta nesciunt neque, et reiciendis omnis.</p>
+
+</div>
+{{< / highlight >}}
+
 <p>In terms of styles, I&#8217;ve set the navigations to <code>display: none;</code> which you can glean from the CodePen embed above. Everything else is just to make it look somewhat presentable.</p>
 <p>The script has been documented, and we&#8217;re using <code>TweenLite.fromTo(el, duration, from, to);</code> to animate them back and forth depending on their active state.</p>
-<pre><code class="language-js">/* globals $, TweenLite */
+
+{{< highlight javascript >}}
+/* globals $, TweenLite */
 
 'use strict';
 
@@ -135,4 +141,6 @@ var NavController = {
   }
 };
 
-NavController.init();</code></pre>
+NavController.init();
+
+{{< / highlight >}}

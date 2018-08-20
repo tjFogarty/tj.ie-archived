@@ -14,31 +14,43 @@ categories:
 </blockquote>
 <hr />
 <p>Let&#8217;s say we have a <code>&lt;Button /&gt;</code> component that we can apply different themes to. We can set it up like so in our <code>src/components/button/index.js</code> file:</p>
-<pre><code class="language-javascript">  export const ButtonTheme = {
-    PRIMARY: 'primary',
-    SECONDARY: 'secondary'
-  }</code></pre>
-<p>Then, we can define our prop types:</p>
-<pre><code class="language-javascript">  Button.propTypes = {
-    theme: PropTypes.oneOf(Object.values(ButtonTheme))
-  }</code></pre>
-<p>Finally then, in <code>stories/button.js</code> we can pull this in and reference it:</p>
-<pre><code class="language-javascript">  import React from 'react'
-  import { storiesOf } from '@storybook/react'
-  import { withKnobs, select} from '@storybook/addon-knobs'
-  import Button, { ButtonTheme } from '../src/components/button'
 
-  storiesOf('Button', module)
-    .addDecorator(withKnobs)
-    .add('Simple button', () =&gt; (
-      &lt;Button
-        theme={select(
-          'Theme',
-          Object.values(ButtonTheme),
-          ButtonTheme.PRIMARY)
-        }
-      &gt;
-        Click me!
-      &lt;/Button&gt;
-  ))</code></pre>
+{{< highlight javascript >}}
+export const ButtonTheme = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary'
+}
+{{< / highlight >}}
+
+<p>Then, we can define our prop types:</p>
+
+{{< highlight javascript >}}
+Button.propTypes = {
+  theme: PropTypes.oneOf(Object.values(ButtonTheme))
+}
+{{< / highlight >}}
+
+<p>Finally then, in <code>stories/button.js</code> we can pull this in and reference it:</p>
+
+{{< highlight jsx >}}
+import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { withKnobs, select} from '@storybook/addon-knobs'
+import Button, { ButtonTheme } from '../src/components/button'
+
+storiesOf('Button', module)
+  .addDecorator(withKnobs)
+  .add('Simple button', () => (
+    <Button
+      theme={select(
+        'Theme',
+        Object.values(ButtonTheme),
+        ButtonTheme.PRIMARY)
+      }
+    >
+      Click me!
+    </Button>
+))
+{{< / highlight >}}
+
 <p>So we only have to define the different themes once, and it&#8217;ll propogate across our prop types and &#8216;knobs&#8217; in Storybook automatically! Magic.</p>

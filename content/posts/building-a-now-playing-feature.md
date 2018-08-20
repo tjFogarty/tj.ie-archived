@@ -19,16 +19,26 @@ categories:
 <h3 id="css-more-than-style">CSS: More than style <a class="anchor" href="#css-more-than-style" title="CSS: More than style">#</a></h3>
 <p>I&#8217;m using CSS custom properties to display content. As far as I&#8217;m aware it can be read by screen readers, but I&#8217;m happy to be corrected on that.</p>
 <p>The idea is to have a custom property that has an initial value of <code>Loading...</code>:</p>
-<pre><code class="language-css">:root {
+
+{{< highlight css >}}
+:root {
     --current-track: 'Loading...';
-}</code></pre>
+}
+{{< / highlight >}}
+
 <p>Then when the user triggers the request, the property will be updated with the track information, which is displayed like this:</p>
-<pre><code class="language-css">...::after {
+
+{{< highlight css >}}
+...::after {
     content: var(--current-track);
-}</code></pre>
+}
+{{< / highlight >}}
+
 <p>So before the request has completed, you&#8217;re seeing <code>Loading...</code>.</p>
 <p>Here&#8217;s the CSS we need:</p>
-<pre><code class="language-css">.c-now-playing {
+
+{{< highlight css >}}
+c-now-playing {
   position: fixed;
   z-index: 10;
   bottom: 50px;
@@ -83,15 +93,21 @@ categories:
 .c-now-playing__trigger:hover .c-now-playing__icon,
 .c-now-playing__trigger:focus .c-now-playing__icon {
   color: #f3f3f3;
-}</code></pre>
+}
+{{< / highlight >}}
+
 <p>And the corresponding HTML:</p>
-<pre><code class="language-html">&lt;button type="button" class="c-now-playing__trigger js-lt-trigger"&gt;
+{{< highlight html >}}
+&lt;button type="button" class="c-now-playing__trigger js-lt-trigger"&gt;
     Now Playing
-&lt;/button&gt;</code></pre>
+&lt;/button&gt;
+{{< / highlight >}}
+
 <h3 id="the-java-script">The JavaScript <a class="anchor" href="#the-java-script" title="The JavaScript">#</a></h3>
 <p>The code required for this to work is minimal &#8212; we need a way to request the latest track, and update the custom property with the result.</p>
-<pre><code class="language-js">const endpoint =
-  'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&amp;user=NAME&amp;api_key=API_KEY&amp;format=json&amp;limit=1'
+
+{{< highlight javascript >}}
+const endpoint = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&amp;user=NAME&amp;api_key=API_KEY&amp;format=json&amp;limit=1'
 
 export const ListeningTo = {
   hoverTrigger: document.querySelector('.js-lt-trigger'),
@@ -125,7 +141,9 @@ export const ListeningTo = {
   }
 }
 
-// when imported, you can call ListeningTo.init() to start.</code></pre>
+// when imported, you can call ListeningTo.init() to start.
+{{< / highlight >}}
+
 <p>In the <code>init</code> function, it only fires when the trigger is hovered, and it&#8217;ll only happen once per page load. There&#8217;s no need to keep making the request after that.</p>
 <h2 id="sin-é-thats-it">Sin é (that&#8217;s it) <a class="anchor" href="#sin-é-thats-it" title="Sin é (that's it)">#</a></h2>
 <p>You can see the result in the bottom right corner of the site, in the future I&#8217;ll probably refactor it to use the Spotify API. In the meantime, however, it works just fine.</p>

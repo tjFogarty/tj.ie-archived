@@ -12,7 +12,9 @@ categories:
 <p>I like JavaScript, and having a JSON object with data in it that I can iterate over is ideal. How do I get that JSON, though? After a couple of keystrokes on NPM I found <a href="https://www.npmjs.com/package/rss-parser" target="_blank" rel="noopener">rss-parser</a>. It does exactly what I was looking for; you pass a URL to a feed, and get JSON back.</p>
 <p>This is too straight-forward, though. How do I overcomplicate this?</p>
 <p>I created a little project that uses <a href="https://expressjs.com/" target="_blank" rel="noopener">Express</a> to respond to a GET request which returns my feed data.</p>
-<pre><code class="language-js">const express = require('express');
+
+{{< highlight javascript >}}
+const express = require('express');
 const Parser = require('rss-parser');
 const PORT = process.env.PORT || 5000;
 
@@ -28,21 +30,23 @@ const FEED_LIST = [
 let app = express();
 
 app
-  .get('/', (req, res) =&gt; {
+  .get('/', (req, res) => {
     let parser = new Parser();
 
-    const feedRequests = FEED_LIST.map(feed =&gt; {
+    const feedRequests = FEED_LIST.map(feed => {
       return parser.parseURL(feed);
     })
 
-    Promise.all(feedRequests).then(response =&gt; {
+    Promise.all(feedRequests).then(response => {
       res.setHeader('Access-Control-Allow-Origin', '*');
       // res.setHeader('Access-Control-Allow-Origin', 'some-domain-to-allow.com');
       res.header('Access-Control-Allow-Methods', 'GET');
       res.json(response);
     })
   })
-  .listen(PORT, () =&gt; console.log(`Listening on ${PORT}`));</code></pre>
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+{{< / highlight >}}
+
 <p>Running <code>node index.js</code> and visiting <code>http://localhost:5000</code> in your browser then should return a bounty of data.</p>
 <p>You could do this with any language you fancy. You might already have a hosting plan where you can fire up a PHP script to do the same thing. For me, I chose <a href="https://ww.heroku.com">Heroku</a> because of their free plan and integration with GitHub. It suits me to add a feed to the list by updating an array letting Heroku deploy it.</p>
 <h2 id="heroku">Heroku <a class="anchor" href="#heroku" title="Heroku">#</a></h2>
@@ -56,11 +60,15 @@ app
 <p>To specify what command to run (in this case <code>node index.js</code>), I created a new file called <code>Procfile</code> in the root of my project. This file contains some process types, and there’s a few, but in this case we only need the <code>web</code> process type to fire up our little Express app. So with that, our <code>Procfile</code> looks exactly like this:</p>
 <pre><code>web: node index.js</code></pre>
 <p>The final piece was to create an <code>app.json</code> file. This acts as a sort of description of our app. In this case, it’s a name, description and what docker image to use. The docker image will contain the environment of our app, in this case it’s Node.js.</p>
-<pre><code class="language-json">{
+
+{{< highlight json >}}
+{
   "name": "Feeds App",
   "description": "Returns RSS feeds in JSON",
   "image": "heroku/nodejs"
-}</code></pre>
+}
+{{< / highlight >}}
+
 <p>After pushing your changes, you should see from the dashboard that your app is deploying, and when it’s ready clicking on <code>Open App</code> in the top-right corner of your dashboard opens it up in a new tab. </p>
 <p>On the free plan, the app will softly fall asleep if there’s been no traffic to it for 30 minutes. It’ll wake up again on the next visit, but it’ll just take a few moments before you get a response while it fumbles for the alarm clock to turn it off, or maybe burst it off a wall.</p>
 <h2 id="front-end">Front-end <a class="anchor" href="#front-end" title="Front-end">#</a></h2>

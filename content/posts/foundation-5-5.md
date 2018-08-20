@@ -10,7 +10,9 @@ categories:
 <p>This release also contains a contribution of my own (woo!) which allows you to execute code based on the current media query. It means you can check things like <code>Foundation.utils.is_large_up()</code> or <code>Foundation.utils.is_small_only()</code> which I&#8217;ve found to be pretty useful.</p>
 <p>You can see the pull request <a href="https://github.com/zurb/foundation/pull/6035">here</a>.</p>
 <p>Full list of what you can do:</p>
-<pre><code class="language-javascript">// Small queries
+
+{{< highlight javascript >}}
+// Small queries
 Foundation.utils.is_small_only();
 Foundation.utils.is_small_up();
 
@@ -28,4 +30,5 @@ Foundation.utils.is_xlarge_up();
 
 // XXLarge queries
 Foundation.utils.is_xxlarge_only();
-Foundation.utils.is_xxlarge_up();</code></pre>
+Foundation.utils.is_xxlarge_up();
+{{< / highlight >}}

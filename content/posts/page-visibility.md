@@ -10,8 +10,10 @@ categories:
 <p>My cases are far less noble and exciting. Yes, I&#8217;m using it to show an emoji in the document title. Go ahead, switch to a different tab. Do come back though. Please. The link to the MDN Docs gives an example of how to implement the API, along with affordances for older browsers that support a vendor prefixed version. I&#8217;m going to outline a barebones script for my implementation.</p>
 <p>Here&#8217;s the result in case it&#8217;s removed or changed.</p>
 <img src="https://tj-craft.test/uploads/page-visibility.gif" alt="Page visibility example" />
-<pre><code class="language-javascript">const PageVisibility = {
-  asleepEmoji: '&#x1f4a4;',
+
+{{< highlight javascript >}}
+const PageVisibility = {
+  asleepEmoji: '💤',
   originalTitle: document.title, // [1]
 
   init() {
@@ -31,7 +33,9 @@ categories:
 
     document.title = title
   }
-}</code></pre>
+}
+{{< / highlight >}}
+
 <p>After calling <code>PageVisibility.init()</code> you&#8217;re good to go. </p>
 <p>[1] We&#8217;re storing the original copy of the document title so we can revert back to it once the page is visible again.</p>
 <p>[2] We do a rudimentary check for modern support for this feature. You can check out the MDN link above for the vendor prefixed version.</p>

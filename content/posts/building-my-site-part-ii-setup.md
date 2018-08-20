@@ -33,7 +33,8 @@ categories:
 <p>Next, I needed to create a field for this section to store my post content. Back we go to settings and then <code>Fields</code> to click <code>New Field</code>. I gave it the name of <code>Post Content</code> which generated the handle <code>postContent</code> which I&#8217;ll use in the templates to get the content. After this, I set the field type as <code>Doxster</code> to use Markdown.</p>
 <p>Finally, I go back to <code>Settings &gt; Sections</code> and add an entry type to Posts. From here I used the drag and drop editor to assign my <code>postContent</code> field to the section.</p>
 <p>After adding some posts from my old setup, it was then time to dig into the template. Remember when I added the <code>posts/_entry</code> information to the template field for the section? Craft maps this to your templates directory, so creating the folder <code>posts</code> and the template <code>_entry.twig</code> inside it will work to display a single post. At it&#8217;s most basic, it looks like this:</p>
-<pre><code class="language-twig">{% extends 'layouts/default' %}
+{{< highlight twig >}}
+{% extends 'layouts/default' %}
 
 {% block content %}
   &lt;article&gt;
@@ -43,10 +44,14 @@ categories:
 
       {{ entry.postContent | typogrify }}
   &lt;/article&gt;
-{% endblock %}</code></pre>
+{% endblock %}
+{{< / highlight >}}
+
 <p>The <code>layouts/default</code> file is essentially our <code>html</code>, <code>head</code> and <code>body</code> tags which surround our post template. Within the body, you&#8217;ll have <code>{% block content %}{% endblock %}</code> which will signal to Twig to drop the above in that spot.</p>
 <p>Next up, I needed to create a listing of those posts on my homepage, so I created the file <code>index.twig</code> in the root of the templates folder and added the following:</p>
-<pre><code class="language-twig">{% extends 'layouts/default' %}
+
+{{< highlight twig >}}
+{% extends 'layouts/default' %}
 
 {% block content %}
 
@@ -75,19 +80,25 @@ categories:
         &lt;a href="{{ pageInfo.nextUrl }}"&gt;Next Page&lt;/a&gt;
   {% endif %}
 
-{% endblock %}</code></pre>
+{% endblock %}
+{{< / highlight >}}
+
 <p>I added in some filters like <code>striptags</code>, <code>slice</code> and <code>raw</code> for the post preview to display a little excerpt from the post content. With that, the basic site was up and running.</p>
 <h3 id="laravel-mix">Laravel Mix <a class="anchor" href="#laravel-mix" title="Laravel Mix">#</a></h3>
 <p>Alright, the data is flowing through the templates like the life-blood that it is. Next I needed to inject some styling into the site, peppered with some JavaScript for a few cool interactive features.</p>
 <p>You could argue that for something simple, webpack just isn&#8217;t needed, and you&#8217;d be absolutely right. There&#8217;s nothing wrong with a single CSS file and a few script tags since that&#8217;s what it all boils down to anyway. I wanted to use some features of JavaScript that needed something extra for them to work across multiple browsers. I felt it would be conducive to a more scalable codebase when things get tacked-on down the line. I could be wrong, but I&#8217;m willing to give it a go.</p>
 <p>Laravel Mix makes it easy to get started in any web project, as seen in the <a href="https://github.com/JeffreyWay/laravel-mix/blob/master/docs/installation.md" rel="noopener" target="_blank">installation docs</a> it&#8217;s not just for Laravel.</p>
 <p>For example, if I want to have my JavaScript &amp; Less transpiled I can do the following in my <code>webpack.mix.js</code> file:</p>
-<pre><code class="language-javascript">const mix = require('laravel-mix')
+
+{{< highlight javascript >}}
+const mix = require('laravel-mix')
 
 mix
   .setPublicPath('web/')
     .js('web/src/js/main.js', 'assets/js')
-    .less('web/src/less/app.less', 'assets/css')</code></pre>
+    .less('web/src/less/app.less', 'assets/css')
+{{< / highlight >}}
+
 <p>It kinda reminds me of Gulp a little bit, and you can always extend it further with plugins or other configuration options.</p>
 <p>With that, I can run <code>npm run watch</code> to watch my files for changes. In my deployment script I have <code>npm run production</code> for an optimised build.</p>
 <h2 id="just-keep-swimming">Just Keep Swimming <a class="anchor" href="#just-keep-swimming" title="Just Keep Swimming">#</a></h2>

@@ -8,11 +8,17 @@ categories:
 <p>I&#8217;m working on a little project, and it&#8217;s fairly lightweight. I ended up creating a JavaScript object with a few functions to help with the most common tasks, e.g. add class, toggle class, select element&#8230;</p>
 <p>It&#8217;s just a collection assembled from <a href="http://youmightnotneedjquery.com/">You Might Not Need jQuery</a>.</p>
 <p>Example usage:</p>
-<pre><code class="language-javascript">U.ready(function() {
+
+{{< highlight javascript >}}
+U.ready(function() {
   console.log('Ready to go!');
-});</code></pre>
+});
+{{< / highlight >}}
+
 <p>I&#8217;d usually have this exported as a separate module using Browserify or ES2015.</p>
-<pre><code class="language-javascript">/**
+
+{{< highlight javascript >}}
+/**
  * Utilities 
  * see http://youmightnotneedjquery.com/
  * @type {Object}
@@ -100,5 +106,7 @@ var U = {
       el.className = classes.join(' ');
     }
   }
-};</code></pre>
+};
+{{< / highlight >}}
+
 <p><a href="https://gist.github.com/tjFogarty/04a797998fc1df10e5fe/">View the Gist</a></p>

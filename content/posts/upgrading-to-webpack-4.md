@@ -20,7 +20,9 @@ categories:
 </ul>
 <h2 id="setup">Setup <a class="anchor" href="#setup" title="Setup">#</a></h2>
 <p>The start of my config loads the packages I need, and I capture the mode we&#8217;re in (development or production). I&#8217;ll then use this mode later to update the config with any production-specific actions. For context, <code>webpack.config.js</code> sits at the root of my project, with source files and final assets living in a <code>web</code> folder.</p>
-<pre><code class="language-javascript">const path = require('path')
+
+{{< highlight javascript >}}
+const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
@@ -28,11 +30,15 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const workboxPlugin = require('workbox-webpack-plugin')
 
 let env = process.env.NODE_ENV
-let isDev = env === 'development'</code></pre>
+let isDev = env === 'development'
+{{< / highlight >}}
+
 <h2 id="general-configuration">General Configuration <a class="anchor" href="#general-configuration" title="General Configuration">#</a></h2>
 <h3 id="java-script">JavaScript <a class="anchor" href="#java-script" title="JavaScript">#</a></h3>
 <p>This part took a bit of tweaking to get my paths right for code splitting and correctly loading chunks from the correct url, but in the end I settled on:</p>
-<pre><code class="language-javascript">const WEBPACK_CONFIG = {
+
+{{< highlight javascript >}}
+const WEBPACK_CONFIG = {
   mode: env, // development or production
   entry: {
     main: './web/src/js/main.js'
@@ -43,11 +49,15 @@ let isDev = env === 'development'</code></pre>
     filename: 'assets/js/[name].js',
     chunkFilename: 'assets/js/chunks/[name].js'
   }
-}</code></pre>
+}
+{{< / highlight >}}
+
 <p>I needed to set the <code>publicPath</code> to <code>/</code> so the chunks would load correctly, but beyond that there&#8217;s enough there to handle everything else.</p>
 <h3 id="styles">Styles <a class="anchor" href="#styles" title="Styles">#</a></h3>
 <p>Styles took a bit of playing around with, turns out I&#8217;m a fool and didn&#8217;t read the instructions on where to place the <code>less-loader</code> plugin. I got there in the end though, so the updated config looks like this:</p>
-<pre><code class="language-javascript">const WEBPACK_CONFIG = {
+
+{{< highlight javascript >}}
+const WEBPACK_CONFIG = {
   mode: env,
   entry: {
     main: './web/src/js/main.js',
@@ -77,13 +87,19 @@ let isDev = env === 'development'</code></pre>
       filename: 'assets/css/app.css'
     })
   ]
-}</code></pre>
+}
+{{< / highlight >}}
+
 <p>I updated the <code>entry</code> object for my styles, and added rules for dealing with <code>less</code> files. Finally I added the <code>MiniCssExtractPlugin</code> to point the output into my assets folder.</p>
 <h4>Tailwind</h4>
 <p>To get Tailwind working I added a <code>postcss.config.js</code> file to my project containing:</p>
-<pre><code class="language-javascript">module.exports = {
+
+{{< highlight javascript >}}
+module.exports = {
   plugins: [require('tailwindcss')('./tailwind.js')]
-}</code></pre>
+}
+{{< / highlight >}}
+
 <p>The <code>tailwind.js</code> reference being my configuration file.</p>
 <h3 id="miscellaneous">Miscellaneous <a class="anchor" href="#miscellaneous" title="Miscellaneous">#</a></h3>
 <p>Another thing I wanted to do was clear out the assets folder on each run in case I added some extra files, like unnamed chunks so I didn&#8217;t have a folder full of <code>1..n.js</code> files.</p>
@@ -92,7 +108,9 @@ let isDev = env === 'development'</code></pre>
 <h2 id="production-only">Production-only <a class="anchor" href="#production-only" title="Production-only">#</a></h2>
 <h3 id="minify">Minify <a class="anchor" href="#minify" title="Minify">#</a></h3>
 <p>I only wanted to minify in production, so with that I added a condition to append to the webpack if it wasn&#8217;t in development mode:</p>
-<pre><code class="language-javascript">// `isDev` is set up earlier to check if process.env.NODE_ENV === 'development'
+
+{{< highlight javascript >}}
+// `isDev` is set up earlier to check if process.env.NODE_ENV === 'development'
 if (!isDev) {
   WEBPACK_CONFIG.optimization = {
     minimizer: [
@@ -104,18 +122,26 @@ if (!isDev) {
       new OptimizeCSSAssetsPlugin({})
     ]
   }
-}</code></pre>
+}
+{{< / highlight >}}
+
 <h3 id="service-worker">Service Worker <a class="anchor" href="#service-worker" title="Service Worker">#</a></h3>
 <p>I&#8217;ll be honest, this is something that I still need to work on if I want to go full on PWA. I&#8217;m using <a href="https://github.com/GoogleChrome/workbox" rel="noopener noreferrer" target="_blank">Workbox</a> to help with this.</p>
 <p>So still inside the <code>if (!isDev)</code> block I added:</p>
-<pre><code class="language-javascript">WEBPACK_CONFIG.plugins.push(
+
+{{< highlight javascript >}}
+WEBPACK_CONFIG.plugins.push(
   new workboxPlugin.InjectManifest({
     swSrc: './web/src/js/sw.js',
     swDest: 'sw.js'
   })
-)</code></pre>
+)
+{{< / highlight >}}
+
 <p>This compiles the service worker from this file:</p>
-<pre><code class="language-javascript">workbox.skipWaiting()
+
+{{< highlight javascript >}}
+workbox.skipWaiting()
 workbox.clientsClaim()
 
 workbox.routing.registerRoute(
@@ -138,7 +164,9 @@ workbox.routing.registerRoute(
   })
 )
 
-workbox.precaching.precacheAndRoute(self.__precacheManifest)</code></pre>
+workbox.precaching.precacheAndRoute(self.__precacheManifest)
+{{< / highlight >}}
+
 <p>This caches images, JavaScript, and CSS. I really need to read up more on it.</p>
 <h2 id="wha-happen">Wha&#8217; Happen? <a class="anchor" href="#wha-happen" title="Wha' Happen?">#</a></h2>
 <p>In the end, running <code>npm run dev</code> went from taking 6 seconds to 2.5 seconds, and <code>npm run production</code> dropped from 14 seconds to 4. Absolutely fantastic gains there, and a testament to the fine work those smart folks do working on webpack. This was more of a learning experience to get closer to the metal as it were, and I&#8217;ll continue tweaking and breaking things because it&#8217;s my site. Better I do it here than at work. I&#8217;ll only have myself to answer to, and I&#8217;m my own harshest critic.</p>
