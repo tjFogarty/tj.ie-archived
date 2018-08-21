@@ -6,12 +6,12 @@ If you have any questions, or just want to say hi, feel free to drop me a messag
   
 Alternatively, you can <a href="https://twitter.com/tj_fogarty" rel="noopener" target="_blank">find me on Twitter</a>.
   
-<form method="post" action="/contact-thanks/" class="max-w-md mt-4" accept-charset="UTF-8" netlify>
-  <label for="from-name">Your Name</label>
-  <input id="from-name" type="text" name="fromName" value="">
+<form method="post" action="/contact-thanks/" class="max-w-md mt-4" accept-charset="UTF-8" name="contact" netlify>
+  <label for="name">Your Name</label>
+  <input id="name" type="text" name="name" value="">
 
-  <label for="from-email">Your Email (required)</label>
-  <input id="from-email" type="email" name="fromEmail" value="" required>
+  <label for="email">Your Email (required)</label>
+  <input id="email" type="email" name="email" value="" required>
 
   <label for="subject">Subject</label>
   <input id="subject" type="text" name="subject" value="">
