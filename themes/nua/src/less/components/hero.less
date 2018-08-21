@@ -1,16 +1,17 @@
 .c-hero {
-  @apply .flex .items-end;
+  display: flex;
+  align-items: flex-end;
   position: relative;
   overflow: hidden;
 }
 
-@screen md {
+@media @mq-md {
   .c-hero__title {
     margin-bottom: 0;
   }
 }
 
-@screen lg {
+@media @mq-lg {
   .c-hero__title {
     font-size: 4em;
   }
@@ -20,11 +21,4 @@
   position: relative;
   z-index: 1;
   width: 100%;
-}
-
-@supports (mix-blend-mode: soft-light) {
-  .c-hero__image {
-    mix-blend-mode: soft-light;
-    opacity: 1;
-  }
 }

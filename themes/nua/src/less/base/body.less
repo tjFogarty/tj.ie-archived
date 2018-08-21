@@ -22,20 +22,31 @@
   --c-hero-primary: var(--c-primary);
   --c-hero-secondary: var(--c-secondary);
   --hero-position-y: 0%;
+  --font-serif: 'Alegreya', 'serif';
+  --font-sans-serif: 'Alegreya Sans', 'sans-serif';
+  --font-mono: 'Operator Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace';
 }
+
+@mq-sm: ~"only screen and (min-width: 576px)";
+@mq-md: ~"only screen and (min-width: 768px)";
+@mq-lg: ~"only screen and (min-width: 992px)";
+@mq-xl: ~"only screen and (min-width: 1200px)";
 
 html {
   font-size: 1.2em;
 }
 
 body {
-  @apply .font-serif .bg-white .text-black;
+  font-family: var(--font-serif);
+  background-color: var(--c-white);
+  color: var(--c-black);
   font-weight: 300;
   line-height: 1.45;
 }
 
 ::selection {
-  @apply .bg-primary .text-white;
+  background-color: var(--c-primary);
+  color: var(--c-white);
 }
 
 .content {

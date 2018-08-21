@@ -1,3 +1,1 @@
-module.exports = {
-  plugins: [require('tailwindcss')('./tailwind.js')]
-}
+module.exports = {}

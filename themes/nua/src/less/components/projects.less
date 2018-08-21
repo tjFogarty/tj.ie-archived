@@ -1,27 +1,19 @@
 .c-projects {
-	@apply .list-reset .my-3;
+  margin: 0 0.75rem;
+  padding: 0;
+  list-style: none;
 
   ul {
-    @apply .list-reset;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 }
 
 .c-projects__item {
-  @apply .mb-8;
+  margin-bottom: 2rem;
 }
 
 .c-projects__item-title {
   margin-top: 0;
-}
-
-.c-projects__item-image {
-  @apply .mt-3 .ml-auto .mr-auto .block;
-  image-rendering: -webkit-optimize-contrast;
-  max-width: 100%;
-}
-
-@screen md {
-  .c-projects__item-image {
-    @apply .mt-0;
-  }
 }

@@ -12,11 +12,11 @@
     <div class="c-share-container">
     
     {{ if .Params.Categories }}
-      <div>
+      <div class="c-post__categories">
         <small>Categories: &nbsp;</small>
-        <ul class="list-reset inline-flex mb-6 md:mb-2">
+        <ul class="c-post__categories-list">
           {{ range .Params.Categories }}
-          <li class="mr-3">
+          <li class="c-post__categories-item">
             <a href="/category/{{ . | urlize }}">
               <small>{{ . }}</small>
             </a>
@@ -28,7 +28,7 @@
     </div>
     
     {{ with .NextInSection }}
-    <p>Next: <a class="mt-5" href="{{ .Permalink }}">{{ .Title }}</a></p>
+    <p>Next: <a href="{{ .Permalink }}">{{ .Title }}</a></p>
     {{ end }}
   </article>
 </div>

@@ -1,12 +1,16 @@
 .c-btn {
-  @apply .py-1 .px-3 .no-underline .inline-block .text-base;
+  padding: 0.25rem 0.75rem;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
 }
 
 .c-btn-primary {
-  @apply .bg-primary .text-white;
+  background-color: var(--c-primary);
+  color: var(--c-white);
   transition: background ease 0.2s;
 
   &:hover {
-    @apply .bg-secondary;
+    background-color: var(--c-secondary);
   }
 }
