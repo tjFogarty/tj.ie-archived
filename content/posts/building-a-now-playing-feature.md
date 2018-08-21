@@ -1,5 +1,6 @@
 ---
 title: "Building a 'Now Playing' Feature"
+description: "Show the world what you're listening to because it's important."
 date: 2017-12-18T12:19:00+00:00
 draft: false
 categories: 

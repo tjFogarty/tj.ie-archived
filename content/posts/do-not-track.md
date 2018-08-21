@@ -1,5 +1,6 @@
 ---
 title: "Do Not Track"
+description: "How to use window.doNotTrack to decide when to use tracking."
 date: 2018-04-15T13:01:00+01:00
 draft: false
 categories: 

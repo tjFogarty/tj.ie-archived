@@ -1,5 +1,6 @@
 ---
 title: "Building My Site Part II: Setup"
+description: "Setting up my new website with Craft CMS."
 date: 2018-01-07T14:53:00+00:00
 draft: false
 categories: 

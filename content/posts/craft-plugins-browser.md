@@ -1,5 +1,6 @@
 ---
 title: "Craft Plugins Browser"
+description: "A small project to browse Craft CMS plugins by popularity."
 date: 2018-02-04T12:10:00+00:00
 draft: false
 categories: 

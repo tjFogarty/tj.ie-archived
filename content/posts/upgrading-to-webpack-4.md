@@ -1,5 +1,6 @@
 ---
 title: "Upgrading to webpack 4"
+description: "Moving from Laravel Mix to webpack 4, and the performance benefits."
 date: 2018-05-12T21:48:00+01:00
 draft: false
 categories: 

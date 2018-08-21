@@ -1,5 +1,6 @@
 ---
 title: "What Do I Know?"
+description: "The web moves fast, but it doesn't invalidate what you already know."
 date: 2018-07-24T22:39:00+01:00
 draft: false
 categories: 

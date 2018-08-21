@@ -1,5 +1,6 @@
 ---
 title: "Building My Site Part III: Fine Tuning"
+description: "Final tweaks and performance improvements for my website."
 date: 2018-01-08T15:57:00+00:00
 draft: false
 categories: 

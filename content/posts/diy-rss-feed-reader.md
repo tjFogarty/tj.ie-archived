@@ -1,5 +1,6 @@
 ---
 title: "DIY RSS Feed Reader"
+description: "Building your own Feed Reader with Vue.js and Node"
 date: 2018-02-12T15:44:00+00:00
 draft: false
 categories: 

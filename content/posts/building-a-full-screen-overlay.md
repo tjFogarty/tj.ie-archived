@@ -1,5 +1,6 @@
 ---
 title: "Building a full-screen overlay"
+description: "A JavaScript approach to a full-screen overlay"
 date: 2015-04-06T00:00:00+01:00
 draft: false
 categories: 

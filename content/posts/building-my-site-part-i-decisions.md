@@ -1,5 +1,6 @@
 ---
 title: "Building My Site Part I: Decisions"
+description: "Building my website with Craft CMS."
 date: 2018-01-06T23:04:00+00:00
 draft: false
 categories: 

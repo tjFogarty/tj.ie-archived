@@ -1,5 +1,6 @@
 ---
 title: "Client-Side Search with Algolia"
+description: "Adding client-side search with Algolia."
 date: 2018-01-09T21:54:00+00:00
 draft: false
 categories: 
