@@ -1,5 +1,6 @@
 ---
 title: "A Signal in the Static"
+description: "Moving from Craft CMS to Hugo and Netlify"
 date: 2018-08-19T16:28:24+01:00
 draft: false
 categories:

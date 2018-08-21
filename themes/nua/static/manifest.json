@@ -2,7 +2,7 @@
   "name": "TJ Fogarty",
   "short_name": "TJ",
   "theme_color": "#197b8f",
-  "start_url": "/archive",
+  "start_url": "/archive/",
   "display": "standalone",
   "background_color": "#fff",
   "description": "Web Developer",
