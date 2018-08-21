@@ -1,18 +1,18 @@
 <!-- COMMON TAGS -->
 
 <!-- Schema.org for Google -->
-<meta itemprop="name" content="{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}">
-<meta itemprop="description" content="{{ if not .IsHome}} {{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
+<meta itemprop="name" content="{{ if not .IsHome}}{{ .Page.Title }} | {{ end }}{{ .Site.Title }}">
+<meta itemprop="description" content="{{ if not .IsHome}}{{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
 <!-- Twitter -->
-<meta name="twitter:card" content="{{ if not .IsHome}} {{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
-<meta name="twitter:title" content="{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}">
-<meta name="twitter:description" content="{{ if not .IsHome}} {{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
+<meta name="twitter:card" content="{{ if not .IsHome}}{{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
+<meta name="twitter:title" content="{{ if not .IsHome}}{{ .Page.Title }} | {{ end }}{{ .Site.Title }}">
+<meta name="twitter:description" content="{{ if not .IsHome}}{{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
 <meta name="twitter:site" content="@tj_fogarty">
 <meta name="twitter:creator" content="@tj_fogarty">
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-<meta name="og:title" content="{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}">
-<meta name="og:description" content="{{ if not .IsHome}} {{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
-<meta name="og:url" content="{{ .Site.BaseURL }}">
-<meta name="og:site_name" content="{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}">
+<meta name="og:title" content="{{ if not .IsHome}}{{ .Page.Title }} | {{ end }}{{ .Site.Title }}">
+<meta name="og:description" content="{{ if not .IsHome}}{{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
+<meta name="og:url" content="{{ if not .IsHome}}{{ .Page.URL }}{{ else }}{{ .Site.BaseURL }}{{ end }}">
+<meta name="og:site_name" content="{{ if not .IsHome}}{{ .Page.Title }} | {{ end }}{{ .Site.Title }}">
 <meta name="og:locale" content="en_IE">
 <meta name="og:type" content="website">
