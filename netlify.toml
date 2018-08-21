@@ -43,7 +43,7 @@ to = "/index.xml"
 
 [[redirects]]
 from = "https://awesome-northcutt-12634b.netlify.com/*"
-to = "https://tj.ie/:splat"
+to = "https://www.tj.ie/:splat"
 
 [[redirects]]
 from = "/instagram"
