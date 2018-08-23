@@ -3,7 +3,7 @@
   <div>
     <h1>{{.Title}}</h1>
     
-    <p>I write about
+    <p>Categories: 
       {{ range $key, $value := .Site.Taxonomies.categories }}
       <a href="/category/{{ $key | urlize  }}">{{ $key }}</a> ({{ len $value }})
       {{ end }}

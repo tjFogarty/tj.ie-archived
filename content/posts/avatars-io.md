@@ -3,6 +3,8 @@ title: "Avatars.io"
 description: "Avatars.io lets you quickly grab a URL to an avatar of yours from a few different services" 
 date: 2018-08-21T14:06:53+01:00
 draft: false
+categories:
+  - External Links
 ---
 
 I was having a read through some source code on a project and came across a reference to Avatars.io, which is a pretty nice service for fetching avatars. 
