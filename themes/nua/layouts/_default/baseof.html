@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}</title>
-    <meta name="description" content="{{ if not .IsHome}} {{ .Page.Description }} | {{ else }}TJ Fogarty is a web developer from Limerick, Ireland. He specialises in JavaScript, CSS, and PHP.{{ end }}">
     {{ partial "social-meta.html" . }}
     <link rel="preload" href="/fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/alegreya-sans.woff2" as="font" type="font/woff2" crossorigin>    
