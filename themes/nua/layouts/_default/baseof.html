@@ -34,6 +34,7 @@
     
     <script src="/assets/js/main.js" defer></script>
 
+    {{ if not .Site.BuildDrafts }}
     <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
     <script>
     (function(f, a, t, h, o, m){
@@ -48,5 +49,6 @@
     fathom('trackPageview');
     </script>
     <!-- / Fathom -->
+    {{ end }}
 </body>
 </html>

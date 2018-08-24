@@ -471,6 +471,12 @@ pre {
   height: 100%;
   z-index: -1;
 }
+blockquote {
+  border-left: 5px solid var(--c-primary);
+  font-style: italic;
+  margin-left: 0;
+  padding-left: 1.5rem;
+}
 .l-post-list {
   margin: 0;
   padding: 0;
