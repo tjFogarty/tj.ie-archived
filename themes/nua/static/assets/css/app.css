@@ -517,7 +517,7 @@ blockquote {
   background-color: var(--c-secondary);
 }
 .c-projects {
-  margin: 0 0.75rem;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
