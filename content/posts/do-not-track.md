@@ -5,6 +5,7 @@ date: 2018-04-15T13:01:00+01:00
 draft: false
 categories: 
 - JavaScript
+- Analytics
 ---
 <p>When I first began writing posts for my own website, I was keen to get an insight into how people were finding my blog, what pages were most popular, and generally nerding out with the real-time dashboard in Google Analytics to see visitors from different parts of the world.</p>
 <p>Those things definitely still interest me, but over time I haven&#8217;t really used any of the information I get in a meaningful way. I imagine for other sites it&#8217;s more useful, especially if you need to run some ads, or it&#8217;s part of your income or a service you offer and you want to see if users are hitting any issues. That&#8217;s super important stuff, and I don&#8217;t see a problem with it. The way it looks to be going now, however, is that it&#8217;s becoming more of an opt-in experience rather than one of opt-out.</p>

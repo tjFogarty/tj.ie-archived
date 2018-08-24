@@ -3,6 +3,8 @@ title: "Fathom Analytics"
 description: "Installing Fathom analytics on Heroku."
 date: 2018-08-24T19:06:48+01:00
 draft: false
+categories:
+  - Analytics
 ---
 
 I've been going without any sort of analytics for my website for a number of months as I just wasn't happy with giving all that information to third parties. Plus, this is a fairly small operation here, so it's not exactly a requirement of mine.

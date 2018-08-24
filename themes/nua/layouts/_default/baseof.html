@@ -9,9 +9,13 @@
     <link rel="preload" href="/fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/alegreya-sans.woff2" as="font" type="font/woff2" crossorigin>    
      
+     {{ if not .Site.BuildDrafts }}
     <style>
         {{ readFile "themes/nua/static/assets/css/app.css" | safeCSS }}
     </style>
+    {{ else }}
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+    {{ end }}
     
     <meta name="theme-color" content="#197b8f" />
     
