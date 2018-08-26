@@ -20,6 +20,8 @@ export const Hero = {
       // creatr 200 random points
       start: bound => {
         pts = Create.distributeRandom(space.innerBound, 200)
+        
+        this.container.classList.add('is-ready')
       },
 
       animate: (time, ftime) => {
@@ -43,9 +45,5 @@ export const Hero = {
     })
 
     space.play()
-      
-    setTimeout(() => {
-      this.container.classList.add('is-ready')
-    }, 200)
   }
 }

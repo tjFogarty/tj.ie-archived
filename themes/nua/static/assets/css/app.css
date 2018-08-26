@@ -601,7 +601,7 @@ blockquote {
   width: 100%;
   height: 100%;
   background-color: var(--c-off-black);
-  transition: opacity ease 0.3s;
+  transition: opacity ease 2s;
 }
 .c-hero__canvas.is-ready {
   opacity: 1;
