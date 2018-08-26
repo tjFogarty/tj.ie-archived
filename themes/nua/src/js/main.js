@@ -1,8 +1,8 @@
 import { ready, env } from './utils'
-import { PageVisibility } from './page-visibility'
+import { Hero } from './hero'
 
 ready(async () => {
-  PageVisibility.init()
+  Hero.init()
 })
 
 if (true || (env() === 'production' && 'serviceWorker' in navigator)) {

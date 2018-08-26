@@ -8,6 +8,20 @@
   flex-direction: column;
   background-color: var(--c-white);
   padding: 1rem;
+  box-sizing: border-box;
+  
+  &.is-fixed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: transparent;
+    
+    .c-nav__link {
+      color: var(--c-white);
+    }
+  }
 }
 
 @media @mq-sm {
@@ -128,8 +142,12 @@
 
 .c-nav__link {
   display: block;
+  text-transform: uppercase;
+  font-family: var(--font-sans-serif);
   color: var(--c-primary);
   text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
 
   &:hover,
   &.is-active {

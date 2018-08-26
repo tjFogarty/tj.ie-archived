@@ -15,7 +15,7 @@
         {{ readFile "themes/nua/static/assets/css/app.css" | safeCSS }}
     </style>
     {{ else }}
-    <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v={{ now.Unix }}">
     {{ end }}
     
     <meta name="theme-color" content="#197b8f" />
@@ -38,9 +38,9 @@
         {{ block "main" . }}{{ end }}
     </main>
     
-     {{ partial "footer.html" . }}
-    
-    <script src="/assets/js/main.js" defer></script>
+    {{ partial "footer.html" . }}
+     
+    <script src="/assets/js/main.js{{ if .Site.BuildDrafts }}?v={{ now.Unix }}{{ end }}" defer></script>
 
     {{ if not .Site.BuildDrafts }}
     <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->

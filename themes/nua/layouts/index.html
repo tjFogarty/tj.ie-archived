@@ -2,40 +2,47 @@
 
 <div class="c-hero">
     <div class="c-hero__content">
-        <div class="l-container l-homepage">
-            <div>
-                <h1 class="c-hero__title">Hi, I'm TJ, a web developer from Limerick, Ireland</h1>
-                <div>
-                    <h2>About Me</h2>
-                    <p>I’m a front-end/ui/web developer hailing from the great county of Limerick in Ireland. I mostly work in JavaScript, CSS and PHP. I spend my days tinkering with code and side-projects, but you can find me on <a href="https://twitter.com/tj_fogarty" target="_blank" rel="noopener">Twitter</a>, <a href="https://codepen.io/tjFogarty/" target="_blank" rel="noopener">CodePen</a>, and <a href="https://github.com/tjFogarty" target="_blank" rel="noopener">GitHub</a>. If you want to get in contact, you can hit me up on Twitter or via the <a href="/contact">contact page</a>.</p>
-                </div>
-            </div>
-            
-            <div>
-                <h2 class="mt-0">Latest Posts</h2>
-                <ul class="l-post-list">
-                    {{ range first 5 (where .Pages "Section" "posts") }}
-                    <li class="l-post-list__item">
-                        <div class="c-post c-post--preview">
-                            <div class="c-post-preview__heading">
-                                <time class="c-post__date" datetime="{{.PublishDate}}">
-                                    {{.PublishDate.Format "2 Jan"}}
-                                </time>
-            
-                                <h3 class="c-post__title c-post__title--preview">
-                                    <a class="c-post__title-link" href="{{.Permalink}}">
-                                        {{.Title}}
-                                    </a>
-                                </h3>
-                            </div>
-                        </div>
-                    </li>
-                    {{ end }}
-                </ul>
-            
-                <a class="c-btn c-btn-primary" href="/archive">View Archive</a>
-            </div>
+        <div class="l-container">
+            <h1 class="c-hero__title">Hi, I'm TJ, a web developer from Limerick, Ireland</h1>
         </div>
+        
+        <canvas class="js-hero c-hero__canvas"></canvas>
+    </div>
+</div>
+
+<div class="l-container l-homepage">
+    <div>
+        <h2 class="mt-0">About Me</h2>
+        <p>I’m a front-end/ui/web developer hailing from the great county of Limerick in Ireland. I mostly work in JavaScript,
+            CSS and PHP. I spend my days tinkering with code and side-projects, but you can find me on <a href="https://twitter.com/tj_fogarty"
+                target="_blank" rel="noopener">Twitter</a>, <a href="https://codepen.io/tjFogarty/" target="_blank" rel="noopener">CodePen</a>,
+            and <a href="https://github.com/tjFogarty" target="_blank" rel="noopener">GitHub</a>. If you want to get
+            in contact, you can hit me up on Twitter or via the <a href="/contact">contact page</a>.</p>
+    </div>
+
+    <div>
+        <h2 class="mt-0">Latest Posts</h2>
+        <ul class="l-post-list">
+            {{ range first 5 (where .Pages "Section" "posts") }}
+            <li class="l-post-list__item">
+                <div class="c-post c-post--preview">
+                    <div class="c-post-preview__heading">
+                        <time class="c-post__date" datetime="{{.PublishDate}}">
+                            {{.PublishDate.Format "2 Jan"}}
+                        </time>
+
+                        <h3 class="c-post__title c-post__title--preview">
+                            <a class="c-post__title-link" href="{{.Permalink}}">
+                                {{.Title}}
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+
+        <a class="c-btn c-btn-primary" href="/archive">View Archive</a>
     </div>
 </div>
 {{ end }}
