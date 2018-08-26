@@ -4,4 +4,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://tj.ie/index.xml
+Sitemap: https://tj.ie/sitemap.xml
