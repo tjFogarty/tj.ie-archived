@@ -17,27 +17,26 @@ export const Hero = {
     space.background = '#142232'
 
     space.add({
-      // creatr 200 random points
-      start: bound => {
+      start: () => {
         pts = Create.distributeRandom(space.innerBound, 200)
-        
+
         this.container.classList.add('is-ready')
       },
 
-      animate: (time, ftime) => {
-        // make a line and turn it into an "op" (see the guide on Op for more)
+      animate: () => {
         let perpend = new Group(space.center.$subtract(0.1), space.pointer).op(
           Line.perpendicularFromPt
         )
+        
         pts.rotate2D(0.0005, space.center)
 
         pts.forEach((p, i) => {
-          // for each point, find the perpendicular to the line
-          let lp = perpend(p)
-          var ratio = Math.min(
-            1,
-            1 - lp.$subtract(p).magnitude() / (space.size.x / 2)
-          )
+          let lp = perpend(p),
+            ratio = Math.min(
+              1,
+              1 - lp.$subtract(p).magnitude() / (space.size.x / 2)
+            )
+
           form.stroke(`rgba(100,100,100,${ratio}`, ratio * 2).line([p, lp])
           form.fillOnly(['#FFBC00', '#EF3E4A', '#D5E9E2'][i % 3]).point(p, 1)
         })
