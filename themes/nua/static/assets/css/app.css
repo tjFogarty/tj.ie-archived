@@ -474,7 +474,8 @@ blockquote {
   border-left: 5px solid var(--c-primary);
   font-style: italic;
   margin-left: 0;
-  padding-left: 1.5rem;
+  background: var(--c-off-white);
+  padding: 0.1rem 1.5rem;
 }
 .l-post-list {
   margin: 0;
