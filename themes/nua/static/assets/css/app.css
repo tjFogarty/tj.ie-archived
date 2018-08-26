@@ -333,13 +333,12 @@ template {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 :root {
-  --c-primary: #E75152;
   --c-primary: #E44A66;
   --c-secondary: #4F3A4B;
   --c-black: #222;
   --c-off-black: #142232;
   --c-white: #fff;
-  --c-yellow: #FFBC00;
+  --c-off-white: #f5f5f5;
   --font-serif: 'Alegreya', 'serif';
   --font-sans-serif: 'Alegreya Sans', 'sans-serif';
   --font-mono: 'Operator Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace';
@@ -490,6 +489,22 @@ blockquote {
 .l-post-list__item:last-child {
   border: none;
 }
+@media only screen and (min-width: 768px) {
+  .l-post-list--grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+}
+.l-post-list__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.l-post-list__heading-title {
+  margin: 0;
+}
 .l-container {
   max-width: 60rem;
   margin: 0 auto;
@@ -500,6 +515,18 @@ blockquote {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
+  }
+}
+.l-touchpoints {
+  margin: 0 0 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+@media only screen and (min-width: 768px) {
+  .l-touchpoints {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
   }
 }
 .c-btn {
@@ -515,6 +542,10 @@ blockquote {
 }
 .c-btn-primary:hover {
   background-color: var(--c-secondary);
+}
+.c-wrapper {
+  background-color: var(--c-off-white);
+  padding-top: 1rem;
 }
 .c-projects {
   margin: 0;
@@ -565,7 +596,6 @@ blockquote {
   opacity: 0;
   top: 0;
   left: 0;
-  z-index: -1;
   width: 100%;
   height: 100%;
   background-color: var(--c-off-black);
@@ -728,6 +758,12 @@ blockquote {
 }
 .c-post__categories-item {
   margin-right: 1rem;
+}
+.c-post-preview__heading--stacked {
+  display: block;
+}
+.c-post__date--small {
+  font-size: 0.9rem;
 }
 .c-footer {
   background-color: var(--c-black);

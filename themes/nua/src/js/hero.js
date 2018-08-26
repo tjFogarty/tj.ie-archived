@@ -42,10 +42,7 @@ export const Hero = {
       }
     })
 
-    space
-      .bindMouse()
-      .bindTouch()
-      .play()
+    space.play()
       
     setTimeout(() => {
       this.container.classList.add('is-ready')

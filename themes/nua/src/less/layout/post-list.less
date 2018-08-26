@@ -13,3 +13,22 @@
     border: none;
   }
 }
+
+.l-post-list--grid {
+  @media @mq-md {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+}
+
+.l-post-list__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.l-post-list__heading-title {
+  margin: 0;
+}
