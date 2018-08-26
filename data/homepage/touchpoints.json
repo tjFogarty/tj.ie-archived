@@ -1,0 +1,16 @@
+{
+  "touchpoints": [
+    {
+      "name": "Front-end",
+      "description": "I deliver performant, maintainable, and scalable front-end code through the use of custom-made pattern libraries, well-structured CSS, and robust tooling. This helps drive consistency, predictability, and rapid prototyping when working on a large project."
+    },
+    {
+      "name": "Back-end",
+      "description": "I have many years of experience with various PHP-based content management systems such as WordPress, Craft CMS, and ExpressionEngine. I'm also familiar with WordPress plugin development, and custom applications with Laravel. I use services such as Netlify, Heroku, and DigitalOcean for deploying projects."
+    },
+    {
+      "name": "JavaScript",
+      "description": "I build applications with Vue.js and React, and couple these with the front-end skills in the production of pattern libraries and clean code, and wire them up to content management systems and bespoke applications."
+    }
+  ]
+}

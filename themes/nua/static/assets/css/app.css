@@ -700,6 +700,7 @@ blockquote {
 .c-nav__link:hover,
 .c-nav__link.is-active {
   text-decoration: underline;
+  color: var(--c-secondary);
 }
 @media only screen and (min-width: 576px) {
   .c-nav__link {
