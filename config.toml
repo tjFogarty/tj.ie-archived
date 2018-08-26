@@ -6,3 +6,7 @@ pygmentsStyle = "dracula"
 [permalinks]
   posts = "/:slug"
   categories = "/category/:slug"
+[params]
+  description = "TJ Fogarty is a web developer experienced in front-end and back-end development with Vue.js, React, Sass, PHP, Laravel, WordPress, Craft, ExpressionEngine and more."
+  twitter = "@tj_fogarty"
+  author = "TJ Fogarty"
