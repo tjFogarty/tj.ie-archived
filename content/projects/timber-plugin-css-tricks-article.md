@@ -1,11 +1,11 @@
 ---
-title: "CSS Tricks Article - Timber WordPress Plugin"
+title: "CSS-Tricks Article - Timber WordPress Plugin"
 description: "Working with the delighful Chris Coyier I wrote an article for CSS-Tricks."
 date: 2018-08-28T17:01:38+01:00
 draft: false
 ---
 
-Working with the delighful Chris Coyier I wrote an article for CSS Tricks. It's a highlight in my life on the web for sure. I pitched a couple of ideas and we settled on writing about a WordPress plugin that changed how I worked, <a href="https://timber.github.io/docs/" rel="noopener noreferrer" target="_blank">Timber</a>. It lets you build your site with the Twig templating language.
+Working with the delighful Chris Coyier I wrote an article for CSS-Tricks. It's a highlight in my life on the web for sure. I pitched a couple of ideas and we settled on writing about a WordPress plugin that changed how I worked, <a href="https://timber.github.io/docs/" rel="noopener noreferrer" target="_blank">Timber</a>. It lets you build your site with the Twig templating language.
 
 It's also <a href="https://github.com/timber/timber#helpful-links" target="_blank" rel="noopener noreferrer">linked to on the repos page</a>.
 
