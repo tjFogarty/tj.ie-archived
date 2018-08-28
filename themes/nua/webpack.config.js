@@ -64,7 +64,7 @@ if (!isDev) {
       ])
     }),
     new SWPrecacheWebpackPlugin({
-      cacheId: 'tj-ie',
+      cacheId: 'tj-ie-v2',
       filename: 'sw.js',
       minify: true,
       stripPrefix: 'static',

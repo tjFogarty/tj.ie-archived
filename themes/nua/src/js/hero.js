@@ -6,7 +6,7 @@ export class Hero {
     this.buildWorld = this.buildWorld.bind(this)
     
     try {
-      import(/** webpackChunkName : "pts" */ 'pts').then(this.buildWorld)
+      import(/* webpackChunkName: "pts" */ 'pts').then(this.buildWorld)
     } catch (e) {
       console.error('Error loading pts', e)
     }
