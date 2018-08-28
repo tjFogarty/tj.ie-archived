@@ -1,10 +1,12 @@
+const PointColours = ['#d42897', '#EF3E4A', '#D5E9E2']
+
 export class Hero {
   constructor() {
     this.container = document.querySelector('.js-hero')
     if (!this.container) return
-    
+
     this.buildWorld = this.buildWorld.bind(this)
-    
+
     try {
       import(/* webpackChunkName: "pts" */ 'pts').then(this.buildWorld)
     } catch (e) {
@@ -42,7 +44,7 @@ export class Hero {
             )
 
           form.stroke(`rgba(240,240,240,${ratio}`, ratio * 2).line([p, lp])
-          form.fillOnly(['#FFBC00', '#EF3E4A', '#D5E9E2'][i % 3]).point(p, 2)
+          form.fillOnly(PointColours[i % 3]).point(p, 2)
         })
       }
     })
