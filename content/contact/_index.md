@@ -6,10 +6,8 @@ If you have any questions, or just want to say hi, feel free to drop me a messag
   
 Alternatively, you can <a href="https://twitter.com/tj_fogarty" rel="noopener" target="_blank">find me on Twitter</a>.
   
-<form method="post" action="/contact-thanks/" class="max-w-md mt-4" accept-charset="UTF-8" name="contact" netlify netlify-honeypot="thanks">
-  <p style="display: none;">
-    <label for="thanks">Don’t fill this out if you're human: <input name="thanks" id="thanks" /></label>
-  </p>
+<form method="post" action="/contact-thanks/" class="max-w-md mt-4" accept-charset="UTF-8" name="contact" netlify>
+
   <label for="name">Your Name</label>
   <input id="name" type="text" name="name" value="">
 
