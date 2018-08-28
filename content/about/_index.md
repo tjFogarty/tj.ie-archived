@@ -2,11 +2,13 @@
 title: "About"
 ---
 
-I’m TJ, a web devel­op­er from Lim­er­ick, Ire­land 🇮🇪 and liv­ing in Water­ford. I most­ly hang around the front-end devel­op­ment side of things, but I know enough to be dan­ger­ous with the likes of PHP and Node as well.
+I’m TJ, a web devel­op­er from Lim­er­ick, Ire­land 🇮🇪 and liv­ing in Water­ford. I have BSc Hons in Multimedia Programming, and Design from Limerick Institute of Technology.
+
+Pre­vi­ous­ly, I’ve worked for ResourceKraft as a Designer/​Developer, Mav­er­ick as the Lead Devel­op­er, and Emag­ine as a Web Devel­op­er and then Tech­ni­cal Lead. At the moment I’m a UI Devel­op­er at Stitcher­Ads where I’m devel­op­ing a com­po­nent library and design system.
 
 I enjoy work­ing with JavaScript (React and Vue), Node, PHP (Craft CMS, Word­Press, Lar­avel, Expres­sio­nEngine), and CSS (Sass, Less, good ‘ol vanil­la CSS). Spend­ing all these years work­ing with such fun tech­nolo­gies reminds me that just because you can do it, def­i­nite­ly means you should.
 
-Pre­vi­ous­ly, I’ve worked for ResourceKraft as a Designer/​Developer, Mav­er­ick as the Lead Devel­op­er, and Emag­ine as a Web Devel­op­er and then Tech­ni­cal Lead. At the moment I’m a UI Devel­op­er at Stitcher­Ads where I’m devel­op­ing a com­po­nent library and design system.
+In my spare time I listen to music, read, try to figure out that bug that's been haunting me, and waking a 4am with a solution from the fever dream that destroyed me.
 
 You can find me at the links below:
 
@@ -24,7 +26,7 @@ You can find me at the links below:
   </li>
 </ul>
 
-<h2 id="features">Fea­tures <a href="#features" title="Features">#</a></h2>
+<h2 id="features">Fea­tures</h2>
 
 Some folks on the inter­net think I don’t spout total non­sense. It’s news to me, but here’s some proof:
 

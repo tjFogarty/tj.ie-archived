@@ -2,7 +2,7 @@ import { ready, env } from './utils'
 import { Hero } from './hero'
 
 ready(async () => {
-  Hero.init()
+  new Hero()
 })
 
 if (true || (env() === 'production' && 'serviceWorker' in navigator)) {

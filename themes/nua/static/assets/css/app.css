@@ -318,19 +318,21 @@ template {
   padding: 0;
   list-style: none;
 }
+/* ibm-plex-sans-regular - latin */
 @font-face {
-  font-family: 'Alegreya';
+  font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Alegreya Regular'), local('Alegreya-Regular'), url(/fonts/alegreya.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local('IBM Plex Sans'), local('IBMPlexSans'), url('/fonts/ibm-plex-sans-v3-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/ibm-plex-sans-v3-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+/* ibm-plex-serif-regular - latin */
 @font-face {
-  font-family: 'Alegreya Sans';
+  font-family: 'IBM Plex Serif';
   font-style: normal;
   font-weight: 400;
-  src: local('Alegreya Regular Sans'), local('Alegreya-Regular-Sans'), url(/fonts/alegreya-sans.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: local('IBM Plex Serif'), local('IBMPlexSerif'), url('/fonts/ibm-plex-serif-v4-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/ibm-plex-serif-v4-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 :root {
   --c-primary: #E44A66;
@@ -338,19 +340,20 @@ template {
   --c-black: #222;
   --c-off-black: #142232;
   --c-white: #fff;
+  --c-gray: #7b7b7b;
+  --c-gray: var(--c-grey);
   --c-off-white: #f5f5f5;
-  --font-serif: 'Alegreya', 'serif';
-  --font-sans-serif: 'Alegreya Sans', 'sans-serif';
+  --font-serif: 'IBM Plex Serif', 'serif';
+  --font-sans-serif: 'IBM Plex Sans', 'sans-serif';
   --font-mono: 'Operator Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace';
 }
 html {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 body {
   font-family: var(--font-serif);
   background-color: var(--c-white);
   color: var(--c-black);
-  font-weight: 300;
   line-height: 1.45;
 }
 ::selection {
@@ -422,6 +425,11 @@ h6 {
   }
   small {
     font-size: 0.8em;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 4rem;
   }
 }
 a {
@@ -507,7 +515,7 @@ blockquote {
   margin: 0;
 }
 .l-container {
-  max-width: 60rem;
+  max-width: 64rem;
   margin: 0 auto;
   padding: 1.5rem;
 }
@@ -568,18 +576,17 @@ blockquote {
 .c-hero {
   display: flex;
   align-items: flex-end;
-  color: var(--c-white);
   position: relative;
   overflow: hidden;
-  background-color: var(--c-off-black);
   padding-top: 5rem;
+  border-bottom: 1px solid var(--c-off-white);
 }
 @media only screen and (min-width: 768px) {
   .c-hero {
     padding-top: 0;
   }
   .c-hero__title {
-    padding: 4rem 0;
+    padding: 5rem 0 4rem 0;
     margin-bottom: 0;
   }
 }
@@ -631,9 +638,6 @@ blockquote {
   width: 100%;
   z-index: 2;
   background-color: transparent;
-}
-.c-nav.is-fixed .c-nav__link {
-  color: var(--c-white);
 }
 @media only screen and (min-width: 576px) {
   .c-nav {
@@ -713,7 +717,7 @@ blockquote {
 .c-post:not(.c-post--preview) .c-post__date {
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
-  color: #aaa;
+  color: var(--c-grey);
 }
 @media only screen and (min-width: 992px) {
   .c-post:not(.c-post--preview) {

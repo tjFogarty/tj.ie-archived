@@ -7,8 +7,8 @@
     <title>{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}</title>
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ end }}">
     {{ partial "social-meta.html" . }}
-    <link rel="preload" href="/fonts/alegreya.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/alegreya-sans.woff2" as="font" type="font/woff2" crossorigin>    
+    <link rel="preload" href="/fonts/ibm-plex-sans-v3-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/ibm-plex-serif-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>    
      
      {{ if not .Site.BuildDrafts }}
     <style>

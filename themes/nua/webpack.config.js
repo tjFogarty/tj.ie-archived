@@ -70,7 +70,9 @@ if (!isDev) {
       stripPrefix: 'static',
       staticFileGlobs: [
         'static/fonts/*.woff2',
-        'static/assets/js/main.js'
+        'static/fonts/*.woff',
+        'static/assets/js/main.js',
+        'static/assets/js/chunks/*.js',
       ]
     })
   )
