@@ -24,7 +24,13 @@ export class Hero {
 
     space.add({
       start: () => {
-        pts = Create.distributeRandom(space.innerBound, 200)
+        let pointCount = 200
+        
+        if (window.innerWidth < 500) {
+          pointCount = 30
+        }
+        
+        pts = Create.distributeRandom(space.innerBound, pointCount)
 
         this.container.classList.add('is-ready')
       },
