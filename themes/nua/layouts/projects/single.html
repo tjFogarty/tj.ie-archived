@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="l-container">
+  <article class="c-post" itemscope itemtype="http://schema.org/Article">
+    <h1 itemprop="name headline">{{ .Title }}</h1>
+
+    {{ .Content }}
+
+    <div class="c-share-container">
+
+      {{ if .Params.Categories }}
+      <div class="c-post__categories">
+        <small>Categories: &nbsp;</small>
+        <ul class="c-post__categories-list">
+          {{ range .Params.Categories }}
+          <li class="c-post__categories-item">
+            <a href="/category/{{ . | urlize }}">
+              <small>{{ . }}</small>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with .NextInSection }}
+    <p>Next: <a href="{{ .Permalink }}">{{ .Title }}</a></p>
+    {{ end }}
+  </article>
+</div>
+{{ end }}
