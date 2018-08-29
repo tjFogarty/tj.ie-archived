@@ -19,16 +19,14 @@ export class Hero {
       form = space.getForm(),
       pts = new Group()
 
-    // space.background = '#142232'
     space.background = '#fff'
 
     space.add({
       start: () => {
-        let pointCount = 200
-        
-        if (window.innerWidth < 500) {
-          pointCount = 30
-        }
+        let windowWidth = window.innerWidth
+        // magic number to generate enough points based on screen size
+        // the number is reduced the smaller the screen is
+        let pointCount = Math.floor(windowWidth * 0.14)
         
         pts = Create.distributeRandom(space.innerBound, pointCount)
 

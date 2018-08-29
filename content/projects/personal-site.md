@@ -1,8 +1,9 @@
 ---
 title: "Personal Site"
 description: "This is my old personal site built on Craft CMS. It's no longer maintained as I've moved to a static site which I'm planning to make freely available when I've worked everything out with it."
-date: 2018-08-28T15:53:22+01:00
+date: 2018-08-26T15:53:22+01:00
 draft: false
+featured: true
 ---
 
 This is my old personal site built on Craft CMS. It's no longer maintained as I've moved to a static site which I'm planning to make freely available when I've worked everything out with it.

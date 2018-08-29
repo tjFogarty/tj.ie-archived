@@ -2,8 +2,8 @@
   {{ $touchpointsJ := .Site.Data.homepage.touchpoints }}  
   {{ range $touchpointsJ }}
     {{ range . }}
-      <li>
-        <h2>{{ .name }}</h2>
+      <li class="c-touchpoint">
+        <h2 class="c-touchpoint__title">{{ .name }}</h2>
         
         <p>
           {{ .description }}

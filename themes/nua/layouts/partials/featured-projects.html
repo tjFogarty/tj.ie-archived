@@ -1,0 +1,27 @@
+<div class="l-post-list-container">
+  <div class="l-post-list__heading">
+    <h3 class="l-post-list__heading-title">Featured Projects</h3>
+    <a class="c-btn c-btn-primary" href="/projects/">View Projects</a>
+  </div>
+  <ul class="l-post-list l-post-list--grid-thirds">
+    {{ range where .Pages "Section" "projects" }}
+      {{ if .Params.featured }}
+      <li class="l-post-list__item">
+        <div class="c-post c-post--preview">
+          <div class="c-post-preview__heading c-post-preview__heading--stacked">
+            <h4 class="c-post__title c-post__title--preview">
+              <a class="c-post__title-link" href="{{.Permalink}}">
+                {{.Title}}
+              </a>
+            </h4>
+
+            <p>
+              {{ if .Description }} {{ .Description }} {{ else }} {{ .Summary }} {{ end }}
+            </p>
+          </div>
+        </div>
+      </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</div>
