@@ -30,6 +30,8 @@
     {{ with .NextInSection }}
     <p>Next: <a href="{{ .Permalink }}">{{ .Title }}</a></p>
     {{ end }}
+    
+    {{ template "_internal/disqus.html" . }}
   </article>
 </div>
 {{ end }}
