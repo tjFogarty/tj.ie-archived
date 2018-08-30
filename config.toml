@@ -3,7 +3,6 @@ languageCode = "en-ie"
 title = "TJ Fogarty | Web Developer"
 theme = "nua"
 pygmentsStyle = "dracula"
-disqusShortname = "tj-ie"
 [permalinks]
   posts = "/:slug"
   categories = "/category/:slug"
