@@ -24,13 +24,13 @@ pygmentsStyle = "dracula"
     weight = -110
     
   [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Archive"
+    url = "/archive/"
     weight = -109
     
   [[menu.main]]
-    name = "Archive"
-    url = "/archive/"
+    name = "About"
+    url = "/about/"
     weight = -108
     
   [[menu.main]]

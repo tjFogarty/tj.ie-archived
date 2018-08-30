@@ -2,28 +2,30 @@
 
 
 <div class="l-container">
-  <h1>{{ .Title }}</h1>
-  
-  {{ range .Pages.GroupByDate "2006" }}
-  <div class="c-sticky-list">
-    <h2 class="c-sticky-list__title">{{ .Key }}</h2>
-    <ul class="l-post-list">
-      {{ range .Pages }}
-      <li class="l-post-list__item">
-        <div class="c-post c-post--preview">
-          <div class="c-post-preview__heading">
-            <time class="c-post__date" datetime="{{ .PublishDate }}">
-              {{ .PublishDate.Format "2 Jan" }}
-            </time>
-  
-            <h3 class="c-post__title c-post__title--preview">
-              <a class="c-post__title-link" href="{{ .Permalink }}">{{ .Title }}</a>
-            </h3>
+  <div class="c-post">
+    <h1>{{ .Title }}</h1>
+    
+    {{ range .Pages.GroupByDate "2006" }}
+    <div class="c-sticky-list">
+      <h2 class="c-sticky-list__title">{{ .Key }}</h2>
+      <ul class="l-post-list">
+        {{ range .Pages }}
+        <li class="l-post-list__item">
+          <div class="c-post c-post--preview">
+            <div class="c-post-preview__heading">
+              <time class="c-post__date" datetime="{{ .PublishDate }}">
+                {{ .PublishDate.Format "2 Jan" }}
+              </time>
+    
+              <h3 class="c-post__title c-post__title--preview">
+                <a class="c-post__title-link" href="{{ .Permalink }}">{{ .Title }}</a>
+              </h3>
+            </div>
           </div>
-        </div>
-      </li>
-      {{ end }}
-    </ul>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
   </div>
   {{ end }}
 </div>
