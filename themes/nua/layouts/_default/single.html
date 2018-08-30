@@ -30,8 +30,13 @@
     {{ with .NextInSection }}
     <p>Next: <a href="{{ .Permalink }}">{{ .Title }}</a></p>
     {{ end }}
+
+    <h3 class="c-touchpoint__title" id="comments">Comments</h4>
+    
+    <p>I accept comments via email, and clicking "Add Comment" will open your default email client. If you don't want this, you can instead email your comment to contact at tj dot ie.</p>
     
     <a class="c-btn c-btn-primary" href="mailto:contact@tj.ie?subject=Comment - {{ .Title }}">Add Comment</a>
+
   </article>
 </div>
 {{ end }}
