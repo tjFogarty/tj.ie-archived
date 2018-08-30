@@ -4,7 +4,7 @@ title: "Contact"
 
 If you have any questions, or just want to say hi, feel free to drop me a message via the form below. I’ll get back to you as soon as I can.
   
-Alternatively, you can <a href="https://twitter.com/tj_fogarty" rel="noopener" target="_blank">find me on Twitter</a>.
+Alternatively, you can <a href="https://twitter.com/tj_fogarty" rel="noopener" target="_blank">find me on Twitter</a>, or send me an email at <a href="mailto:contact@tj.ie">contact@tj.ie</a>
   
 <form method="post" action="/contact-thanks/" class="max-w-md mt-4" accept-charset="UTF-8" name="contact" netlify>
 
