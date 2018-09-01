@@ -45,7 +45,13 @@ Some folks on the inter­net think I don’t spout total non­sense. It’s news
   
   <li>
     <a href="http://craftlinklist.com/issues/61" target="_blank" rel="noopener noreferrer">
-      Buil­ing my Site series on Craft Link List Newsletter
+      Buil­ding my Site series on Craft Link List Newsletter
+    </a>
+  </li>
+
+  <li>
+    <a href="http://craftlinklist.com/issues/71" target="_blank" rel="noopener noreferrer">
+      "A Signal in the Static" featured on Craft Link List Newsletter
     </a>
   </li>
   
