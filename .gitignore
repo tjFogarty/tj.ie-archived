@@ -1,4 +1,8 @@
 
+themes/nua/static/service-worker.js
+themes/nua/static/js
+themes/nua/static/css
+
 # Created by https://www.gitignore.io/api/node,hugo,macos
 
 ### Hugo ###

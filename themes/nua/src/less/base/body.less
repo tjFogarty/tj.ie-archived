@@ -1,51 +1,12 @@
-@font-face {
-  font-family: 'Domine';
-  font-style: normal;
-  font-weight: 400;
-  font-display: fallback;
-  src: local('Domine'), local('Domine-Regular'),
-       url('/fonts/domine-v5-latin-regular.woff2') format('woff2'),
-       url('/fonts/domine-v5-latin-regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Muli';
-  font-style: normal;
-  font-weight: 400;
-  font-display: fallback;
-  src: local('Muli Regular'), local('Muli-Regular'),
-       url('/fonts/muli-v11-latin-regular.woff2') format('woff2'),
-       url('/fonts/muli-v11-latin-regular.woff') format('woff');
-}
-
-:root {
-  --c-primary: #d42897;
-  --c-secondary: #4F3A4B;
-  --c-black: #222;
-  --c-off-black: #142232;
-  --c-white: #fff;
-  --c-gray: #7b7b7b;
-  --c-gray: var(--c-grey);
-  --c-off-white: #f5f5f5;
-  --font-serif: 'Domine', 'serif';
-  --font-sans-serif: 'Muli', 'sans-serif';
-  --font-mono: 'Operator Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace';
-}
-
-@mq-sm: ~"only screen and (min-width: 576px)";
-@mq-md: ~"only screen and (min-width: 768px)";
-@mq-lg: ~"only screen and (min-width: 992px)";
-@mq-xl: ~"only screen and (min-width: 1200px)";
-
 html {
-  font-size: 1.05em;
+  font-size: 1.125em;
 }
 
 body {
-  font-family: var(--font-sans-serif);
+  font-family: var(--font-body);
   background-color: var(--c-white);
-  color: var(--c-black);
-  line-height: 1.5;
+  color: var(--c-off-black);
+  line-height: 1.735;
 }
 
 ::selection {

@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="l-container">
   <div class="c-post">
-    <h1>{{.Title}}</h1>
+    <h1 class="mt-0">{{.Title}}</h1>
     
     <p>Categories: 
       {{ range $key, $value := .Site.Taxonomies.categories }}

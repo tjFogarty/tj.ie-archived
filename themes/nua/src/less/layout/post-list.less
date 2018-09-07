@@ -17,8 +17,12 @@
 .l-post-list--grid {
   @media @mq-md {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5em;
+  }
+  
+  @media @mq-lg {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
   }
 }
 
@@ -26,7 +30,7 @@
   @media @mq-md {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
+    grid-gap: 1.5em;
   }
 }
 

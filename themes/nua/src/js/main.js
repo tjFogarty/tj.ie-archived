@@ -7,8 +7,8 @@ ready(async () => {
   TableOfContents.init()
 })
 
-if (true || (env() === 'production' && 'serviceWorker' in navigator)) {
+if (env() === 'production' && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('/service-worker.js')
   })
 }

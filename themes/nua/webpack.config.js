@@ -19,8 +19,8 @@ const WEBPACK_CONFIG = {
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, 'static'),
-    filename: 'assets/js/[name].js',
-    chunkFilename: 'assets/js/chunks/[name].js'
+    filename: 'js/[name].js',
+    chunkFilename: 'js/chunks/[name].js'
   },
   module: {
     rules: [
@@ -36,9 +36,9 @@ const WEBPACK_CONFIG = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['static/assets']),
+    new CleanWebpackPlugin(['static/js', 'static/css']),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/app.css'
+      filename: 'css/main.css'
     })
   ]
 }
@@ -64,15 +64,15 @@ if (!isDev) {
       ])
     }),
     new SWPrecacheWebpackPlugin({
-      cacheId: 'tj-ie-v2',
-      filename: 'sw.js',
+      cacheId: 'tj-ie-v3',
+      filename: 'service-worker.js',
       minify: true,
       stripPrefix: 'static',
       staticFileGlobs: [
         'static/fonts/*.woff2',
         'static/fonts/*.woff',
-        'static/assets/js/main.js',
-        'static/assets/js/chunks/*.js',
+        'static/js/main.js',
+        'static/js/chunks/*.js',
       ]
     })
   )
