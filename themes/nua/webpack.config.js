@@ -72,6 +72,7 @@ if (!isDev) {
         'static/fonts/*.woff2',
         'static/fonts/*.woff',
         'static/js/main.js',
+        'static/css/main.css',
         'static/js/chunks/*.js',
       ]
     })
