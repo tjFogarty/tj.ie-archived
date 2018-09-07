@@ -1,5 +1,19 @@
 {{ define "main" }}
-<div class="l-container">
+<div class="l-container {{ if .Params.toc }} has-toc {{ end }}">
+  {{ if .Params.toc }}
+    <aside class="c-toc js-toc">
+      <div class="c-toc__list-container js-toc-list" tabindex="-1">
+        <p class="c-toc__title">Table of Contents</h2>
+        {{ .TableOfContents }}
+
+      </div>
+      <button type="button" class="c-toc__toggle js-toc-toggle c-btn c-btn-primary" aria-label="Table of Contents">
+        <svg>
+          <use xlink:href="#list"></use>
+        </svg>
+      </button>
+    </aside>
+  {{ end }}
   <article class="c-post" itemscope itemtype="http://schema.org/Article">
     <time class="c-post__date" itemprop="datePublished" datetime="{{ .PublishDate }}">
       {{ .PublishDate.Format "2 January 2006" }}

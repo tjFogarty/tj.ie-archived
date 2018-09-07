@@ -9,3 +9,5 @@ export function env() {
 
   return 'production'
 }
+
+export const motionQuery = window.matchMedia('(prefers-reduced-motion)')

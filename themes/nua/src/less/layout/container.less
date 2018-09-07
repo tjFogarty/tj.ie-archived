@@ -2,4 +2,13 @@
   max-width: 64rem;
   margin: 0 auto;
   padding: 1.5rem;
+
+  &.has-toc {
+    @media @mq-lg {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 25px;
+      max-width: 80rem;
+    }
+  }
 }

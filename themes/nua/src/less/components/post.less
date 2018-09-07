@@ -8,6 +8,10 @@
       color: var(--c-grey);
     }
   }
+
+  .has-toc & {
+    margin-left: 3rem;
+  }
 }
 
 @media @mq-lg {
@@ -16,6 +20,26 @@
       max-width: 70%;
       margin-left: auto;
       margin-right: auto;
+    }
+    
+    .has-toc & {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  }
+}
+
+@media @mq-xl {
+  .c-post {
+    &:not(.c-post--preview) {
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .has-toc & {
+      max-width: 70%;
+      margin-left: 0;
     }
   }
 }
