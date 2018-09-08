@@ -1,17 +1,19 @@
 <ul class="c-projects">
-{{ range (where .Pages "Section" "projects") }}
-    <li class="c-projects__item">
-      <h2 class="c-projects__item-title">{{ .Title }}</h2>
-      
-      <p>
-      {{ if .Description }}
-        {{ .Description }}
-      {{ else }}
-        {{ .Summary }}
-      {{ end }}
-      </p>
-      
-      <a class="c-btn c-btn-primary" href="{{ .Permalink }}">Read more <span class="visuallyhidden">about {{ .Title }}</span></a>
+{{ range $index, $page := (where .Pages "Section" "projects") }}
+    <li class="c-wrapper {{ if modBool $index 2 }}c-wrapper--light{{ end }}">
+      <div class="c-projects__item">
+        <h2 class="c-projects__item-title">{{ .Title }}</h2>
+        
+        <p>
+        {{ if .Description }}
+          {{ .Description }}
+        {{ else }}
+          {{ .Summary }}
+        {{ end }}
+        </p>
+        
+        <a class="c-btn c-btn-primary--inverted" href="{{ .Permalink }}">Read more <span class="visuallyhidden">about {{ .Title }}</span></a>
+      </div>
     </li>
   {{ end }}
 </ul>
