@@ -2,7 +2,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  font-family: var(--font-headings);
 
   @media @mq-lg {
     position: sticky;
@@ -76,10 +75,12 @@
 }
 
 [id="TableOfContents"] {
-  > ul,
-  > ul > li > ul {
+  ul {
     margin: 0;
-    padding: 0;
+  }
+  
+  > ul, > ul > li > ul {
     list-style: none;
+    padding: 0;
   }
 }

@@ -1,9 +1,7 @@
-<h2>Other Projects</h2>
-
 <ul class="c-projects">
 {{ range (where .Pages "Section" "projects") }}
     <li class="c-projects__item">
-      <h3 class="c-projects__item-title">{{ .Title }}</h3>
+      <h2 class="c-projects__item-title">{{ .Title }}</h2>
       
       <p>
       {{ if .Description }}

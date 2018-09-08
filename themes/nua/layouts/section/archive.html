@@ -14,7 +14,7 @@
       <h2 class="c-sticky-list__title">{{ .Key }}</h2>
       <ul class="l-post-list">
         {{ range (where .Pages "Section" "posts") }}
-        <li class="l-post-list__item">
+        <li class="l-post-list__item with-mb">
           <div class="c-post c-post--preview">
             <div class="c-post-preview__heading">
               <time class="c-post__date" datetime="{{ .PublishDate }}">

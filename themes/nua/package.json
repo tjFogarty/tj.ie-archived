@@ -57,8 +57,5 @@
   "bugs": {
     "url": "https://github.com/tjFogarty/tj.ie/issues"
   },
-  "homepage": "https://github.com/tjFogarty/tj.ie#readme",
-  "dependencies": {
-    "pts": "^0.6.1"
-  }
+  "homepage": "https://github.com/tjFogarty/tj.ie#readme"
 }
