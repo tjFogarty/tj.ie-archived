@@ -1,10 +1,9 @@
 <div class="l-post-list-container">
   <div class="l-post-list__heading">
     <h3 class="l-post-list__heading-title">Latest Posts</h3>
-    <a class="c-btn c-btn-primary" href="/archive/">View Archive</a>
   </div>
-  <ul class="l-post-list l-post-list--grid">
-    {{ range first 4 (where .Pages "Section" "posts") }}
+  <ul class="l-post-list l-post-list--grid-thirds">
+    {{ range first 3 (where .Pages "Section" "posts") }}
     <li class="l-post-list__item">
       <div class="c-post c-post--preview">
         <div class="c-post-preview__heading c-post-preview__heading--stacked">
@@ -30,4 +29,8 @@
     </li>
     {{ end }}
   </ul>
+  
+  <div class="l-post-list__actions">
+    <a class="c-btn c-btn-primary--inverted" href="/archive/">View Archive</a>
+  </div>
 </div>

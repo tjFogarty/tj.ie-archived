@@ -1,6 +1,6 @@
 ---
 title: "CSS-Tricks Article - Timber WordPress Plugin"
-description: "Working with the delighful Chris Coyier I wrote an article for CSS-Tricks."
+description: "Working with the delighful Chris Coyier I wrote an article for CSS-Tricks on Timber, a WordPress plugin that completely changes theme development."
 date: 2018-08-28T17:01:38+01:00
 draft: false
 featured: true

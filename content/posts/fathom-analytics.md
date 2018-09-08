@@ -1,6 +1,6 @@
 ---
 title: "Fathom Analytics"
-description: "Installing Fathom analytics on Heroku."
+description: "Installing Fathom analytics, an open-source alternative to traditional web analytics, on Heroku."
 date: 2018-08-24T19:06:48+01:00
 draft: false
 categories:

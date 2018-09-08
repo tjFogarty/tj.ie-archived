@@ -138,8 +138,8 @@
 
 .c-nav__link {
   display: block;
-  font-family: var(--font-headings);
   color: var(--c-primary);
+  font-size: 0.9em;
   text-decoration: none;  
 
   &:hover,
@@ -147,10 +147,8 @@
     text-decoration: underline;
     color: var(--c-secondary);
   }
-}
-
-@media @mq-sm {
-  .c-nav__link {
+  
+  @media @mq-sm {
     margin-right: 1rem;
   }
 }

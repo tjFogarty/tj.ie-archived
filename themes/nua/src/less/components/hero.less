@@ -14,11 +14,15 @@
 
 .c-hero__title {
   color: var(--c-off-black);
+  font-weight: 700;
   
   @media @mq-md { 
-    padding: 5rem 0 4rem 0;
     margin-bottom: 0;
   }
+}
+
+.c-hero__title-highlight {
+  color: var(--c-primary);
 }
 
 
@@ -26,6 +30,28 @@
   position: relative;
   z-index: 1;
   width: 100%;
+}
+
+.c-hero__content-inner {
+  @media @mq-md {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 60% 35%;
+    padding: 3rem 0 2rem 0;
+  }
+}
+
+.c-hero__image {
+  max-width: 250px;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+  
+  @media @mq-md {
+    margin: 0;
+    max-width: 100%;
+  }
 }
 
 

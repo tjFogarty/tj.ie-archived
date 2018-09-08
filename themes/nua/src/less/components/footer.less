@@ -1,5 +1,5 @@
 .c-footer {
-  background-color: var(--c-off-black);
+  background-color: var(--c-black);
   color: var(--c-white);
   text-align: center;
 }
@@ -20,7 +20,7 @@
 .c-footer__icons {
   display: flex;
   justify-content: center;
-  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   position: relative;
   top: 6px;
 }
@@ -37,12 +37,9 @@
 }
 
 @media @mq-sm {
-  .c-footer {
-    text-align: left;
-  }
-
   .c-footer__inner {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
@@ -50,4 +47,9 @@
   .c-footer__icons {
     margin-top: 0;
   }
+}
+
+.c-footer__credits {
+  font-size: 0.8em;
+  margin-bottom: 0;
 }
