@@ -3,6 +3,10 @@
   {{ range $touchpointsJ }}
     {{ range . }}
       <li class="c-touchpoint">
+        <svg class="c-touchpoint__icon">
+          <use xlink:href="#{{ .icon }}"></use>
+        </svg>
+
         <h2 class="c-touchpoint__title">{{ .name }}</h2>
         
         <p>
