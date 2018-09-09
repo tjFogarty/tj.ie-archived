@@ -210,7 +210,7 @@ This greatly improves performance, though if you make some drastic changes a use
 
 ## Bonus Research
 
-While writing this I became aware of <a href="https://progressivetooling.com/" target="_blank" rel="noopener noreferrer"></a> which looks to be a pretty fine resource for tooling around this subject.
+While writing this I became aware of <a href="https://progressivetooling.com/" target="_blank" rel="noopener noreferrer">Progressive Tooling</a> which looks to be a pretty fine resource for tooling around this subject.
 
 If you want to eek out more performance improvements, have a look at these:
 
