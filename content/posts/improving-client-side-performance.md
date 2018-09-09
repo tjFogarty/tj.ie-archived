@@ -4,6 +4,9 @@ description: "A few ways in which we can improve client-side performance focusin
 date: 2018-09-09T17:34:10+01:00
 draft: false
 toc: true
+categories:
+- Performance
+- Guide
 ---
 
 Below are some ways I've found to optimise the performance of a site when getting it ready for a production environment, or patching an existing site. Where possible I'll list some common implementations, though understandably we don't always have the kind of access we want to make changes.
