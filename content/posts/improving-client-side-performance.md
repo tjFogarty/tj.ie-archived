@@ -171,7 +171,9 @@ You can make it works with HTML, and either use the supplied CSS, or use your ow
 
 OK, this one is a bit more involved... you can include social media feeds without JavaScript, but you need to have some sort of server-side access to render them. You can roll your own using a given social media's SDK, or use a plugin. The added bonus of this is being able to style it to match your site.
 
-I don't have any recommendations on this part, as I ended up rolling my own for Craft CMS, ExpressionEngine, and WordPress on work projects. I used the PHP SDKs for Twitter and Instagram. So that can be a fun learning experience. 
+I don't have any recommendations on this part, as I ended up rolling my own for Craft CMS, ExpressionEngine, and WordPress for work projects. I used the PHP SDKs for Twitter and Instagram. So that can be a fun learning experience.
+
+It's more straight-forward with WordPress, as you can create a PHP file and include it in your `functions.php` file. For Twitter, I used the <a href="https://github.com/J7mbo/twitter-api-php" target="_blank" rel="noopener noreferrer">twitter-api-php</a> package for gathering the latest tweets of an account.
 
 I'm sure there are solutions out there for your CMS of choice, however, and I'll leave it to you to find one that does the job. This isn't an easy-out, I just don't have experience with those plugins. Hopefully, it's sparked some investigation on ways you can speed up your projects.
 
@@ -181,7 +183,17 @@ If you're not using webpack, Gulp, Parcel etc... for packaging all of your depen
 
 WordPress users rejoice, you can choose from many solutions such as <a href="https://wordpress.org/plugins/autoptimize/" target="_blank" rel="noopener noreferrer">Autoptimize</a>, and <a href="https://wordpress.org/plugins/w3-total-cache/" target="_blank" rel="noopener noreferrer">W3 Total Cache</a> which brings more than just combining assets to the table.
 
-I'm not aware of up to date solutions for other platforms, but I'll add them here if I come across any.
+I'm not aware of up to date plugin solutions for other platforms, but I'll add them here if I come across any.
+
+If you're using npm, a quick solution might be to use the <a href="https://github.com/mishoo/UglifyJS2" target="_blank" rel="noopener noreferrer">UglifyJS</a> package. So after running `npm install uglify-js`, you can add a new `script` to your `package.json`:
+
+{{< highlight json >}}
+"scripts": {
+  "build": "uglifyjs src/vendor/jquery.js src/main.js -o dist/bundle.min.js -c -m"
+}
+{{< / highlight >}}
+
+The command `npm run build` then would combine and minify your JavaScript. The `-c`, and `-m` flags will compress and mangle your code.
 
 ## Service Workers
 
@@ -217,7 +229,7 @@ While writing this I became aware of <a href="https://progressivetooling.com/" t
 
 If you want to eek out more performance improvements, have a look at these:
 
-- <a href="https://developers.google.com/web/updates/2016/03/link-rel-preload" target="_blank" rel="noopener noreferrer">link rel="preload"</a>
-- <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare</a>
+- <a href="https://developers.google.com/web/updates/2016/03/link-rel-preload" target="_blank" rel="noopener noreferrer">link rel="preload"</a> lets you identify priority assets to improve loading performance
+- <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare</a> makes use of a global CDN to improve performance. It has a generous free offering as well, which makes it worth trying out.
 
 That's all I have! I'll update this with any new insights I receive, but hopefully there are a few bits here that prove useful.
