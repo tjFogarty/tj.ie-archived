@@ -36,6 +36,12 @@ Some folks on the inter­net think I don’t spout total non­sense. It’s news
       Tim­ber and Twig Reignit­ed my Love for Word­Press on CSS-Tricks
     </a>
   </li>
+
+  <li>
+    <a href="https://mailchi.mp/css-weekly/issue-330-designing-with-code-shape-path-editor-client-side-performance" target="_blank" rel="noopener noreferrer">
+      Improving Client-Side Performance on CSS Weekly
+    </a>
+  </li>
   
   <li>
     <a href="https://www.getrevue.co/profile/alligatorio/issues/vuepress-vue-dropzone-css-position-sticky-react-loadable-unstated-getting-started-with-nuxt-js-107443" target="_blank" rel="noopener noreferrer">
