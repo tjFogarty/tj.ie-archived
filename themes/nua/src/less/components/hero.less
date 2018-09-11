@@ -14,10 +14,11 @@
 
 .c-hero__title {
   color: var(--c-off-black);
+  max-width: 200px;
   font-weight: 700;
   
-  @media @mq-md { 
-    margin-bottom: 0;
+  @media @mq-sm { 
+    max-width: 100%;
   }
 }
 
@@ -42,12 +43,30 @@
   }
 }
 
+.c-hero__cta {
+  .c-btn {
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+}
+
 .c-hero__image {
-  max-width: 250px;
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  right: 0;
+  opacity: 0.3;
   display: block;
+  max-width: 250px;
   border-radius: 50%;
   margin: 0 auto;
   
+  @media @mq-sm {
+    position: static;
+    opacity: 1;
+    z-index: unset;
+  }
+
   @media @mq-md {
     margin: 0;
     max-width: 100%;
