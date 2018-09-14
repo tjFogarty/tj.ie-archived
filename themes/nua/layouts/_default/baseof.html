@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="4CLP9Nzk8aQmNgM8X5bh-baGaTICG1ta0Z9jXSLvsOc" />
     <title>{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}</title>
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ end }}">
+
     {{ partial "social-meta.html" . }}
-    
+
+    <!-- Preload fonts -->
     <link rel="preload" href="/fonts/playfair-display-v13-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/playfair-display-v13-latin-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/open-sans-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="preload" href="/css/main.css" as="style">    
-    <link rel="preload" href="/js/main.js" as="script">    
-     
+    <!-- Preload assets -->
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="preload" href="/js/main.js" as="script">
+
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    
+
     <meta name="theme-color" content="#CF1259" />
-    
+
     <link rel="manifest" href="/manifest.json">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,35 +31,40 @@
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
-</head>
-<body>
-    
+  </head>
+  <body>
     {{ partial "header.html" . }}
     {{ partial "icons.html" . }}
-    
+
     <main class="content" role="main">
-        {{ block "main" . }}{{ end }}
+      {{ block "main" . }}{{ end }}
     </main>
-    
+
     {{ partial "footer.html" . }}
-     
+
     <script src="/js/main.js" defer></script>
 
     {{ if not .Site.BuildDrafts }}
     <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
     <script>
-    (function(f, a, t, h, o, m){
+      (function(f, a, t, h, o, m){
         a[h]=a[h]||function(){
-            (a[h].q=a[h].q||[]).push(arguments)
+          (a[h].q=a[h].q||[]).push(arguments)
         };
         o=f.createElement('script'),
         m=f.getElementsByTagName('script')[0];
         o.async=1; o.src=t; o.id='fathom-script';
         m.parentNode.insertBefore(o,m)
-    })(document, window, 'https://fathom.tj.ie/tracker.js', 'fathom');
-    fathom('trackPageview');
+      })(document, window, 'https://fathom.tj.ie/tracker.js', 'fathom');
+      fathom('trackPageview');
     </script>
     <!-- / Fathom -->
+
+    <script>
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+      });
+    </script>
     {{ end }}
 </body>
 </html>

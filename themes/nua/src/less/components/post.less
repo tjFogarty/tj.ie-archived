@@ -14,7 +14,7 @@
       margin-bottom: 0.25rem;
       color: var(--c-grey);
     }
-    
+
     h3 {
       color: var(--c-secondary);
     }
@@ -32,7 +32,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .has-toc & {
       margin-left: 0;
       max-width: 100%;
@@ -47,7 +47,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .has-toc & {
       max-width: 80%;
       margin-left: 0;
@@ -101,10 +101,17 @@
 
 .c-post__categories {
   margin-bottom: 1rem;
+  font-size: .9rem;
+}
+
+.c-post__categories-title {
+  font-size: .8em;
+  position: relative;
+  top: .1em;
 }
 
 .c-post__categories-item {
-  margin-right: 1rem;
+  margin: 0 .5rem 0 0;
 }
 
 .c-post-preview__heading--stacked {
@@ -113,4 +120,14 @@
 
 .c-post__date--small {
   font-size: 0.9rem;
+}
+
+.c-post__navigation {
+  display: flex;
+  flex-direction: column;
+
+  @media @mq-md {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

@@ -10,8 +10,3 @@ ready(async () => {
   });
 })
 
-if (env() === 'production' && 'serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-  })
-}
