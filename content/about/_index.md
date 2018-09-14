@@ -42,6 +42,12 @@ Some folks on the inter­net think I don’t spout total non­sense. It’s news
       Improving Client-Side Performance on CSS Weekly
     </a>
   </li>
+
+  <li>
+    <a href="https://mailchi.mp/responsivedesign/326" target="_blank" rel="noopener noreferrer">
+      Improving Client-Side Performance on Responsive Design Weekly
+    </a>
+  </li>
   
   <li>
     <a href="https://www.getrevue.co/profile/alligatorio/issues/vuepress-vue-dropzone-css-position-sticky-react-loadable-unstated-getting-started-with-nuxt-js-107443" target="_blank" rel="noopener noreferrer">
