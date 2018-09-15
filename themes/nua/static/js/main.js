@@ -1,1 +1,136 @@
-!function(t){var e={};function n(i){if(e[i])return e[i].exports;var r=e[i]={i:i,l:!1,exports:{}};return t[i].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=t,n.c=e,n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:i})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var r in t)n.d(i,r,function(e){return t[e]}.bind(null,r));return i},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="/",n(n.s=4)}([function(t,e,n){"use strict";(function(t){function i(t){document.addEventListener("DOMContentLoaded",t,!1)}n.d(e,"b",function(){return i}),n.d(e,"a",function(){return r});const r=window.matchMedia("(prefers-reduced-motion)")}).call(this,n(1))},function(t,e){var n,i,r=t.exports={};function s(){throw new Error("setTimeout has not been defined")}function o(){throw new Error("clearTimeout has not been defined")}function c(t){if(n===setTimeout)return setTimeout(t,0);if((n===s||!n)&&setTimeout)return n=setTimeout,setTimeout(t,0);try{return n(t,0)}catch(e){try{return n.call(null,t,0)}catch(e){return n.call(this,t,0)}}}!function(){try{n="function"==typeof setTimeout?setTimeout:s}catch(t){n=s}try{i="function"==typeof clearTimeout?clearTimeout:o}catch(t){i=o}}();var u,l=[],a=!1,h=-1;function d(){a&&u&&(a=!1,u.length?l=u.concat(l):h=-1,l.length&&f())}function f(){if(!a){var t=c(d);a=!0;for(var e=l.length;e;){for(u=l,l=[];++h<e;)u&&u[h].run();h=-1,e=l.length}u=null,a=!1,function(t){if(i===clearTimeout)return clearTimeout(t);if((i===o||!i)&&clearTimeout)return i=clearTimeout,clearTimeout(t);try{i(t)}catch(e){try{return i.call(null,t)}catch(e){return i.call(this,t)}}}(t)}}function v(t,e){this.fun=t,this.array=e}function b(){}r.nextTick=function(t){var e=new Array(arguments.length-1);if(arguments.length>1)for(var n=1;n<arguments.length;n++)e[n-1]=arguments[n];l.push(new v(t,e)),1!==l.length||a||c(f)},v.prototype.run=function(){this.fun.apply(null,this.array)},r.title="browser",r.browser=!0,r.env={},r.argv=[],r.version="",r.versions={},r.on=b,r.addListener=b,r.once=b,r.off=b,r.removeListener=b,r.removeAllListeners=b,r.emit=b,r.prependListener=b,r.prependOnceListener=b,r.listeners=function(t){return[]},r.binding=function(t){throw new Error("process.binding is not supported")},r.cwd=function(){return"/"},r.chdir=function(t){throw new Error("process.chdir is not supported")},r.umask=function(){return 0}},,,function(t,e,n){"use strict";n.r(e);var i=n(0);const r={container:document.querySelector(".js-toc"),listContainer:document.querySelector(".js-toc-list"),links:null,headings:null,intersectionOptions:{rootMargin:"0px",threshold:1},previousSection:null,observer:null,toggle:document.querySelector(".js-toc-toggle"),init(){this.container&&(this.handleObserver=this.handleObserver.bind(this),this.setUpObserver(),this.findLinksAndHeadings(),this.observeSections(),this.toggle.addEventListener("click",this.handleToggleClick.bind(this)),this.links.forEach(t=>{t.addEventListener("click",this.handleLinkClick.bind(this))}))},handleToggleClick(){this.container.classList.toggle("is-active"),this.listContainer.addEventListener("transitionend",()=>{this.container.classList.contains("is-active")&&this.links[0].focus()},{once:!0})},handleLinkClick(t){t.preventDefault();let e=t.target.getAttribute("href").replace("#",""),n=this.headings.find(t=>t.getAttribute("id")===e);n.setAttribute("tabindex",-1),n.focus(),window.scroll({behavior:i.a.matches?"instant":"smooth",top:n.offsetTop-15,block:"start"}),this.container.classList.contains("is-active")&&this.container.classList.remove("is-active")},handleObserver(t,e){t.forEach(t=>{let e=`#${t.target.getAttribute("id")}`,n=this.links.find(t=>t.getAttribute("href")===e);t.isIntersecting&&1===t.intersectionRatio?(n.classList.add("is-visible"),this.previousSection=t.target.getAttribute("id")):n.classList.remove("is-visible"),this.highlightFirstActive()})},highlightFirstActive(){let t=this.container.querySelector(".is-visible");this.links.forEach(t=>{t.classList.remove("is-active")}),t&&t.classList.add("is-active"),!t&&this.previousSection&&this.container.querySelector(`a[href="#${this.previousSection}"]`).classList.add("is-active")},observeSections(){this.headings.forEach(t=>{this.observer.observe(t)})},setUpObserver(){this.observer=new IntersectionObserver(this.handleObserver,this.intersectionOptions)},findLinksAndHeadings(){this.links=[...this.container.querySelectorAll("a")],this.headings=this.links.map(t=>{let e=t.getAttribute("href");return document.querySelector(e)})}};Object(i.b)(async()=>{r.init()})}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/main.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/process/browser.js":
+/*!*****************************************!*\
+  !*** ./node_modules/process/browser.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// shim for using process in browser\nvar process = module.exports = {};\n\n// cached from whatever global is present so that test runners that stub it\n// don't break things.  But we need to wrap it in a try catch in case it is\n// wrapped in strict mode code which doesn't define any globals.  It's inside a\n// function because try/catches deoptimize in certain engines.\n\nvar cachedSetTimeout;\nvar cachedClearTimeout;\n\nfunction defaultSetTimout() {\n    throw new Error('setTimeout has not been defined');\n}\nfunction defaultClearTimeout () {\n    throw new Error('clearTimeout has not been defined');\n}\n(function () {\n    try {\n        if (typeof setTimeout === 'function') {\n            cachedSetTimeout = setTimeout;\n        } else {\n            cachedSetTimeout = defaultSetTimout;\n        }\n    } catch (e) {\n        cachedSetTimeout = defaultSetTimout;\n    }\n    try {\n        if (typeof clearTimeout === 'function') {\n            cachedClearTimeout = clearTimeout;\n        } else {\n            cachedClearTimeout = defaultClearTimeout;\n        }\n    } catch (e) {\n        cachedClearTimeout = defaultClearTimeout;\n    }\n} ())\nfunction runTimeout(fun) {\n    if (cachedSetTimeout === setTimeout) {\n        //normal enviroments in sane situations\n        return setTimeout(fun, 0);\n    }\n    // if setTimeout wasn't available but was latter defined\n    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {\n        cachedSetTimeout = setTimeout;\n        return setTimeout(fun, 0);\n    }\n    try {\n        // when when somebody has screwed with setTimeout but no I.E. maddness\n        return cachedSetTimeout(fun, 0);\n    } catch(e){\n        try {\n            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally\n            return cachedSetTimeout.call(null, fun, 0);\n        } catch(e){\n            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error\n            return cachedSetTimeout.call(this, fun, 0);\n        }\n    }\n\n\n}\nfunction runClearTimeout(marker) {\n    if (cachedClearTimeout === clearTimeout) {\n        //normal enviroments in sane situations\n        return clearTimeout(marker);\n    }\n    // if clearTimeout wasn't available but was latter defined\n    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {\n        cachedClearTimeout = clearTimeout;\n        return clearTimeout(marker);\n    }\n    try {\n        // when when somebody has screwed with setTimeout but no I.E. maddness\n        return cachedClearTimeout(marker);\n    } catch (e){\n        try {\n            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally\n            return cachedClearTimeout.call(null, marker);\n        } catch (e){\n            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.\n            // Some versions of I.E. have different rules for clearTimeout vs setTimeout\n            return cachedClearTimeout.call(this, marker);\n        }\n    }\n\n\n\n}\nvar queue = [];\nvar draining = false;\nvar currentQueue;\nvar queueIndex = -1;\n\nfunction cleanUpNextTick() {\n    if (!draining || !currentQueue) {\n        return;\n    }\n    draining = false;\n    if (currentQueue.length) {\n        queue = currentQueue.concat(queue);\n    } else {\n        queueIndex = -1;\n    }\n    if (queue.length) {\n        drainQueue();\n    }\n}\n\nfunction drainQueue() {\n    if (draining) {\n        return;\n    }\n    var timeout = runTimeout(cleanUpNextTick);\n    draining = true;\n\n    var len = queue.length;\n    while(len) {\n        currentQueue = queue;\n        queue = [];\n        while (++queueIndex < len) {\n            if (currentQueue) {\n                currentQueue[queueIndex].run();\n            }\n        }\n        queueIndex = -1;\n        len = queue.length;\n    }\n    currentQueue = null;\n    draining = false;\n    runClearTimeout(timeout);\n}\n\nprocess.nextTick = function (fun) {\n    var args = new Array(arguments.length - 1);\n    if (arguments.length > 1) {\n        for (var i = 1; i < arguments.length; i++) {\n            args[i - 1] = arguments[i];\n        }\n    }\n    queue.push(new Item(fun, args));\n    if (queue.length === 1 && !draining) {\n        runTimeout(drainQueue);\n    }\n};\n\n// v8 likes predictible objects\nfunction Item(fun, array) {\n    this.fun = fun;\n    this.array = array;\n}\nItem.prototype.run = function () {\n    this.fun.apply(null, this.array);\n};\nprocess.title = 'browser';\nprocess.browser = true;\nprocess.env = {};\nprocess.argv = [];\nprocess.version = ''; // empty string to avoid regexp issues\nprocess.versions = {};\n\nfunction noop() {}\n\nprocess.on = noop;\nprocess.addListener = noop;\nprocess.once = noop;\nprocess.off = noop;\nprocess.removeListener = noop;\nprocess.removeAllListeners = noop;\nprocess.emit = noop;\nprocess.prependListener = noop;\nprocess.prependOnceListener = noop;\n\nprocess.listeners = function (name) { return [] }\n\nprocess.binding = function (name) {\n    throw new Error('process.binding is not supported');\n};\n\nprocess.cwd = function () { return '/' };\nprocess.chdir = function (dir) {\n    throw new Error('process.chdir is not supported');\n};\nprocess.umask = function() { return 0; };\n\n\n//# sourceURL=webpack:///./node_modules/process/browser.js?");
+
+/***/ }),
+
+/***/ "./src/js/main.js":
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/js/utils.js\");\n/* harmony import */ var _toc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toc */ \"./src/js/toc.js\");\n\n\n\nObject(_utils__WEBPACK_IMPORTED_MODULE_0__[\"ready\"])(async () => {\n  _toc__WEBPACK_IMPORTED_MODULE_1__[\"TableOfContents\"].init()\n})\n\n\n//# sourceURL=webpack:///./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/toc.js":
+/*!***********************!*\
+  !*** ./src/js/toc.js ***!
+  \***********************/
+/*! exports provided: TableOfContents */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"TableOfContents\", function() { return TableOfContents; });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/js/utils.js\");\n\n\nconst TableOfContents = {\n  container: document.querySelector('.js-toc'),\n  listContainer: document.querySelector('.js-toc-list'),\n  links: null,\n  headings: null,\n  intersectionOptions: {\n    rootMargin: '0px',\n    threshold: 1\n  },\n  previousSection: null,\n  observer: null,\n  toggle: document.querySelector('.js-toc-toggle'),\n\n  init() {\n    if (!this.container || !('IntersectionObserver' in window)) return\n\n    this.handleObserver = this.handleObserver.bind(this)\n\n    this.setUpObserver()\n    this.findLinksAndHeadings()\n    this.observeSections()\n\n    this.toggle.addEventListener('click', this.handleToggleClick.bind(this))\n\n    this.links.forEach(link => {\n      link.addEventListener('click', this.handleLinkClick.bind(this))\n    })\n  },\n\n  handleToggleClick() {\n    this.container.classList.toggle('is-active')\n\n    this.listContainer.addEventListener(\n      'transitionend',\n      () => {\n        if (this.container.classList.contains('is-active')) {\n          this.links[0].focus()\n        }\n      },\n      { once: true }\n    )\n  },\n\n  handleLinkClick(evt) {\n    evt.preventDefault()\n    let id = evt.target.getAttribute('href').replace('#', '')\n\n    let section = this.headings.find(heading => {\n      return heading.getAttribute('id') === id\n    })\n\n    section.setAttribute('tabindex', -1)\n    section.focus()\n\n    window.scroll({\n      behavior: _utils__WEBPACK_IMPORTED_MODULE_0__[\"motionQuery\"].matches ? 'instant' : 'smooth',\n      top: section.offsetTop - 15,\n      block: 'start'\n    })\n\n    if (this.container.classList.contains('is-active')) {\n      this.container.classList.remove('is-active')\n    }\n  },\n\n  handleObserver(entries, observer) {\n    entries.forEach(entry => {\n      let href = `#${entry.target.getAttribute('id')}`,\n        link = this.links.find(l => l.getAttribute('href') === href)\n\n      if (entry.isIntersecting && entry.intersectionRatio === 1) {\n        link.classList.add('is-visible')\n        this.previousSection = entry.target.getAttribute('id')\n      } else {\n        link.classList.remove('is-visible')\n      }\n\n      this.highlightFirstActive()\n    })\n  },\n\n  highlightFirstActive() {\n    let firstVisibleLink = this.container.querySelector('.is-visible')\n\n    this.links.forEach(link => {\n      link.classList.remove('is-active')\n    })\n\n    if (firstVisibleLink) {\n      firstVisibleLink.classList.add('is-active')\n    }\n\n    if (!firstVisibleLink && this.previousSection) {\n      this.container.querySelector(\n        `a[href=\"#${this.previousSection}\"]`\n      ).classList.add('is-active')\n    }\n  },\n\n  observeSections() {\n    this.headings.forEach(heading => {\n      this.observer.observe(heading)\n    })\n  },\n\n  setUpObserver() {\n    this.observer = new IntersectionObserver(\n      this.handleObserver,\n      this.intersectionOptions\n    )\n  },\n\n  findLinksAndHeadings() {\n    this.links = [...this.container.querySelectorAll('a')]\n    this.headings = this.links.map(link => {\n      let id = link.getAttribute('href')\n      return document.querySelector(id)\n    })\n  }\n}\n\n\n//# sourceURL=webpack:///./src/js/toc.js?");
+
+/***/ }),
+
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/*! exports provided: ready, env, motionQuery */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ready\", function() { return ready; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"env\", function() { return env; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"motionQuery\", function() { return motionQuery; });\nfunction ready(fn) {\n  document.addEventListener('DOMContentLoaded', fn, false)\n}\n\nfunction env() {\n  if (process && process.env && \"development\") {\n    return \"development\"\n  }\n\n  return 'production'\n}\n\nconst motionQuery = window.matchMedia('(prefers-reduced-motion)')\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/process/browser.js */ \"./node_modules/process/browser.js\")))\n\n//# sourceURL=webpack:///./src/js/utils.js?");
+
+/***/ })
+
+/******/ });

@@ -14,7 +14,7 @@ export const TableOfContents = {
   toggle: document.querySelector('.js-toc-toggle'),
 
   init() {
-    if (!this.container) return
+    if (!this.container || !('IntersectionObserver' in window)) return
 
     this.handleObserver = this.handleObserver.bind(this)
 
@@ -23,12 +23,12 @@ export const TableOfContents = {
     this.observeSections()
 
     this.toggle.addEventListener('click', this.handleToggleClick.bind(this))
-    
+
     this.links.forEach(link => {
       link.addEventListener('click', this.handleLinkClick.bind(this))
     })
   },
-  
+
   handleToggleClick() {
     this.container.classList.toggle('is-active')
 
