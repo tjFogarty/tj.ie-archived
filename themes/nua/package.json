@@ -59,6 +59,6 @@
   },
   "homepage": "https://github.com/tjFogarty/tj.ie#readme",
   "dependencies": {
-    "vanilla-lazyload": "^10.17.0"
+    "vanilla-lazyload": "^8.15.0"
   }
 }

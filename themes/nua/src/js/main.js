@@ -9,4 +9,3 @@ ready(async () => {
     elements_selector: '.lazy'
   });
 })
-
