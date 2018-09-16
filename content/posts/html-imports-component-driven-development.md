@@ -9,6 +9,8 @@ categories:
   - Experiment
 ---
 
+__Update__: As linked in the article, HTML Imports are being removed from Chrome in favour of other alternatives. This is more of an experiment to look at how a modern take on an old way of doing things might look like in as simple a way as possible without the reliance on too many external tools.
+
 I was thinking about the process of building a site today vs maybe 8 years ago. When WordPress was called for, I'd usually build the site from start to finish within WordPress. You wouldn't see any CSS for a little while as custom post types needed creating, content needed to be sourced, and plugins needed to be installed. The whole front-end was mashed up with this configuration, and nothing was really finished until the site was live.
 
 Now, I didn't know a whole lot 8 years ago, so looking back there are ways it could have been done better. If I could go back, I'd probably build a static site first with all the parts, then port that over to WordPress when it was ready. It might be me, but I find not having to think about a CMS while doing initial front-end work very liberating. I don't want to troubleshoot why a template is breaking when I want to focus on styling. It's too easy for me to go off on a tangent and fiddle with PHP because I just thought of a better way to do something.
