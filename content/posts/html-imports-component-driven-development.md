@@ -29,7 +29,7 @@ Well, {{< external-link href="https://caniuse.com/#search=html%20imports" >}}at 
 
 > At Mozilla we want to explore how importing custom element definitions can align with upcoming ES6 module APIs. We’d be prepared to implement if/when they appear to enable developers to do stuff they can’t already do.
 
-{{< external-link href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/h-JwMiPUnuU/sl79aLoLBQAJ" >}}Chrome will be deprecating the current implementation soon as well.{{< / external-link >}}.
+{{< external-link href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/h-JwMiPUnuU/sl79aLoLBQAJ" >}}Chrome will be deprecating the current implementation soon as well{{< / external-link >}}.
 
 Still, though, I wanted to try to replicate that process of having components and including them where I needed them, without requiring a developer to know the ins-and-outs so they can focus on coding.
 
