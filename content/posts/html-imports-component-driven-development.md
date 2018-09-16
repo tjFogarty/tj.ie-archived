@@ -4,11 +4,14 @@ slug: "html-imports-component-driven-development"
 description: "Playing around with HTML Imports for future possibilities in pattern libraries."
 date: 2018-09-15T22:17:21+01:00
 draft: false
+categories:
+  - JavaScript
+  - Experiment
 ---
 
 I was thinking about the process of building a site today vs maybe 8 years ago. When WordPress was called for, I'd usually build the site from start to finish within WordPress. You wouldn't see any CSS for a little while as custom post types needed creating, content needed to be sourced, and plugins needed to be installed. The whole front-end was mashed up with this configuration, and nothing was really finished until the site was live.
 
-Now, I didn't know a whole lot 8 years ago, so looking back there's ways it could have been done better. If I could go back, I'd probably build a static site first with all the parts, then port that over to WordPress when it was ready. It might be me, but I find not having to think about a CMS while doing initial front-end work very liberating. I don't want to troubleshoot why a template is breaking when I want to focus on styling. It's too easy for me to go off on a tangent and fiddle with PHP because I just thought of a better way to do something.
+Now, I didn't know a whole lot 8 years ago, so looking back there are ways it could have been done better. If I could go back, I'd probably build a static site first with all the parts, then port that over to WordPress when it was ready. It might be me, but I find not having to think about a CMS while doing initial front-end work very liberating. I don't want to troubleshoot why a template is breaking when I want to focus on styling. It's too easy for me to go off on a tangent and fiddle with PHP because I just thought of a better way to do something.
 
 Years later, this idea of focusing on the right things at the right time became, for me at least, encapsulated with {{< external-link href="http://atomicdesign.bradfrost.com/" >}}Atomic Design{{< / external-link >}}, so I want to take this moment to thank Brad Frost for preserving the few remaining brain cells I have left. I used tools like {{< external-link href="https://patternlab.io/" >}}Pattern Lab{{< / external-link >}}, and {{< external-link href="https://fractal.build/" >}}Fractal{{< / external-link >}} which really opened my eyes to the benefits of focusing on one thing at a time. 
 
