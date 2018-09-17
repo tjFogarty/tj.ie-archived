@@ -18,6 +18,9 @@
   {{ range $index, $page := $paginator.Pages }}
     <li class="c-wrapper {{ if modBool $index 2 }}c-wrapper--light{{ end }}">
       <div class="c-projects__item">
+        <time class="c-post__date" itemprop="datePublished" datetime="{{ .PublishDate }}">
+          {{ .PublishDate.Format "2 January 2006" }}
+        </time>
         <h2 class="c-projects__item-title">
           <a class="c-projects__item-title-link" href="{{ .Permalink }}">{{ .Title }}</a>
         </h2>
