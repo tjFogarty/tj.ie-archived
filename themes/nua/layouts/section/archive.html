@@ -1,36 +1,85 @@
 {{ define "main" }}
 <div class="l-container">
-  <div class="c-post">
+  <div class="mb-0 c-post">
     <h1 class="mt-0">{{.Title}}</h1>
-    
-    <p>Categories: 
+
+    <p>Categories:
       {{ range $key, $value := .Site.Taxonomies.categories }}
       <a href="/category/{{ $key | urlize  }}">{{ $key }}</a> ({{ len $value }})
       {{ end }}
     </p>
+  </div>
+</div>
 
-    {{ range (where .Site.RegularPages "Section" "posts").GroupByDate "2006" }}
-    <div class="c-sticky-list">
-      <h2 class="c-sticky-list__title">{{ .Key }}</h2>
-      <ul class="l-post-list">
-        {{ range (where .Pages "Section" "posts") }}
-        <li class="l-post-list__item with-mb">
-          <div class="c-post c-post--preview">
-            <div class="c-post-preview__heading">
-              <time class="c-post__date" datetime="{{ .PublishDate }}">
-                 {{ .PublishDate.Format "2 Jan" }}
-              </time>
-          
-              <h3 class="c-post__title c-post__title--preview">
-                <a class="c-post__title-link" href="{{ .Permalink }}">{{ .Title }}</a>
-              </h3>
-            </div>
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") 5 }}
+{{ $pagination := .Paginator }}
+
+<ul class="c-projects">
+  {{ range $index, $page := $paginator.Pages }}
+    <li class="c-wrapper {{ if modBool $index 2 }}c-wrapper--light{{ end }}">
+      <div class="c-projects__item">
+        <h2 class="c-projects__item-title">
+          <a class="c-projects__item-title-link" href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+
+        <p>
+        {{ if .Description }}
+          {{ .Description }}
+        {{ else }}
+          {{ .Summary }}
+        {{ end }}
+        </p>
+
+        <a class="c-btn c-btn-primary--inverted" href="{{ .Permalink }}">Read more <span class="visuallyhidden">about {{ .Title }}</span></a>
+      </div>
+    </li>
+  {{ end }}
+  </ul>
+  <div class="l-container">
+    <div class="c-post mb-0">
+      <ul class="c-pagination">
+        <li>
+          <a class="c-btn c-btn-primary {{ if eq $paginator.PageNumber 1 }} c-btn--disabled {{ end }}" {{ if ne $paginator.PageNumber 1 }} href="{{ $pagination.First.URL }}" {{ end }}>
+            First
+          </a>
+        </li>
+
+        <li>
+          <a class="c-btn c-btn-primary {{ if not $paginator.HasPrev }} c-btn--disabled {{ end }}" {{ if $paginator.HasPrev }} href="{{ $pagination.Prev.URL }}" rel="prev" {{ end }}>
+            Prev
+          </a>
+        </li>
+
+
+        <li class="c-pagination__select">
+          <label for="select-page">
+            <small>Go to page:</small>
+          </label>
+          <div class="c-pagination__page-select-container">
+            <select id="select-page" class="c-pagination__page-select js-select-nav">
+              {{ range $pagination.Pagers }}
+              <option {{ if eq . $pagination }}selected{{ end }} value="{{ .URL }}">{{ .PageNumber }}</option>
+              {{ end }}
+            </select>
           </div>
+        </li>
+
+        <li>
+          <a class="c-btn c-btn-primary {{ if not $pagination.HasNext }} c-btn--disabled {{ end }}" {{ if $pagination.HasNext }} href="{{ $pagination.Next.URL }}" rel="next" {{ end }}>
+            Next
+          </a>
+        </li>
+
+
+        {{ if $pagination.Last.URL }}
+        <li>
+          <a class="c-btn c-btn-primary {{ if eq $paginator.PageNumber $paginator.TotalPages }} c-btn--disabled {{ end }}" {{ if ne $paginator.PageNumber $paginator.TotalPages }} href="{{ $pagination.Last.URL }}"{{ end }}>
+            Last
+          </a>
         </li>
         {{ end }}
       </ul>
+
     </div>
-    {{ end }}
   </div>
-</div>
 {{ end }}

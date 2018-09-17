@@ -1,7 +1,7 @@
 ---
 title: "HTML Imports & Component-Driven Development"
 slug: "html-imports-component-driven-development"
-description: "Playing around with HTML Imports for future possibilities in pattern libraries."
+description: "Playing around with HTML Imports before deprecation, pining for a native, relatively hassle-free way of building a component library."
 date: 2018-09-15T22:17:21+01:00
 draft: false
 categories:

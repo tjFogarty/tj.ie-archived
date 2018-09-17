@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,12 @@
     <meta name="google-site-verification" content="4CLP9Nzk8aQmNgM8X5bh-baGaTICG1ta0Z9jXSLvsOc" />
     <title>{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}</title>
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ end }}">
+
+    <script>
+      (function() {
+        document.querySelector('html').classList.remove('no-js');
+      })();
+    </script>
 
     {{ partial "social-meta.html" . }}
 
