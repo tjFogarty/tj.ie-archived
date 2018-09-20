@@ -5,7 +5,7 @@
   overflow: hidden;
   padding-top: 5rem;
   border-bottom: 1px solid var(--c-off-white);
-  
+
   @media @mq-md {
     padding-top: 0;
   }
@@ -16,8 +16,8 @@
   color: var(--c-off-black);
   max-width: 200px;
   font-weight: 700;
-  
-  @media @mq-sm { 
+
+  @media @mq-sm {
     max-width: 100%;
   }
 
@@ -28,6 +28,7 @@
 
 .c-hero__title-highlight {
   color: var(--c-primary);
+  font-style: italic;
 }
 
 
@@ -44,6 +45,10 @@
     justify-content: space-between;
     grid-template-columns: 60% 35%;
     padding: 5rem 0 4rem;
+  }
+
+  @media @mq-lg {
+    padding: 7rem 0 6rem;
   }
 }
 
@@ -64,7 +69,7 @@
   max-width: 350px;
   border-radius: 50%;
   margin: 0 auto;
-  
+
   @media @mq-sm {
     position: static;
     opacity: 1;

@@ -1,7 +1,4 @@
 <div class="l-post-list-container">
-  <div class="l-post-list__heading">
-    <h3 class="l-post-list__heading-title">Latest Posts</h3>
-  </div>
   <ul class="l-post-list l-post-list--grid-thirds">
     {{ range first 3 (where .Pages "Section" "posts") }}
     <li class="l-post-list__item">
@@ -10,13 +7,13 @@
           <time class="c-post__date c-post__date--small" datetime="{{.PublishDate}}">
             {{.PublishDate.Format "2 Jan"}}
           </time>
-  
+
           <h4 class="c-post__title c-post__title--preview">
             <a class="c-post__title-link" href="{{.Permalink}}">
               {{.Title}}
             </a>
           </h4>
-          
+
           <p>
             {{ if .Description }}
             {{ .Description }}
@@ -29,7 +26,7 @@
     </li>
     {{ end }}
   </ul>
-  
+
   <div class="l-post-list__actions">
     <a class="c-btn c-btn-primary--inverted" href="/archive/">View Archive</a>
   </div>

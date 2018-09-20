@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="l-container">
-  <div class="mb-0 c-post">
+  <div class="c-post">
     <h1 class="mt-0">{{.Title}}</h1>
 
     <p>Categories:
@@ -39,7 +39,7 @@
   {{ end }}
   </ul>
   <div class="l-container">
-    <div class="c-post mb-0">
+    <div class="c-post">
       <ul class="c-pagination">
         <li>
           <a class="c-btn c-btn-primary {{ if eq $paginator.PageNumber 1 }} c-btn--disabled {{ end }}" {{ if ne $paginator.PageNumber 1 }} href="{{ $pagination.First.URL }}" {{ end }}>
