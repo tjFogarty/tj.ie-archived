@@ -38,7 +38,7 @@ Some folks on the inter­net think I don’t spout total non­sense. It’s news
   </li>
 
   <li>
-      Improving Client-Side Performance on <a href="https://mailchi.mp/css-weekly/issue-330-designing-with-code-shape-path-editor-client-side-performance" target="_blank" rel="noopener noreferrer">CSS Weekly</a>, <a href="https://mailchi.mp/responsivedesign/326" target="_blank" rel="noopener noreferrer">Responsive Design Weekly</a>, <a href="https://www.getrevue.co/profile/vuejsfeed/issues/vue-js-feed-issue-112-vue-london-only-4-days-left-universal-app-code-structure-in-nuxt-js-more-134071" target="_blank" rel="noopener noreferrer">Vue.js Feed</a>.
+      Improving Client-Side Performance on <a href="https://mailchi.mp/css-weekly/issue-330-designing-with-code-shape-path-editor-client-side-performance" target="_blank" rel="noopener noreferrer">CSS Weekly</a>, <a href="https://mailchi.mp/responsivedesign/326" target="_blank" rel="noopener noreferrer">Responsive Design Weekly</a>, <a href="https://www.getrevue.co/profile/vuejsfeed/issues/vue-js-feed-issue-112-vue-london-only-4-days-left-universal-app-code-structure-in-nuxt-js-more-134071" target="_blank" rel="noopener noreferrer">Vue.js Feed</a>, and <a href="https://ponyfoo.com/weekly/132/houdini-mastering-modular-javascript-performance-javascript-timers-and-chrome" target="_blank" rel="noopener noreferrer">Pony Foo</a>.
   </li>
   
   <li>
