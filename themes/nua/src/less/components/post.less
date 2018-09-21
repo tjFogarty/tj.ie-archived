@@ -1,7 +1,7 @@
 .c-post {
   margin-bottom: 3em;
 
-  img {
+  img:not(.c-post__author-image) {
     display: block;
     max-width: 100%;
     height: auto;
@@ -131,5 +131,20 @@
   @media @mq-md {
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+.c-post__author-image {
+  display: block;
+  float: right;
+  border-radius: 50%;
+  shape-outside: circle(50%);
+  margin-left: 25px;
+  width: 100px;
+  height: 100px;
+
+  @media @mq-sm {
+    width: 240px;
+    height: 240px;
   }
 }

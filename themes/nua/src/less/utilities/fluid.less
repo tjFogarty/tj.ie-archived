@@ -1,0 +1,15 @@
+.fluid-calc(@min-size, @max-size, @min-vp-w, @max-vp-w) {
+  @result: (calc(@min-size * 1px + (@max-size - @min-size) * ((100vw - @min-vp-w * 1px) / (@max-vp-w - @min-vp-w))));
+}
+
+.fluid-property(@min-px-size, @max-px-size, @min-vw: 800, @max-vw: 1600, @property: ~'font-size') {
+  @{property}: @min-px-size * 1px;
+
+  @media screen and (min-width: @min-vw * 1px) {
+    @{property}: .fluid-calc(@min-px-size, @max-px-size, @min-vw, @max-vw)[@result];
+  }
+
+  @media screen and (min-width: @max-vw * 1px) {
+    @{property}: @max-px-size * 1px;
+  }
+}

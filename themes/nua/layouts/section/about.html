@@ -4,6 +4,15 @@
     <div>
       <h1 class="mt-0">{{ .Title }}</h1>
 
+      <img
+        class="c-post__author-image"
+        sizes="(min-width: 576px) 240px, 100px"
+        srcset="https://res.cloudinary.com/dab4jaczr/image/upload/f_auto,w_100/v1536939330/tj-bw_lvigai.jpg 100w,
+        https://res.cloudinary.com/dab4jaczr/image/upload/f_auto,w_200/v1536939330/tj-bw_lvigai.jpg 200w,
+        https://res.cloudinary.com/dab4jaczr/image/upload/f_auto,w_250/v1536939330/tj-bw_lvigai.jpg 250w,
+        https://res.cloudinary.com/dab4jaczr/image/upload/f_auto,w_300/v1536939330/tj-bw_lvigai.jpg 300w"
+        src="https://res.cloudinary.com/dab4jaczr/image/upload/f_auto,w_300/v1536939330/tj-bw_lvigai.jpg"
+        alt="TJ Fogarty">
       {{.Content}}
     </div>
   </div>
