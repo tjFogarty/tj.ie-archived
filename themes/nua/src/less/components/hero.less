@@ -4,6 +4,14 @@
   @media @mq-md {
     padding: 3rem 0 5rem 0;
   }
+
+  @media @mq-lg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1rem;
+    min-height: 70vh;
+  }
 }
 
 .c-hero__title {
@@ -15,6 +23,13 @@
   color: var(--c-primary);
   font-style: italic;
   text-shadow: 5px 2px #cf12591f;
+
+  &:hover {
+    .char {
+      animation: colour-fade 0.6s ease forwards;
+      animation-delay: calc(0.04s * var(--char-index));
+    }
+  }
 }
 
 
@@ -22,5 +37,19 @@
   .c-btn {
     margin-right: 1em;
     margin-bottom: 1em;
+  }
+}
+
+@keyframes colour-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+    text-shadow: 0 0 var(--c-grey);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    text-shadow: 5px 2px #cf12591f;
   }
 }

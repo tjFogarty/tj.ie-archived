@@ -1,5 +1,6 @@
 import { ready } from './utils'
 import { TableOfContents } from './toc'
+import Splitting from 'splitting'
 
 ready(async () => {
   let selectNav = document.querySelector('.js-select-nav')
@@ -9,6 +10,8 @@ ready(async () => {
       window.location = event.target.value
     })
   }
+
+  Splitting()
 
   TableOfContents.init()
 })

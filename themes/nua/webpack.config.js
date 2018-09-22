@@ -32,6 +32,12 @@ const WEBPACK_CONFIG = {
           'postcss-loader',
           'less-loader'
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'css-loader'
+        ]
       }
     ]
   },
@@ -61,7 +67,10 @@ if (!isDev) {
         `${__dirname}/**/*.html`,
         `${__dirname}/**/*.md`,
         `${__dirname}/src/**/*.js`
-      ])
+      ]),
+      whitelist: function() {
+        return ['splitting']
+      }
     }),
     new SWPrecacheWebpackPlugin({
       cacheId: 'tj-ie-v3',

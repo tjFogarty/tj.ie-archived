@@ -58,5 +58,8 @@
   "bugs": {
     "url": "https://github.com/tjFogarty/tj.ie/issues"
   },
-  "homepage": "https://github.com/tjFogarty/tj.ie#readme"
+  "homepage": "https://github.com/tjFogarty/tj.ie#readme",
+  "dependencies": {
+    "splitting": "^1.0.5"
+  }
 }
