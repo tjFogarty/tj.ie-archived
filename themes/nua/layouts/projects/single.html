@@ -1,9 +1,15 @@
 {{ define "main" }}
 <div class="l-container">
   <article class="c-post" itemscope itemtype="http://schema.org/Article">
-    <h1 itemprop="name headline" class="mt-0">{{ .Title }}</h1>
+    <div class="c-post__header">
 
-    {{ .Content }}
+      <h1 itemprop="name headline" class="c-post__headline">{{ .Title }}</h1>
+
+    </div>
+
+    <div class="c-post__content">
+      {{ .Content }}
+    </div>
 
     <div class="c-share-container">
 

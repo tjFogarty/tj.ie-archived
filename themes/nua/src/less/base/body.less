@@ -1,5 +1,13 @@
 html {
   font-size: 1.125em;
+  opacity: 0;
+  transition: opacity ease 0.2s;
+  will-change: opacity;
+
+  &.wf-active,
+  &.no-js {
+    opacity: 1;
+  }
 }
 
 body {

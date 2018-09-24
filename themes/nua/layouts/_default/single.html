@@ -14,11 +14,20 @@
     </aside>
   {{ end }}
   <article class="c-post" itemscope itemtype="http://schema.org/Article">
-    <time class="c-post__date" itemprop="datePublished" datetime="{{ .PublishDate }}">
-      {{ .PublishDate.Format "2 January 2006" }}
-    </time>
+    <div class="c-post__header">
 
-    <h1 itemprop="name headline" class="mt-0">{{ .Title }}</h1>
+      <time class="c-post__date" itemprop="datePublished" datetime="{{ .PublishDate }}">
+        {{ .PublishDate.Format "2 January 2006" }}
+      </time>
+
+      <h1 itemprop="name headline" class="c-post__headline">{{ .Title }}</h1>
+
+    </div>
+
+    <div class="c-post__content">
+      {{ .Content }}
+    </div>
+
 
     {{ if .Params.Categories }}
       <div class="c-post__categories">
@@ -34,8 +43,6 @@
         </ul>
       </div>
     {{ end }}
-
-    {{ .Content }}
 
     <div class="c-post__navigation">
       {{ with .NextInSection }}

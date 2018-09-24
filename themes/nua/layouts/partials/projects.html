@@ -2,8 +2,11 @@
 {{ range $index, $page := (where .Pages "Section" "projects") }}
     <li class="c-wrapper {{ if modBool $index 2 }}c-wrapper--light{{ end }}">
       <div class="c-projects__item">
-        <h2 class="c-projects__item-title">{{ .Title }}</h2>
-        
+
+        <h2 class="c-projects__item-title">
+          <a class="c-projects__item-title-link" href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+
         <p>
         {{ if .Description }}
           {{ .Description }}
@@ -11,7 +14,7 @@
           {{ .Summary }}
         {{ end }}
         </p>
-        
+
         <a class="c-btn c-btn-primary--inverted" href="{{ .Permalink }}">Read more <span class="visuallyhidden">about {{ .Title }}</span></a>
       </div>
     </li>

@@ -69,7 +69,7 @@ if (!isDev) {
         `${__dirname}/src/**/*.js`
       ]),
       whitelist: function() {
-        return ['splitting']
+        return ['splitting', 'wf-active', 'no-js']
       }
     }),
     new SWPrecacheWebpackPlugin({
@@ -78,8 +78,6 @@ if (!isDev) {
       minify: true,
       stripPrefix: 'static',
       staticFileGlobs: [
-        'static/fonts/*.woff2',
-        'static/fonts/*.woff',
         'static/js/main.js',
         'static/css/main.css',
         'static/js/chunks/*.js',
