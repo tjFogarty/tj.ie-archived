@@ -3,9 +3,9 @@
   <div class="c-post">
     <h1 class="mt-0">{{.Title}}</h1>
 
-    <p>Categories:
+    <p>Browse by category:
       {{ range $key, $value := .Site.Taxonomies.categories }}
-      <a href="/category/{{ $key | urlize  }}">{{ $key }}</a> ({{ len $value }})
+      <a href="/category/{{ $key | urlize  }}">{{ $key }}</a> -
       {{ end }}
     </p>
   </div>

@@ -1,19 +1,21 @@
 html {
   font-size: 1.125em;
-  will-change: opacity;
 
+  &:not(.no-js),
   &.wf-loading {
-    opacity: 0;
+    .content,
+    .c-nav__inner {
+      opacity: 0;
+    }
   }
 
-  &.wf-active {
-    transition: opacity ease 0.2s;
-    opacity: 1;
-  }
-
-  &.wf-inactive,
-  &.no-js  {
-    opacity: 1;
+  &.wf-active,
+  &.wf-inactive {
+    .content,
+    .c-nav__inner {
+      transition: opacity ease 0.2s;
+      opacity: 1;
+    }
   }
 }
 

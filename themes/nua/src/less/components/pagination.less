@@ -25,16 +25,31 @@
 
 .c-pagination__page-select {
   appearance: none;
+  cursor: pointer;
   display: inline-block;
-  padding: .55rem 2.05rem .55rem .75rem;
+  padding: .33rem 2.05rem .33rem .75rem;
   background-color: transparent;
   border: 1px solid var(--c-primary);
   color: var(--c-primary);
   border-radius: 0;
+  box-shadow: 3px 3px 0 0 var(--c-primary);
+  transition: box-shadow ease 0.2s, background ease 0.2s, color ease 0.2s;
 }
 
 .c-pagination__page-select-container {
   position: relative;
+
+  &:hover, &:focus {
+    .c-pagination__page-select {
+      background-color: var(--c-primary);
+      color: var(--c-white);
+      box-shadow: 0 0 0 0 transparent;
+    }
+
+    &:after {
+      background-color: var(--c-white);
+    }
+  }
 
   &:after {
     content: '';

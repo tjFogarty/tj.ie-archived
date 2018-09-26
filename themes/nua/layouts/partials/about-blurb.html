@@ -1,14 +1,11 @@
 <ul class="l-touchpoints">
-  {{ $touchpointsJ := .Site.Data.homepage.touchpoints }}  
+  {{ $touchpointsJ := .Site.Data.homepage.touchpoints }}
   {{ range $touchpointsJ }}
     {{ range . }}
       <li class="c-touchpoint">
-        <svg class="c-touchpoint__icon">
-          <use xlink:href="#{{ .icon }}"></use>
-        </svg>
 
         <h3 class="c-touchpoint__title">{{ .name }}</h3>
-        
+
         <p>
           {{ .description }}
         </p>

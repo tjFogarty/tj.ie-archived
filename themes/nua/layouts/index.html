@@ -2,29 +2,31 @@
 
 <div class="l-container">
   <div class="c-hero">
-    <h1 class="c-hero__title">I&#8217;m TJ, a <span class="c-hero__title-highlight words chars splitting" data-splitting="chars">web developer</span> from Limerick, Ireland</h1>
+    <h1 class="c-hero__title">T.J. Fogarty</h1>
+    <p class="c-hero__subtitle">
+      Limerick man surviving in Waterford. <br />
+      <span class="c-hero__highlight">UI Engineer</span> at StitcherAds.
+    </p>
     <div class="c-hero__cta">
-        <a href="#featured-projects" class="c-btn c-btn-primary--inverted c-btn--large">Featured Projects</a>
-        <a href="#latest-posts" class="c-btn c-btn-primary c-btn--large">Latest Posts</a>
+        <a href="#featured-projects" class="c-hero__cta-link">Featured Projects</a>
+        <a href="#latest-posts" class="c-hero__cta-link">Latest Posts</a>
     </div>
   </div>
 </div>
 
-<div class="c-wrapper c-wrapper--dark">
-    <div class="l-container">
-        <h2 class="c-wrapper__title">Powered by Coffee & Process</h2>
-        {{ partial "about-blurb.html" . }}
-    </div>
+<div class="l-container">
+    <h2 class="c-wrapper__title">I Write Code</h2>
+    {{ partial "about-blurb.html" . }}
 </div>
 
-<div class="c-wrapper" id="featured-projects">
+<div class="c-wrapper c-wrapper--light" id="featured-projects">
     <div class="l-container">
         <h3 class="c-wrapper__title">Featured Projects</h3>
         {{ partial "featured-projects.html" . }}
     </div>
 </div>
 
-<div class="c-wrapper c-wrapper--light" id="latest-posts">
+<div class="c-wrapper" id="latest-posts">
     <div class="l-container">
         <h3 class="c-wrapper__title">Latest Posts</h3>
         {{ partial "latest-posts.html" . }}

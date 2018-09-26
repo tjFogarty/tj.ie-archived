@@ -3,6 +3,7 @@ languageCode = "en-ie"
 title = "TJ Fogarty | Web Developer"
 theme = "nua"
 pygmentsStyle = "dracula"
+disableHugoGeneratorInject = "true"
 [permalinks]
   posts = "/:slug"
   categories = "/category/:slug"
@@ -10,7 +11,7 @@ pygmentsStyle = "dracula"
   description = "TJ Fogarty is a web developer experienced in front-end and back-end development with Vue.js, React, Sass, PHP, Laravel, WordPress, Craft, ExpressionEngine and more."
   twitter = "@tj_fogarty"
   author = "TJ Fogarty"
-  
+
 [menu]
 
   [[menu.main]]
@@ -22,17 +23,17 @@ pygmentsStyle = "dracula"
     name = "Projects"
     url = "/projects/"
     weight = -110
-    
+
   [[menu.main]]
     name = "Archive"
     url = "/archive/"
     weight = -109
-    
+
   [[menu.main]]
     name = "About"
     url = "/about/"
     weight = -108
-    
+
   [[menu.main]]
     name = "Contact"
     url = "/contact/"

@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="4CLP9Nzk8aQmNgM8X5bh-baGaTICG1ta0Z9jXSLvsOc" />
     <title>{{ if not .IsHome}} {{ .Page.Title }} | {{ end }}{{ .Site.Title }}</title>
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ end }}">
@@ -16,15 +15,13 @@
 
     {{ partial "social-meta.html" . }}
 
-    <!-- Preload fonts -->
-    <link rel="preload" href="/fonts/open-sans-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-
-    <link rel="dns-prefetch" href="//use.typekit.net">
+    <link rel="dns-prefetch" href="https://use.typekit.net">
 
     <!-- Preload assets -->
     <link rel="preload" href="https://use.typekit.net/oau2roz.js" as="script">
     <link rel="preload" href="/css/main.css" as="style">
     <link rel="preload" href="/js/main.js" as="script">
+    <link rel="preload" href="https://fathom.tj.ie/tracker.js" as="script" crossorigin>
 
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 

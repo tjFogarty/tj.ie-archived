@@ -1,4 +1,5 @@
 .c-wrapper {
+  position: relative;
   padding: 2rem 0;
 
   @media @mq-md {
@@ -21,8 +22,11 @@
 }
 
 .c-wrapper__title {
-  text-align: center;
+  position: relative;
   margin-top: 0;
-  font-style: italic;
   margin-bottom: 2rem;
+
+  @media @mq-md {
+    text-align: center;
+  }
 }
