@@ -3,7 +3,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}{{ end }}" />
-<meta name="twitter:title" content="{{ .Title }}{{ if .IsHome }} - {{ .Site.Params.Tagline }}{{ end }} by {{ .Site.Params.twitter }}" />
+<meta name="twitter:title" content="{{ .Title }}{{ if .IsHome }} - {{ .Site.Params.Tagline }}{{ end }}" />
 <meta name="twitter:site" content="{{ .Site.Params.twitter }}" />
 <meta name="twitter:creator" content="{{ .Site.Params.twitter }}" />
 
@@ -20,10 +20,10 @@
 <!-- JSON-LD -->
 {{ if .IsHome }}
 <script type="application/ld+json">
-{ 
-  "@context": "http://schema.org", 
-  "@type": "WebSite", 
-  "url": "{{ .Permalink }}", 
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "{{ .Permalink }}",
   "name": "{{ .Site.Title }}",
    "author": {
       "@type": "Person",
@@ -37,11 +37,11 @@
 {{ if .IsPage }}
     <script type="application/ld+json">
     {{ if eq .Section "posts" }}
-    { 
-        "@context": "http://schema.org", 
+    {
+        "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "{{ .Title }}",
-        "genre": "{{ range .Params.categories }}{{ . }}{{ end }}",  
+        "genre": "{{ range .Params.categories }}{{ . }}{{ end }}",
         "url": "{{ .Permalink }}",
         "datePublished": "{{ time .Date }}",
         "description": "{{ .Description }}",
@@ -51,10 +51,10 @@
         }
      }
     {{ else }}
-    { 
-      "@context": "http://schema.org", 
-      "@type": "WebSite", 
-      "url": "{{ .Permalink }}", 
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "{{ .Permalink }}",
       "name": "{{ .Title }}",
        "author": {
           "@type": "Person",
