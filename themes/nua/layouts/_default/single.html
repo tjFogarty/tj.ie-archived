@@ -52,13 +52,18 @@
       <p>Previous: <a rel="prev" href="{{ .Permalink }}">{{ .Title }}</a></p>
       {{ end }}
     </div>
-
-    <h3 id="comments">Comments</h4>
-
-    <p>I accept comments via email, and clicking "Add Comment" will open your default email client. If the thoughts of your native email client opening horrifies you, you can instead email your comment to contact@tj.ie.</p>
-
-    <a class="c-btn c-btn-primary" href="mailto:contact@tj.ie?subject=Comment - {{ .Title }}">Add Comment</a>
-
   </article>
+</div>
+
+<div class="c-wrapper c-wrapper--light">
+  <div class="l-container">
+    <div class="c-post">
+      <h3 id="comments">Comments</h4>
+
+      <p>I accept comments via email, and clicking "Add Comment" will open your default email client. If the thoughts of your native email client opening horrifies you, you can instead email your comment to contact@tj.ie.</p>
+
+      <a class="c-btn c-btn-primary" href="mailto:contact@tj.ie?subject=Comment - {{ .Title }}">Add Comment</a>
+    </div>
+  </div>
 </div>
 {{ end }}
