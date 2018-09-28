@@ -99,6 +99,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media @mq-sm {
+    justify-content: flex-end;
+  }
 }
 
 .c-post__categories {
@@ -152,6 +156,7 @@
 .c-post__headline {
   margin-top: 0;
   font-style: italic;
+  margin-bottom: var(--space-md);
 }
 
 .c-post__content {

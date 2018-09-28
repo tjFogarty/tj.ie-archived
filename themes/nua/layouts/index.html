@@ -8,8 +8,8 @@
       <span class="c-hero__highlight">UI Engineer</span> at StitcherAds.
     </p>
     <div class="c-hero__cta">
-        <a href="#featured-projects" class="c-hero__cta-link">Featured Projects</a>
         <a href="#latest-posts" class="c-hero__cta-link">Latest Posts</a>
+        <a href="#featured-projects" class="c-hero__cta-link">Featured Projects</a>
     </div>
   </div>
 </div>
@@ -19,18 +19,19 @@
     {{ partial "about-blurb.html" . }}
 </div>
 
-<div class="c-wrapper c-wrapper--light" id="featured-projects">
+<div class="c-wrapper c-wrapper--light" id="latest-posts">
+    <div class="l-container">
+        <h3 class="c-wrapper__title">Latest Posts</h3>
+        {{ partial "latest-posts.html" . }}
+    </div>
+</div>
+
+<div class="c-wrapper" id="featured-projects">
     <div class="l-container">
         <h3 class="c-wrapper__title">Featured Projects</h3>
         {{ partial "featured-projects.html" . }}
     </div>
 </div>
 
-<div class="c-wrapper" id="latest-posts">
-    <div class="l-container">
-        <h3 class="c-wrapper__title">Latest Posts</h3>
-        {{ partial "latest-posts.html" . }}
-    </div>
-</div>
 
 {{ end }}
