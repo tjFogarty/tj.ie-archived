@@ -144,10 +144,9 @@ this.headings.forEach(heading => {
 
 handleObserver(entries, observer) {
   entries.forEach(entry => {
-    let href = `#${entry.target.getAttribute('id')}`,
-        link = this.links.find(l => l.getAttribute('href') === href)
+    let href = `#${entry.target.getAttribute('id')}`
+    let link = this.links.find(l => l.getAttribute('href') === href)
     
-    // I needed to use > 1 on Codepen, not sure why?
     if (entry.isIntersecting && entry.intersectionRatio === 1) {
       link.classList.add('is-visible')
       this.previousSection = entry.target.getAttribute('id') // I'll tell you in a minute
@@ -193,7 +192,7 @@ I'm grabbing the first visible link, then removing all other `is-active` classes
 
 ## Demo
 
-<p data-height="265" data-theme-id="light" data-slug-hash="yxPdqe" data-default-tab="result" data-user="tjFogarty" data-pen-title="Scroll spy table of contents" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/tjFogarty/pen/yxPdqe/">Scroll spy table of contents</a> by T.J. Fogarty (<a href="https://codepen.io/tjFogarty">@tjFogarty</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="500" data-theme-id="light" data-slug-hash="yxPdqe" data-default-tab="result" data-user="tjFogarty" data-pen-title="Scroll spy table of contents" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/tjFogarty/pen/yxPdqe/">Scroll spy table of contents</a> by T.J. Fogarty (<a href="https://codepen.io/tjFogarty">@tjFogarty</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 ## That's It So Far
