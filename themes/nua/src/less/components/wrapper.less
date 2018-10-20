@@ -21,6 +21,13 @@
   color: var(--c-off-white);
 }
 
+.c-wrapper--light,
+.c-wrapper--dark {
+  @media @mq-md {
+    clip-path: polygon(2% 2%,96% 3%,97% 93%,6% 95%);
+  }
+}
+
 .c-wrapper__title {
   position: relative;
   margin-top: 0;
