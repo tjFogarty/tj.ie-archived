@@ -1,12 +1,21 @@
 .c-hero {
-  padding: 2rem 0;
-  margin-bottom: 2rem;
+  padding: 7em 0 2em 0;
+  margin-bottom: var(--space-xxl);
+  background-color: var(--c-hero-bg);
+  color: var(--c-hero-text);
+
+  @media @mq-sm {
+    padding: var(--space-xxl) 0;
+    clip-path: polygon(2% 2%, 96% 3%, 97% 93%, 6% 95%);
+  }
 
   @media @mq-md {
     padding: 3rem 0 5rem 0;
   }
+}
 
-  @media @mq-lg {
+.c-hero__text {
+   @media @mq-lg {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +28,8 @@
   .fluid-property(60, 205, 600);
   font-weight: 700;
   font-style: italic;
-  margin-bottom: 0.2em;
+  margin-bottom: var(--space-sm);
+  color: #4F3A4B;
 
   @media @mq-md {
     margin-top: 0;
@@ -37,6 +47,7 @@
 
 .c-hero__highlight {
   color: var(--c-primary);
+  font-family: var(--font-body-serif);
   font-style: italic;
 }
 
