@@ -23,6 +23,8 @@
     <link rel="preload" href="/js/main.js" as="script">
     <link rel="preload" href="https://fathom.tj.ie/tracker.js" as="script" crossorigin>
 
+    {{ partial "typekit.html" . }}
+
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 
     <noscript>
@@ -39,8 +41,6 @@
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
-
-    {{ partial "typekit.html" . }}
   </head>
   <body>
     {{ partial "header.html" . }}
