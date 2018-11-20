@@ -16,6 +16,19 @@
     width: 100%;
     z-index: 2;
     background-color: transparent;
+
+    .c-nav__link {
+      color: var(--c-secondary);
+
+      &:hover,
+      &.is-active {
+        color: var(--c-black);
+      }
+    }
+
+    .c-nav__logo {
+      background-color: var(--c-secondary);
+    }
   }
 }
 
@@ -143,7 +156,7 @@
 
   &:hover,
   &.is-active {
-    color: var(--c-secondary);
+    color: var(--c-black);
   }
 
   @media @mq-sm {
