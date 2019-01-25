@@ -24,5 +24,6 @@ And a range of projects for
 - <a href="http://www.gainanimalnutrition.com/" target="_blank" rel="noopener noreferrer">Gain Ani­mal Nutri­tion</a>
 - <a href="https://vizorsoftware.com/" target="_blank" rel="noopener noreferrer">Vizor Soft­ware</a>
 - <a href="http://www.dceng.ie/" target="_blank" rel="noopener noreferrer">Dou­glas Car­roll Con­sult­ing Engi­neers</a>
+- <a href="https://www.ul.ie/business/professional-education/mba_programmes/" target="_blank" rel="noopener noreferrer">University of Limerick - MBA Programme</a>
 
 I also intro­duced access to media queries in JavaScript with the release of <a href="/foundation-5-5">Foun­da­tion 5.5</a> back in the day.
