@@ -17,7 +17,6 @@
 
     <!-- Preload assets -->
     <link rel="preload" href="/js/main.js" as="script">
-    <link rel="preload" href="https://fathom.tj.ie/tracker.js" as="script" crossorigin>
     <link rel="preload" href="/fonts/open-sans-v15-latin-regular.woff2" as="font">
     <link rel="preload" href="/fonts/playfair-display-v14-latin-700.woff2" as="font">
     <meta name="theme-color" content="#0881a3" />
@@ -41,23 +40,6 @@
     <script src="/js/main.js" defer></script>
 
     {{ if not .Site.BuildDrafts }}
-
-    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-    <script>
-    (function(f, a, t, h, o, m){
-      a[h]=a[h]||function(){
-        (a[h].q=a[h].q||[]).push(arguments)
-      };
-      o=f.createElement('script'),
-      m=f.getElementsByTagName('script')[0];
-      o.async=1; o.src=t; o.id='fathom-script';
-      m.parentNode.insertBefore(o,m)
-    })(document, window, '//fathom.tj.ie/tracker.js', 'fathom');
-    fathom('set', 'siteId', 'NTDOJ');
-    fathom('trackPageview');
-    </script>
-    <!-- / Fathom -->
-
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
