@@ -74,7 +74,6 @@ if (!isDev) {
       stripPrefix: 'static',
       staticFileGlobs: [
         'static/js/main.js',
-        'static/css/main.css',
         'static/js/chunks/*.js'
       ]
     })

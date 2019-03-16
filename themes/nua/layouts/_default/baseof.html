@@ -16,19 +16,13 @@
     {{ partial "social-meta.html" . }}
 
     <!-- Preload assets -->
-    <link rel="preload" href="/css/main.css" as="style">
     <link rel="preload" href="/js/main.js" as="script">
     <link rel="preload" href="https://fathom.tj.ie/tracker.js" as="script" crossorigin>
     <link rel="preload" href="/fonts/open-sans-v15-latin-regular.woff2" as="font">
     <link rel="preload" href="/fonts/playfair-display-v14-latin-700.woff2" as="font">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-
     <meta name="theme-color" content="#0881a3" />
 
-    <link rel="manifest" href="/manifest.json">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="msapplication-starturl" content="/">
+    <style>{{ readFile "public/css/main.css" | safeCSS }}</style>
 
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
