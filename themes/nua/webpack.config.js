@@ -1,6 +1,6 @@
 const path = require('path')
 const glob = require('glob-all')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
@@ -35,28 +35,23 @@ const WEBPACK_CONFIG = {
       },
       {
         test: /\.css$/,
-        use: [
-          'css-loader'
-        ]
+        use: ['css-loader']
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['static/js', 'static/css']),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/main.css'
     })
-  ]
+  ],
+  devtool: 'source-map'
 }
 
 if (!isDev) {
   WEBPACK_CONFIG.optimization = {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
+      new TerserPlugin({ parallel: true }),
       new OptimizeCSSAssetsPlugin({})
     ]
   }
@@ -80,7 +75,7 @@ if (!isDev) {
       staticFileGlobs: [
         'static/js/main.js',
         'static/css/main.css',
-        'static/js/chunks/*.js',
+        'static/js/chunks/*.js'
       ]
     })
   )

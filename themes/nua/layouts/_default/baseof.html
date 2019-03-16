@@ -15,21 +15,13 @@
 
     {{ partial "social-meta.html" . }}
 
-    <link rel="dns-prefetch" href="https://use.typekit.net">
-
     <!-- Preload assets -->
-    <link rel="preload" href="https://use.typekit.net/oau2roz.js" as="script">
     <link rel="preload" href="/css/main.css" as="style">
     <link rel="preload" href="/js/main.js" as="script">
     <link rel="preload" href="https://fathom.tj.ie/tracker.js" as="script" crossorigin>
-
-    {{ partial "typekit.html" . }}
-
+    <link rel="preload" href="/fonts/open-sans-v15-latin-regular.woff2" as="font">
+    <link rel="preload" href="/fonts/playfair-display-v14-latin-700.woff2" as="font">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-
-    <noscript>
-      <link rel="stylesheet" type="text/css" href="https://use.typekit.net/oau2roz.css">
-    </noscript>
 
     <meta name="theme-color" content="#0881a3" />
 
