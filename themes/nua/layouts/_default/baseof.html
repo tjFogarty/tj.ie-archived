@@ -25,7 +25,11 @@
     <link rel="preload" href="/fonts/playfair-display-v14-latin-700italic.woff2" as="font" crossorigin>
     <meta name="theme-color" content="#0881a3" />
 
-    <style>{{ readFile "public/css/main.css" | safeCSS }}</style>
+    {{ if not .Site.BuildDrafts }}
+      <style>{{ readFile "public/css/main.css" | safeCSS }}</style>
+    {{ else }}
+    <link rel="stylesheet" href="/css/main.css">
+    {{ end }}
 
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
@@ -52,6 +56,7 @@
       }
     </script>
     {{ end }}
-    <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn" defer></script>
+    <script src="//instant.page/1.2.2" type="module"
+      integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU" defer></script>
 </body>
 </html>

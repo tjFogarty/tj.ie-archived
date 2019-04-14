@@ -1,12 +1,11 @@
 .c-hero {
   padding: 7em 0 2em 0;
   margin-bottom: var(--space-xxl);
-  background-color: var(--c-hero-bg);
   color: var(--c-hero-text);
+  background-color: var(--c-hero-bg);
 
   @media @mq-sm {
     padding: var(--space-xxl) 0;
-    clip-path: polygon(2% 2%, 96% 3%, 97% 93%, 6% 95%);
   }
 
   @media @mq-md {
@@ -27,8 +26,9 @@
 .c-hero__title {
   .fluid-property(60, 205, 600);
   font-weight: 700;
+  color: var(--c-primary);
   margin-bottom: var(--space-sm);
-  color: var(--c-hero-text);
+  font-family: var(--font-body);
 
   @media @mq-md {
     margin-top: 0;
