@@ -361,4 +361,16 @@ buildControls() {
 }
 {{< / highlight >}}
 
+Finally then to wrap it all up, we need to remove our event listeners in `componentWillUnmount`. We'll need to call `cancel` on the debounced method in case it fires after unmounting, and it tries updating state on a component that doesn't exist anymore.
+
+{{< highlight javascript >}}
+componentWillUnmount() {
+  this.container.removeEventListener(
+    'scroll',
+    this.debounceCheckForScrollPosition
+  )
+  this.debounceCheckForOverflow.cancel()
+}
+{{< / highlight >}}
+
 <a href="https://codesandbox.io/s/github/tjFogarty/scrollable-container-react" target="_blank" rel="noopener noreferrer" class="c-btn c-btn-primary--inverted">View Demo & Source</a>
