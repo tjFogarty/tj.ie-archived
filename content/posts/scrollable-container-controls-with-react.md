@@ -1,5 +1,6 @@
 ---
 title: "Scrollable Container Controls with React"
+description: "Managing a scrollable container with React by adding button controls, and seeing when they should be enabled or disabled."
 date: 2019-05-03T19:15:42+01:00
 draft: false
 categories:
