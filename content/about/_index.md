@@ -2,9 +2,9 @@
 title: "About"
 ---
 
-I’m TJ, a web devel­op­er from Lim­er­ick, Ire­land 🇮🇪 and liv­ing in Water­ford. I have BSc Hons in Multimedia Programming, and Design from Limerick Institute of Technology.
+I’m TJ, a web devel­op­er from {{< external-link href="https://en.wikipedia.org/wiki/Limerick" >}}Lim­er­ick, Ire­land{{< / external-link >}} 🇮🇪 and liv­ing in Water­ford. I have a BSc Hons in Multimedia Programming, and Design from the Limerick Institute of Technology.
 
-Pre­vi­ous­ly, I’ve worked for ResourceKraft as a Designer/​Developer, Mav­er­ick as the Lead Devel­op­er, and Emag­ine as a Web Devel­op­er and then Tech­ni­cal Lead. At the moment I’m a UI Devel­op­er at Stitcher­Ads where I’m devel­op­ing a com­po­nent library and design system.
+Pre­vi­ous­ly, I’ve worked for ResourceKraft as a Designer/​Developer, Mav­er­ick as the Lead Devel­op­er, and Emag­ine as the Tech­ni­cal Lead. At the moment I’m a UI Devel­op­er at Stitcher­Ads where I’m devel­op­ing a com­po­nent library and design system.
 
 I enjoy work­ing with JavaScript (React and Vue), Node, PHP (Craft CMS, Word­Press, Lar­avel, Expres­sio­nEngine), and CSS (Sass, Less, good ‘ol vanil­la CSS). Spend­ing all these years work­ing with such fun tech­nolo­gies reminds me that just because you can do it, def­i­nite­ly means you should.
 
@@ -12,62 +12,18 @@ In my spare time I listen to music, read, try to figure out that bug that's been
 
 You can find me at the links below:
 
-<ul class="list-reset">
-  <li>
-    <a href="https://twitter.com/tj_fogarty" target="_blank" rel="noopener noreferrer">Twit­ter</a>
-  </li>
+- {{< external-link href="https://twitter.com/tj_fogarty" >}}Twit­ter{{< / external-link >}}
+- {{< external-link href="https://github.com/tjFogarty" >}}GitHub{{< / external-link >}}
+- {{< external-link href="https://codepen.io/tjFogarty/" >}}Code­Pen{{< / external-link >}}
 
-  <li>
-    <a href="https://github.com/tjFogarty" target="_blank" rel="noopener noreferrer">GitHub</a>
-  </li>
-
-  <li>
-    <a href="https://codepen.io/tjFogarty/" target="_blank" rel="noopener noreferrer">Code­Pen</a>
-  </li>
-</ul>
-
-<h2 id="features">Fea­tures</h2>
+## Fea­tures
 
 Some folks on the inter­net think I don’t spout total non­sense. It’s news to me, but here’s some proof:
 
-<ul>
-  <li>
-    <a href="https://css-tricks.com/timber-and-twig-reignited-my-love-for-wordpress/" target="_blank" rel="noopener noreferrer">
-      Tim­ber and Twig Reignit­ed my Love for Word­Press on CSS-Tricks
-    </a>
-  </li>
-
-  <li>
-      Improving Client-Side Performance on <a href="https://mailchi.mp/css-weekly/issue-330-designing-with-code-shape-path-editor-client-side-performance" target="_blank" rel="noopener noreferrer">CSS Weekly</a>, <a href="https://mailchi.mp/responsivedesign/326" target="_blank" rel="noopener noreferrer">Responsive Design Weekly</a>, <a href="https://www.getrevue.co/profile/vuejsfeed/issues/vue-js-feed-issue-112-vue-london-only-4-days-left-universal-app-code-structure-in-nuxt-js-more-134071" target="_blank" rel="noopener noreferrer">Vue.js Feed</a>, and <a href="https://ponyfoo.com/weekly/132/houdini-mastering-modular-javascript-performance-javascript-timers-and-chrome" target="_blank" rel="noopener noreferrer">Pony Foo</a>.
-  </li>
-  
-  <li>
-    <a href="https://www.getrevue.co/profile/alligatorio/issues/vuepress-vue-dropzone-css-position-sticky-react-loadable-unstated-getting-started-with-nuxt-js-107443" target="_blank" rel="noopener noreferrer">
-      “Do Not Track” fea­tured on an Alli​ga​tor​.io newsletter
-    </a>
-  </li>
-  
-  <li>
-    <a href="http://craftlinklist.com/issues/61" target="_blank" rel="noopener noreferrer">
-      Buil­ding my Site series on Craft Link List Newsletter
-    </a>
-  </li>
-
-  <li>
-    <a href="http://craftlinklist.com/issues/71" target="_blank" rel="noopener noreferrer">
-      "A Signal in the Static" featured on Craft Link List Newsletter
-    </a>
-  </li>
-  
-  <li>
-    <a href="https://tympanus.net/codrops/collective/collective-390/" target="_blank" rel="noopener noreferrer">
-      DIY RSS Read­er fea­tured in a Codrops Collective
-    </a>
-  </li>
-  
-  <li>
-    <a href="https://codepen.io/spark/63" target="_blank" rel="noopener noreferrer">
-      Craft Plu­g­in Search fea­tured on Code­Pen Spark
-    </a>
-  </li>
-</ul>
+- {{< external-link href="https://css-tricks.com/timber-and-twig-reignited-my-love-for-wordpress/" >}}Tim­ber and Twig Reignit­ed my Love for Word­Press on CSS-Tricks{{< / external-link >}}
+- Improving Client-Side Performance on {{< external-link href="https://mailchi.mp/css-weekly/issue-330-designing-with-code-shape-path-editor-client-side-performance" >}}CSS Weekly{{< / external-link >}}, {{< external-link href="https://mailchi.mp/responsivedesign/326" >}}Responsive Design Weekly{{< / external-link >}}, {{< external-link href="https://www.getrevue.co/profile/vuejsfeed/issues/vue-js-feed-issue-112-vue-london-only-4-days-left-universal-app-code-structure-in-nuxt-js-more-134071" >}}Vue.js Feed{{< / external-link >}}, and {{< external-link href="https://ponyfoo.com/weekly/132/houdini-mastering-modular-javascript-performance-javascript-timers-and-chrome" >}}Pony Foo{{< / external-link >}}.
+- {{< external-link href="https://www.getrevue.co/profile/alligatorio/issues/vuepress-vue-dropzone-css-position-sticky-react-loadable-unstated-getting-started-with-nuxt-js-107443" >}}“Do Not Track” fea­tured on an Alli​ga​tor​.io newsletter{{< / external-link >}}
+- {{< external-link href="http://craftlinklist.com/issues/61" >}}Buil­ding my Site series on Craft Link List Newsletter{{< / external-link >}}
+- {{< external-link href="http://craftlinklist.com/issues/71" >}}"A Signal in the Static" featured on Craft Link List Newsletter{{< / external-link >}}
+- {{< external-link href="https://tympanus.net/codrops/collective/collective-390/" >}}DIY RSS Read­er fea­tured in a Codrops Collective{{< / external-link >}}
+- {{< external-link href="https://codepen.io/spark/63" >}}Craft Plu­g­in Search fea­tured on Code­Pen Spark{{< / external-link >}}
