@@ -1,8 +1,10 @@
 ---
 title: "Derived Stores With Svelte"
-description: "Getting up to speed with derived stores in Svelte."
+description: "Getting up to speed with derived stores in Svelte and how they compare to something like computed properties in Vue."
 date: 2019-05-15T11:25:16+01:00
 draft: false
+categories:
+  - JavaScript
 ---
 
 {{< external-link href="https://svelte.dev/" >}}Svelte{{< / external-link >}} has been getting a lot of attention recently, and rightly so. If you've used the likes of Vue or React in the past then Svelte won't be a million miles away. I recommend following {{< external-link href="https://svelte.dev/tutorial/basics" >}}their interactive tutorial{{< / external-link >}} if you're interested.
