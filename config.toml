@@ -4,6 +4,7 @@ title = "TJ Fogarty | Web Developer"
 theme = "nua"
 pygmentsStyle = "dracula"
 disableHugoGeneratorInject = "true"
+ISO8601 = "2006-01-02T15:04:05GMT"
 [permalinks]
   posts = "/:slug"
   categories = "/category/:slug"

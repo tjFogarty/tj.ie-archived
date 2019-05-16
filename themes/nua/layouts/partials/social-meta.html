@@ -23,13 +23,13 @@
 {
   "@context": "http://schema.org",
   "@type": "WebSite",
-  "url": "{{ .Permalink }}",
+  "url": {{ printf "%s" .Permalink }},
   "name": "{{ .Site.Title }}",
    "author": {
       "@type": "Person",
-      "name": "{ .Site.Params.author }}"
+      "name": "{{ .Site.Params.author }}"
     },
-  "description": "{ .Site.Params.description }}",
+  "description": "{{ .Site.Params.description }}",
 }
 </script>
 {{ end }}
@@ -42,8 +42,8 @@
         "@type": "BlogPosting",
         "headline": "{{ .Title }}",
         "genre": "{{ range .Params.categories }}{{ . }}{{ end }}",
-        "url": "{{ .Permalink }}",
-        "datePublished": "{{ time .Date }}",
+        "url": {{ printf "%s" .Permalink }},
+        "datePublished": {{ printf "%s" (.PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML) }},
         "description": "{{ .Description }}",
         "author": {
             "@type": "Person",
