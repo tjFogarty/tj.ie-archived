@@ -47,7 +47,7 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "{{ .Title }}",
+        "headline": {{ printf "%s" .Title }},
         "genre": "{{ range .Params.categories }}{{ . }}{{ end }}",
         "url": {{ printf "%s" .Permalink }},
         "datePublished": {{ printf "%s" (.PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML) }},
