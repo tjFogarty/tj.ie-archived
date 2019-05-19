@@ -15,6 +15,8 @@ When I see this for websites it sets off some alarm bells. It might be based on 
 
 I remember doing this with Typekit. I could hook into `wf-loading` and wait for `wf-active` or `wf-inactive` to reveal everything. It needlessly blocked content from being viewed, and if you wanted it to be seamless on load, you'd have to hide everything by default and depend on JavaScript. Then you'd need to make sure it worked without JS as well. I still see sites today that do this, and when you disable JS all you get is a white page. It's frustrating because you know all the content and images have loaded behind this curtain.
 
+Usually we can show a website straight away. The text content is usually immediately available, so why not hand it over? Instead we make the user wait for something they might not care about.
+
 Thankfully these days we can start to take advantage of {{< external-link href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display" >}}font display{{< / external-link >}} and even {{< external-link href="https://css-tricks.com/native-lazy-loading/" >}}native lazy loading{{< / external-link >}}.
 
 ## Background Image Misuse
