@@ -25,7 +25,7 @@ There's something I've noticed that has carried over from the Internet Explorer 
 
 While this is incredibly useful, it's not so great for it to be used instead of a regular image tag. For one, if you want to make the image as responsive as possible you're limited to media queries to swap them out. This isn't great when tied into a CMS. Secondly, you're essentially rendering an empty div with no context for screen readers in case the image pertains to the content.
 
-These days we can use the {{< external-link href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit" >}}object-fit{{< / external-link >}} property. With this we can use the image tag along with `srcset` or `source`.
+These days we can use the {{< external-link href="https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit" >}}object-fit{{< / external-link >}} property. With this we can use the image tag along with the `srcset` attribute, or inside a `picture` element.
 
 ## Responsive
 
