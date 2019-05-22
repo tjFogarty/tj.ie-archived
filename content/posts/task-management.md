@@ -27,6 +27,6 @@ For work, I use a physical journal. I use it to break the "conveniences" - every
 
 {{< post-image src="my-journal.jpg" alt="My Journal" >}}
 
-It also gives me a routine. I start every day away from the computer going over what waits for me today. Once I check my emails and talk to people I'll append new tasks to the list. At the end of the day, I'll do up my tasks for tomorrow and carry over anything that didn't get done today. Closing the journal signals to my brain that work is done for today.
+It also gives me a routine. I start every day away from the computer going over what waits for me. Once I check my emails and talk to people I'll append new tasks to the list. At the end of the day, I'll do up my tasks for tomorrow and carry over anything that didn't get done. Closing the journal signals to my brain that work is done.
 
 I have a few journals filled up now, and it's fun every now and then to look over them and see what I was up to this day 3 years ago. I can laugh at some notes I've written, or wince in pain at the tasks of a nightmare project. It reminds me how far I've come.
