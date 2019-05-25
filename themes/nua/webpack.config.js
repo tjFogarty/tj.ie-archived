@@ -3,7 +3,6 @@ const glob = require('glob-all')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
-// const CleanWebpackPlugin = require('clean-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
@@ -40,7 +39,6 @@ const WEBPACK_CONFIG = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/main.css'
     })

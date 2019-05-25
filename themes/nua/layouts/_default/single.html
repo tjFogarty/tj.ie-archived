@@ -9,6 +9,21 @@
     </aside>
   {{ end }}
   <article class="c-post" itemscope itemtype="http://schema.org/Article">
+    {{ $coverImage := .Params.cover_image }}
+    {{ $coverImageAlt := .Params.cover_image_alt }}
+    {{ with $coverImage }}
+      {{ with $coverImageAlt }}
+      <img src="https://res.cloudinary.com/dab4jaczr/image/upload/w_1000,f_auto,q_auto/v1536498344/{{ $coverImage }}"
+        sizes="100vw" srcset="https://res.cloudinary.com/dab4jaczr/image/upload/w_400,f_auto,q_auto/v1536498344/{{ $coverImage }} 400w,
+        https://res.cloudinary.com/dab4jaczr/image/upload/w_600,f_auto,q_auto/v1536498344/{{ $coverImage }} 600w,
+        https://res.cloudinary.com/dab4jaczr/image/upload/w_900,f_auto,q_auto/v1536498344/{{ $coverImage }} 900w,
+        https://res.cloudinary.com/dab4jaczr/image/upload/w_1000,f_auto,q_auto/v1536498344/{{ $coverImage }} 1000w,
+        https://res.cloudinary.com/dab4jaczr/image/upload/w_1200,f_auto,q_auto/v1536498344/{{ $coverImage }} 1200w,
+        https://res.cloudinary.com/dab4jaczr/image/upload/w_1600,f_auto,q_auto/v1536498344/{{ $coverImage }} 1600w
+        "
+        alt="{{ $coverImageAlt }}" loading="auto" />
+      {{ end }}
+    {{ end }}
     <div class="c-post__header">
 
       <time class="c-post__date" itemprop="datePublished" datetime="{{ .PublishDate }}">

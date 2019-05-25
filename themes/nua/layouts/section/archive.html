@@ -3,86 +3,44 @@
   <div class="c-post text-center">
     <h1 class="mt-0">{{.Title}}</h1>
 
+    {{ $categories := .Site.Taxonomies.categories }}
+    {{ $len := (len $categories) }}
+
     <p>Browse by category:
-      {{ range $key, $value := .Site.Taxonomies.categories }}
-      <a href="/category/{{ $key | urlize  }}">{{ $key }}</a> -
+      {{ range $key, $value := $categories }}
+      <a href="/category/{{ $key | urlize  }}">{{ $key }}</a>,
       {{ end }}
     </p>
   </div>
 </div>
 
-{{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") 5 }}
-{{ $pagination := .Paginator }}
+<div class="l-container">
+  <div class="c-post">
+    {{ range .Site.RegularPages.GroupByDate "2006" "Section" "posts"}}
+    <div class="c-sticky-list">
+      <h2 class="c-sticky-list__title">{{ .Key }}</h2>
+      <ul class="l-post-list">
+        {{ range .Pages }}
+        <li class="l-post-list__item">
+          <div class="c-post c-post--preview">
+            <div class="c-post-preview__heading">
+              <time class="c-post__date" datetime="{{ .PublishDate }}">
+                {{ .PublishDate.Format "2 Jan" }}
+              </time>
 
-<ul class="c-projects">
-  {{ range $index, $page := $paginator.Pages }}
-    <li class="c-wrapper {{ if modBool $index 2 }}c-wrapper--light{{ end }}">
-      <div class="c-projects__item">
-        <time class="c-post__date" itemprop="datePublished" datetime="{{ .PublishDate }}">
-          {{ .PublishDate.Format "2 January 2006" }}
-        </time>
-        <h2 class="c-projects__item-title">
-          <a class="c-projects__item-title-link" href="{{ .Permalink }}">{{ .Title }}</a>
-        </h2>
-
-        <p>
-        {{ if .Description }}
-          {{ .Description }}
-        {{ else }}
-          {{ .Summary }}
-        {{ end }}
-        </p>
-
-        <a class="c-btn c-btn-primary--inverted" href="{{ .Permalink }}">Read more <span class="visuallyhidden">about {{ .Title }}</span></a>
-      </div>
-    </li>
-  {{ end }}
-  </ul>
-  <div class="l-container">
-    <div class="c-post">
-      <ul class="c-pagination">
-        <li>
-          <a class="c-btn c-btn-primary {{ if eq $paginator.PageNumber 1 }} c-btn--disabled {{ end }}" {{ if ne $paginator.PageNumber 1 }} href="{{ $pagination.First.URL }}" {{ end }}>
-            First
-          </a>
-        </li>
-
-        <li>
-          <a class="c-btn c-btn-primary {{ if not $paginator.HasPrev }} c-btn--disabled {{ end }}" {{ if $paginator.HasPrev }} href="{{ $pagination.Prev.URL }}" rel="prev" {{ end }}>
-            Prev
-          </a>
-        </li>
-
-
-        <li class="c-pagination__select">
-          <label for="select-page">
-            <small>Go to page:</small>
-          </label>
-          <div class="c-pagination__page-select-container">
-            <select id="select-page" class="c-pagination__page-select js-select-nav">
-              {{ range $pagination.Pagers }}
-              <option {{ if eq . $pagination }}selected{{ end }} value="{{ .URL }}">{{ .PageNumber }}</option>
-              {{ end }}
-            </select>
+              <div>
+                <h3 class="c-post__title c-post__title--preview">
+                  <a class="c-post__title-link" href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                <p>{{ .Description }}</p>
+              </div>
+            </div>
           </div>
-        </li>
-
-        <li>
-          <a class="c-btn c-btn-primary {{ if not $pagination.HasNext }} c-btn--disabled {{ end }}" {{ if $pagination.HasNext }} href="{{ $pagination.Next.URL }}" rel="next" {{ end }}>
-            Next
-          </a>
-        </li>
-
-
-        {{ if $pagination.Last.URL }}
-        <li>
-          <a class="c-btn c-btn-primary {{ if eq $paginator.PageNumber $paginator.TotalPages }} c-btn--disabled {{ end }}" {{ if ne $paginator.PageNumber $paginator.TotalPages }} href="{{ $pagination.Last.URL }}"{{ end }}>
-            Last
-          </a>
         </li>
         {{ end }}
       </ul>
-
     </div>
+    {{ end }}
   </div>
+</div>
 {{ end }}

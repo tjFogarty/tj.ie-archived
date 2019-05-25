@@ -64,7 +64,7 @@
 .c-post__date {
   display: block;
   color: var(--c-grey);
-  min-width: 70px;
+  min-width: 60px;
 }
 
 .c-post__title--preview {
@@ -82,9 +82,12 @@
 }
 
 @media @mq-md {
+  .c-post__title--preview {
+    font-size: var(--text-lg);
+  }
+
   .c-post-preview__heading {
     display: flex;
-    align-items: center;
 
     .c-post__date {
       margin-right: 0.25rem;
@@ -155,7 +158,6 @@
 
 .c-post__headline {
   margin-top: 0;
-  font-style: italic;
   margin-bottom: var(--space-md);
 }
 
