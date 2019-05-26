@@ -146,6 +146,11 @@ html {
   font-size: 1.125em;
   scroll-behavior: smooth;
 }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: initial;
+  }
+}
 body {
   font-family: 'PT Sans', sans-serif;
   font-family: var(--font-body);
@@ -961,6 +966,26 @@ figcaption {
   .c-post__columns p:first-child {
     margin-top: 0;
   }
+}
+.c-post__cover-image {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 70vh;
+  overflow: hidden;
+  -webkit-filter: blur(calc(var(--scrollY) * 20px));
+          filter: blur(calc(var(--scrollY) * 20px));
+  will-change: filter;
+}
+.c-post__body {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  background-color: var(--c-white);
+}
+.c-post__content {
+  max-width: 70ch;
+  margin: 0 auto;
 }
 .c-footer {
   background-color: #222;

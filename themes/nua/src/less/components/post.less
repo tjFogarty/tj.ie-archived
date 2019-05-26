@@ -183,3 +183,23 @@
     }
   }
 }
+
+.c-post__cover-image {
+  position: sticky;
+  top: 0;
+  height: 70vh;
+  overflow: hidden;
+  filter: blur(calc(var(--scrollY) * 20px));
+  will-change: filter;
+}
+
+.c-post__body {
+  position: relative;
+  z-index: 1;
+  background-color: var(--c-white);
+}
+
+.c-post__content {
+  max-width: 70ch;
+  margin: 0 auto;
+}

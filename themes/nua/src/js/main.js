@@ -1,8 +1,9 @@
 import { ready } from './utils'
 import { TableOfContents } from './toc'
+import { CoverImage } from './cover-image'
 
 ready(async () => {
-  let selectNav = document.querySelector('.js-select-nav')
+  const selectNav = document.querySelector('.js-select-nav')
 
   if (selectNav) {
     selectNav.addEventListener('change', event => {
@@ -10,5 +11,6 @@ ready(async () => {
     })
   }
 
+  CoverImage.init()
   TableOfContents.init()
 })

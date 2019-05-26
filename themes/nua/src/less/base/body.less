@@ -3,6 +3,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: initial;
+  }
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--c-white);
