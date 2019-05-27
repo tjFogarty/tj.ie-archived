@@ -1,5 +1,12 @@
 html {
   font-size: 1.125em;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: initial;
+  }
 }
 
 body {

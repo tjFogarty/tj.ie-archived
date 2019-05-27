@@ -46,6 +46,10 @@ from = "https://awesome-northcutt-12634b.netlify.com/*"
 to = "https://tj.ie/:splat"
 
 [[redirects]]
+from = "/archive/page/*"
+to = "/archive/"
+
+[[redirects]]
 from = "/instagram"
 to = "/about"
 

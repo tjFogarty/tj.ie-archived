@@ -3,7 +3,6 @@ const glob = require('glob-all')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
-// const CleanWebpackPlugin = require('clean-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 
@@ -18,9 +17,9 @@ const WEBPACK_CONFIG = {
   },
   output: {
     publicPath: '/',
-    path: path.resolve(__dirname, 'static'),
+    path: path.resolve(__dirname, 'static/assets'),
     filename: 'js/[name].js',
-    chunkFilename: 'js/chunks/[name].js'
+    chunkFilename: 'assets/js/chunks/[name].js'
   },
   module: {
     rules: [
@@ -40,7 +39,6 @@ const WEBPACK_CONFIG = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/main.css'
     })
@@ -64,7 +62,7 @@ if (!isDev) {
         `${__dirname}/src/**/*.js`
       ]),
       whitelist: function() {
-        return ['splitting', 'wf-active', 'no-js']
+        return ['no-js']
       }
     }),
     new SWPrecacheWebpackPlugin({
@@ -73,8 +71,8 @@ if (!isDev) {
       minify: true,
       stripPrefix: 'static',
       staticFileGlobs: [
-        'static/js/main.js',
-        'static/js/chunks/*.js',
+        'static/assets/js/main.js',
+        'static/assets/js/chunks/*.js',
         'static/fonts/*.woff2',
       ]
     })

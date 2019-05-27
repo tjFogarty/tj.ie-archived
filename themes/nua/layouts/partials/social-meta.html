@@ -24,6 +24,10 @@
 {{ range .Params.categories }}<meta property="article:section" content="{{ . }}" />{{ end }}
 {{ if isset .Params "date" }}<meta property="article:published_time" content="{{ time .Date }}" />{{ end }}
 
+{{ if .Params.cover_image }}
+<meta property="og:image" content="https://res.cloudinary.com/dab4jaczr/image/upload/w_1200,h_630,f_auto,q_auto/v1536498344/{{ .Params.cover_image }}">
+{{ end }}
+
 <!-- JSON-LD -->
 {{ if .IsHome }}
 <script type="application/ld+json">

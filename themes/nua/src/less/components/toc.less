@@ -1,15 +1,16 @@
 .c-toc {
   display: none;
-  position: fixed;
-  top: 0;
+  position: sticky;
+  width: 400px;
+  z-index: 2;
   left: 0;
+  top: 2rem;
+  max-height: 100vh;
+  margin-top: .8rem;
+  padding: 1rem;
 
   @media @mq-lg {
     display: block;
-    position: sticky;
-    top: 2rem;
-    max-height: 100vh;
-    margin-top: 2.8rem;
   }
 
   a {
@@ -23,9 +24,16 @@
   }
 }
 
+@media @mq-lg {
+  .c-toc-container {
+    display: flex;
+    position: relative;
+    background-color: #fff;
+  }
+}
+
 .c-toc__list-container {
   transform: translateX(-100%);
-  background-color: var(--c-off-white);
   top: 0;
   left: 0;
   height: 100vh;
@@ -42,7 +50,6 @@
   }
 
   @media @mq-lg {
-    background-color: var(--c-white);
     padding: 0;
     transform: translateX(0);
     max-height: 100vh;
@@ -81,6 +88,14 @@
 
 [id="TableOfContents"] {
   ul {
+    margin: 0;
+  }
+
+  a {
+    font-size: 0.7em;
+  }
+
+  li {
     margin: 0;
   }
 

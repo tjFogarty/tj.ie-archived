@@ -1,10 +1,14 @@
-<img
+<div class="c-post__image-container">
+  <img
   src="https://res.cloudinary.com/dab4jaczr/image/upload/w_600,f_auto,q_auto/v1536498344/{{ .Get "src" }}"
-  sizes="(min-width: 922px) 708px, 100vw"
-  srcset="https://res.cloudinary.com/dab4jaczr/image/upload/w_400,f_auto,q_auto/v1536498344/{{ .Get "src" }} 400w,
-  https://res.cloudinary.com/dab4jaczr/image/upload/w_600,f_auto,q_auto/v1536498344/{{ .Get "src" }} 600w,
-  https://res.cloudinary.com/dab4jaczr/image/upload/w_710,f_auto,q_auto/v1536498344/{{ .Get "src" }} 710w,
-  https://res.cloudinary.com/dab4jaczr/image/upload/w_800,f_auto,q_auto/v1536498344/{{ .Get "src" }} 800w"
-  alt="{{ .Get "alt" }}"
-  loading="auto"
-/>
+    class="c-post__image"
+    sizes="(min-width: 922px) 900px, 100vw"
+    srcset="https://res.cloudinary.com/dab4jaczr/image/upload/w_400,f_auto,q_auto/v1536498344/{{ .Get "src" }} 400w,
+    https://res.cloudinary.com/dab4jaczr/image/upload/w_600,f_auto,q_auto/v1536498344/{{ .Get "src" }} 600w,
+    https://res.cloudinary.com/dab4jaczr/image/upload/w_710,f_auto,q_auto/v1536498344/{{ .Get "src" }} 710w,
+    https://res.cloudinary.com/dab4jaczr/image/upload/w_800,f_auto,q_auto/v1536498344/{{ .Get "src" }} 800w,
+    https://res.cloudinary.com/dab4jaczr/image/upload/w_900,f_auto,q_auto/v1536498344/{{ .Get "src" }} 900w"
+    alt="{{ .Get "alt" }}"
+    loading="auto"
+  />
+</div>

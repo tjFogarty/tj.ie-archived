@@ -1,8 +1,10 @@
 ---
-title: "Task Management ✅"
+title: "Task Management"
 description: "How I handle task management - a combination of software with pen and paper depending on the context."
 date: 2019-05-22T10:36:59+01:00
 draft: false
+cover_image: "my-journal.jpg"
+cover_image_alt: "My Journal"
 ---
 
 Ask 10 people how they approach task management, and you might get 10 different answers. Not so much philosophically, but rather physically: how do you store or keep track of them?
@@ -24,8 +26,6 @@ This went on for a few years, and it got exhausting. It's my own doing; no-one a
 For my personal life, I still use software. I moved between Wunderlist and Todoist before settling on TickTick. They all do much the same thing. This works great for the features listed above, mostly for portability and access on the go. I keep track of shopping lists, article ideas, housework etc...
 
 For work, I use a physical journal. I use it to break the "conveniences" - everything stays in the journal, nothing leaks out. It's like a quarantine of sorts. I appreciate that it makes me stop and think about what I'm doing, and I enjoy writing as well. Keeping up legible cursive writing is something I enjoy, especially when I write out a nice "f" - that can make my day.
-
-{{< post-image src="my-journal.jpg" alt="My Journal" >}}
 
 It also gives me a routine. I start every day away from the computer going over what waits for me. Once I check my emails and talk to people I'll append new tasks to the list. At the end of the day, I'll do up my tasks for tomorrow and carry over anything that didn't get done. Closing the journal signals to my brain that work is done.
 
