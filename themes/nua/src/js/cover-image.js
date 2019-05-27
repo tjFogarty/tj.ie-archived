@@ -1,3 +1,5 @@
+import { watchViewport } from 'tornis'
+
 export const CoverImage = {
   async init() {
     this.coverImage = document.querySelector('.c-post__cover-image')
@@ -6,7 +8,6 @@ export const CoverImage = {
 
     this.updateValues = this.updateValues.bind(this)
 
-    const { watchViewport } = await import(/* webpackChunkName: "tornis" */ 'tornis')
     watchViewport(this.updateValues)
   },
 

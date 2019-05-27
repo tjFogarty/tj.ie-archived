@@ -1,50 +1,6 @@
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	// install a JSONP callback for chunk loading
-/******/ 	function webpackJsonpCallback(data) {
-/******/ 		var chunkIds = data[0];
-/******/ 		var moreModules = data[1];
-/******/
-/******/
-/******/ 		// add "moreModules" to the modules object,
-/******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, resolves = [];
-/******/ 		for(;i < chunkIds.length; i++) {
-/******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
-/******/ 				resolves.push(installedChunks[chunkId][0]);
-/******/ 			}
-/******/ 			installedChunks[chunkId] = 0;
-/******/ 		}
-/******/ 		for(moduleId in moreModules) {
-/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
-/******/ 				modules[moduleId] = moreModules[moduleId];
-/******/ 			}
-/******/ 		}
-/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
-/******/
-/******/ 		while(resolves.length) {
-/******/ 			resolves.shift()();
-/******/ 		}
-/******/
-/******/ 	};
-/******/
-/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
-/******/ 	// object to store loaded and loading chunks
-/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 	// Promise = chunk loading, 0 = chunk loaded
-/******/ 	var installedChunks = {
-/******/ 		"main": 0
-/******/ 	};
-/******/
-/******/
-/******/
-/******/ 	// script path function
-/******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "assets/js/chunks/" + ({"tornis":"tornis"}[chunkId]||chunkId) + ".js"
-/******/ 	}
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -70,66 +26,6 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
-/******/ 	// This file contains only the entry chunk.
-/******/ 	// The chunk loading function for additional chunks
-/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
-/******/ 		var promises = [];
-/******/
-/******/
-/******/ 		// JSONP chunk loading for javascript
-/******/
-/******/ 		var installedChunkData = installedChunks[chunkId];
-/******/ 		if(installedChunkData !== 0) { // 0 means "already installed".
-/******/
-/******/ 			// a Promise means "currently loading".
-/******/ 			if(installedChunkData) {
-/******/ 				promises.push(installedChunkData[2]);
-/******/ 			} else {
-/******/ 				// setup Promise in chunk cache
-/******/ 				var promise = new Promise(function(resolve, reject) {
-/******/ 					installedChunkData = installedChunks[chunkId] = [resolve, reject];
-/******/ 				});
-/******/ 				promises.push(installedChunkData[2] = promise);
-/******/
-/******/ 				// start chunk loading
-/******/ 				var script = document.createElement('script');
-/******/ 				var onScriptComplete;
-/******/
-/******/ 				script.charset = 'utf-8';
-/******/ 				script.timeout = 120;
-/******/ 				if (__webpack_require__.nc) {
-/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
-/******/ 				}
-/******/ 				script.src = jsonpScriptSrc(chunkId);
-/******/
-/******/ 				// create error before stack unwound to get useful stacktrace later
-/******/ 				var error = new Error();
-/******/ 				onScriptComplete = function (event) {
-/******/ 					// avoid mem leaks in IE.
-/******/ 					script.onerror = script.onload = null;
-/******/ 					clearTimeout(timeout);
-/******/ 					var chunk = installedChunks[chunkId];
-/******/ 					if(chunk !== 0) {
-/******/ 						if(chunk) {
-/******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
-/******/ 							var realSrc = event && event.target && event.target.src;
-/******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
-/******/ 							error.type = errorType;
-/******/ 							error.request = realSrc;
-/******/ 							chunk[1](error);
-/******/ 						}
-/******/ 						installedChunks[chunkId] = undefined;
-/******/ 					}
-/******/ 				};
-/******/ 				var timeout = setTimeout(function(){
-/******/ 					onScriptComplete({ type: 'timeout', target: script });
-/******/ 				}, 120000);
-/******/ 				script.onerror = script.onload = onScriptComplete;
-/******/ 				document.head.appendChild(script);
-/******/ 			}
-/******/ 		}
-/******/ 		return Promise.all(promises);
-/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -182,16 +78,6 @@
 /******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
-/******/
-/******/ 	// on error function for async loading
-/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
-/******/
-/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
-/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
-/******/ 	jsonpArray.push = webpackJsonpCallback;
-/******/ 	jsonpArray = jsonpArray.slice();
-/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
-/******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -395,6 +281,18 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/tornis/dist/tornis.js":
+/*!********************************************!*\
+  !*** ./node_modules/tornis/dist/tornis.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(t,s){ true?s(exports):undefined}(this,function(t){"use strict";function s(t,s){let i=0;return function(...e){const h=(new Date).getTime();if(!(h-i<t))return i=h,s(...e)}}function i(t){return Math.floor(t.reduce((t,s)=>t+s,0)/t.length)}class e{constructor(){this.lastX=0,this.lastY=0,this.lastWidth=window.innerWidth,this.lastHeight=window.innerHeight,this.lastMouseX=0,this.lastMouseY=0,this.scrollHeight=document.body.scrollHeight,this.scrollChange=!1,this.sizeChange=!1,this.mouseChange=!1,this.currX=0,this.currY=0,this.currWidth=window.innerWidth,this.currHeight=window.innerHeight,this.currMouseX=0,this.currMouseY=0,this.mouseXVelocity=[],this.mouseYVelocity=[],this.lastMouseXVelocity=0,this.lastMouseYVelocity=0,this.updating=!1,this.callbacks=[],this.update=this.update.bind(this),this.handleResize=this.handleResize.bind(this),this.handleMouse=this.handleMouse.bind(this),this.formatData=this.formatData.bind(this),this.watch=this.watch.bind(this),this.unwatch=this.unwatch.bind(this),this.handleResize=s(110,this.handleResize),this.handleMouse=s(75,this.handleMouse),window.addEventListener("resize",this.handleResize),window.addEventListener("mousemove",this.handleMouse),requestAnimationFrame(this.update)}handleResize(t){this.currWidth=window.innerWidth,this.currHeight=window.innerHeight}handleMouse(t){this.currMouseX=t.clientX,this.currMouseY=t.clientY}formatData(){return{scroll:{changed:this.scrollChange,left:Math.floor(this.lastX),right:Math.floor(this.lastX+this.lastWidth),top:Math.floor(this.lastY),bottom:Math.floor(this.lastY+this.lastHeight),velocity:{x:Math.floor(this.scrollXVelocity)||0,y:Math.floor(this.scrollYVelocity)||0}},size:{changed:this.sizeChange,x:Math.floor(this.lastWidth),y:Math.floor(this.lastHeight),docY:Math.floor(this.scrollHeight)},mouse:{changed:this.mouseChange,x:Math.floor(this.lastMouseX),y:Math.floor(this.lastMouseY),velocity:{x:Math.floor(this.lastMouseXVelocity)||0,y:Math.floor(this.lastMouseYVelocity)||0}}}}updateSize(){}update(){const{currWidth:currWidth,currHeight:currHeight,currMouseX:currMouseX,currMouseY:currMouseY}=this;if(this.updating)return!1;this.scrollChange=this.sizeChange=this.mouseChange=!1,window.pageXOffset==this.lastX&&0!=this.scrollXVelocity&&(this.scrollXVelocity=0,this.scrollChange=!0),window.pageYOffset==this.lastY&&0!=this.scrollYVelocity&&(this.scrollYVelocity=0,this.scrollChange=!0),window.pageXOffset!=this.lastX&&(this.scrollChange=!0,this.scrollXVelocity=Math.floor(window.pageXOffset-this.lastX),this.lastX=window.pageXOffset),window.pageYOffset!=this.lastY&&(this.scrollChange=!0,this.scrollYVelocity=Math.floor(window.pageYOffset-this.lastY),this.lastY=window.pageYOffset),currWidth!=this.lastWidth&&(this.lastWidth=currWidth,this.scrollHeight=document.body.scrollHeight,this.sizeChange=!0),currHeight!=this.lastHeight&&(this.lastHeight=currHeight,this.sizeChange=!0),this.mouseXVelocity.length>5&&this.mouseXVelocity.shift(),this.mouseXVelocity.push(currMouseX-this.lastMouseX),i(this.mouseXVelocity)!=this.lastMouseXVelocity&&(this.lastMouseXVelocity=i(this.mouseXVelocity),this.mouseChange=!0),currMouseX!=this.lastMouseX&&(this.lastMouseX=currMouseX,this.mouseChange=!0),this.mouseYVelocity.length>5&&this.mouseYVelocity.shift(),this.mouseYVelocity.push(currMouseY-this.lastMouseY),i(this.mouseYVelocity)!=this.lastMouseYVelocity&&(this.lastMouseYVelocity=i(this.mouseYVelocity),this.mouseChange=!0),currMouseY==this.lastMouseY&&0==i(this.mouseYVelocity)||(this.lastMouseY=currMouseY,this.mouseChange=!0),(this.scrollChange||this.sizeChange||this.mouseChange)&&this.callbacks.forEach(t=>t(this.formatData())),this.updating=!1,requestAnimationFrame(this.update)}watch(t,s=!0){if("function"!=typeof t)throw new Error("Value passed to Watch is not a function");if(s){const s=this.formatData();s.scroll.changed=!0,s.mouse.changed=!0,s.size.changed=!0,t(s)}this.callbacks.push(t)}unwatch(t){if("function"!=typeof t)throw new Error("The value passed to unwatch is not a function");this.callbacks=this.callbacks.filter(s=>s!==t)}}const h=new e;window.__TORNIS={watchViewport:h.watch,unwatchViewport:h.unwatch,getViewportState:h.formatData};const o=h.watch,a=h.unwatch,l=h.formatData;t.getViewportState=l,t.unwatchViewport=a,t.watchViewport=o,Object.defineProperty(t,"__esModule",{value:!0})});
+
+
+/***/ }),
+
 /***/ "./src/js/cover-image.js":
 /*!*******************************!*\
   !*** ./src/js/cover-image.js ***!
@@ -405,6 +303,10 @@ process.umask = function() { return 0; };
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoverImage", function() { return CoverImage; });
+/* harmony import */ var tornis__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tornis */ "./node_modules/tornis/dist/tornis.js");
+/* harmony import */ var tornis__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tornis__WEBPACK_IMPORTED_MODULE_0__);
+
+
 const CoverImage = {
   async init() {
     this.coverImage = document.querySelector('.c-post__cover-image')
@@ -413,8 +315,7 @@ const CoverImage = {
 
     this.updateValues = this.updateValues.bind(this)
 
-    const { watchViewport } = await __webpack_require__.e(/*! import() | tornis */ "tornis").then(__webpack_require__.t.bind(null, /*! tornis */ "./node_modules/tornis/dist/tornis.js", 7))
-    watchViewport(this.updateValues)
+    Object(tornis__WEBPACK_IMPORTED_MODULE_0__["watchViewport"])(this.updateValues)
   },
 
   updateValues({ scroll }) {
