@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="{{ if .Params.toc }} has-toc {{ end }}">
   {{ if .Params.toc }}
-    <aside class="c-toc js-toc">
+    <aside class="c-toc js-toc visuallyhidden">
       <div class="c-toc__list-container js-toc-list" tabindex="-1">
-        <p class="c-toc__title">Table of Contents</h2>
+        <div class="c-toc__title">Table of Contents</h2>
         {{ .TableOfContents }}
       </div>
     </aside>
@@ -35,12 +35,7 @@
 
         <h1 itemprop="name headline" class="c-post__headline">{{ .Title }}</h1>
 
-      </div>
-
-      <div class="c-post__content">
-        {{ .Content }}
-      </div>
-      {{ if .Params.Categories }}
+        {{ if .Params.Categories }}
         <div class="c-post__categories">
           <small class="c-post__categories-title">Categories: &nbsp;</small>
           <ul class="c-post__categories-list">
@@ -53,29 +48,40 @@
             {{ end }}
           </ul>
         </div>
-      {{ end }}
+        {{ end }}
+
+      </div>
+
+      <div class="c-post__content">
+        {{ .Content }}
+      </div>
 
       <div class="c-post__navigation">
-        {{ with .NextInSection }}
-        <p>Next: <a rel="next" href="{{ .Permalink }}">{{ .Title }}</a></p>
-        {{ end }}
         {{ with .PrevInSection }}
-        <p>Previous: <a rel="prev" href="{{ .Permalink }}">{{ .Title }}</a></p>
+        <a rel="prev" href="{{ .Permalink }}" class="c-post__navigation-item">
+          {{ if .Params.cover_image }}
+            <img src="https://res.cloudinary.com/dab4jaczr/image/upload/w_200,f_auto,q_20/v1536498344/{{ .Params.cover_image }}"
+            alt="{{ .Params.cover_image_alt }}" class="c-post__navigation-image">
+          {{ end }}
+          <div class="c-post__navigation-item-text">
+            <p>Previously...</p>
+            <p class="c-post__navigation-item-title">{{ .Title }}</p>
+          </div>
+        </a>
+        {{ end }}
+        {{ with .NextInSection }}
+        <a rel="next" href="{{ .Permalink }}" class="c-post__navigation-item">
+          {{ if .Params.cover_image }}
+            <img src="https://res.cloudinary.com/dab4jaczr/image/upload/w_200,f_auto,q_20/v1536498344/{{ .Params.cover_image }}" alt="{{ .Params.cover_image_alt }}" class="c-post__navigation-image">
+          {{ end }}
+          <div class="c-post__navigation-item-text">
+            <p>Up Next...</p>
+            <p class="c-post__navigation-item-title">{{ .Title }}</p>
+          </div>
+        </a>
         {{ end }}
       </div>
     </div>
   </article>
-</div>
-
-<div class="c-wrapper c-wrapper--light">
-  <div class="l-container">
-    <div class="c-post">
-      <h3 id="comments">Comments</h4>
-
-      <p>I accept comments via email, and clicking "Add Comment" will open your default email client. If the thoughts of your native email client opening horrifies you, you can instead email your comment to contact@tj.ie.</p>
-
-      <a class="c-btn c-btn-primary" href="mailto:contact@tj.ie?subject=Comment - {{ .Title }}">Add Comment</a>
-    </div>
-  </div>
 </div>
 {{ end }}

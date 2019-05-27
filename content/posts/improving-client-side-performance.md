@@ -7,6 +7,8 @@ toc: true
 categories:
 - Performance
 - Guide
+cover_image: "imageoptim.jpg"
+cover_image_alt: "ImageOptim software"
 ---
 
 Below are some ways I've found to optimise the performance of a site when getting it ready for a production environment, or patching an existing site. Where possible I'll list some common implementations, though understandably we don't always have the kind of access we want to make changes.
@@ -15,7 +17,7 @@ These opportunities for client-side improvements are typically more common among
 
 ## Images
 
-A picture paints a thousand words, but that's no good when many of those words are synonyms for "slow". People aren't always aware of the specifics of an image, nor should they have to be in some cases. If it's possible to upload a 5mb image, then chances are it'll happen at some point. That's just how it goes. 
+A picture paints a thousand words, but that's no good when many of those words are synonyms for "slow". People aren't always aware of the specifics of an image, nor should they have to be in some cases. If it's possible to upload a 5mb image, then chances are it'll happen at some point. That's just how it goes.
 
 There are some methods we can use to automate the reduction of overall bloat, and still preserve image quality. Where automation isn't always available (for things like static sites, or non-CMS based projects) there's still plenty of tools we can employ.
 
@@ -100,7 +102,7 @@ img {
 }
 {{< / highlight >}}
 
-Sure, it resizes, but you could be wasting a lot of bandwidth here. If I need a sticky note I don't fold an A4 sheet into a small square; that would be a waste of paper. 
+Sure, it resizes, but you could be wasting a lot of bandwidth here. If I need a sticky note I don't fold an A4 sheet into a small square; that would be a waste of paper.
 
 If we follow the approaches above, we can combine different sized images and serve the appropriate one to the user.
 
@@ -114,7 +116,7 @@ An example from the Responsive Image Community Group website:
 <picture>
   <source media="(min-width: 40em)"
     srcset="big.jpg 1x, big-hd.jpg 2x">
-  <source 
+  <source
     srcset="small.jpg 1x, small-hd.jpg 2x">
   <img src="fallback.jpg" alt="">
 </picture>
@@ -139,7 +141,7 @@ So you have your images resized and optimised with your responsive image tags in
 
 The same goes for scrolling, not everyone makes it to the bottom of a page for one reason or another.
 
-By far my favourite solution is <a href="https://github.com/verlok/lazyload" target="_blank" rel="noopener noreferrer">LazyLoad</a>. 
+By far my favourite solution is <a href="https://github.com/verlok/lazyload" target="_blank" rel="noopener noreferrer">LazyLoad</a>.
 
 {{< highlight html >}}
 <img class="lazy" alt="..."  data-src="../img/44721746JJ_15_a.jpg">
@@ -155,7 +157,7 @@ var myLazyLoad = new LazyLoad({
 });
 {{< / highlight >}}
 
-This works for the `srcset` attribute in `<picture>` and `<img>` as well. 
+This works for the `srcset` attribute in `<picture>` and `<img>` as well.
 
 ## Third-Party Plugins/Scripts
 
@@ -199,7 +201,7 @@ The command `npm run build` then would combine and minify your JavaScript. The `
 
 Using service workers, we can intercept network requests and serve up cached assets. What we can do is, once the user has visited the site, cache things like styles, scripts, fonts etc... then any subsequent requests from that user will be served from the cache. Once we make updates, we can invalidate the service worker, and fresh assets will be downloaded again.
 
-For this site at the moment, I'm using the <a href="https://github.com/goldhand/sw-precache-webpack-plugin" target="_blank" rel="noopener noreferrer">SW Precache webpack plugin</a>. This lets me generate a service worker with webpack when I move things into production. I'm finding it's especially useful for fonts to avoid a flash of unstyled text. 
+For this site at the moment, I'm using the <a href="https://github.com/goldhand/sw-precache-webpack-plugin" target="_blank" rel="noopener noreferrer">SW Precache webpack plugin</a>. This lets me generate a service worker with webpack when I move things into production. I'm finding it's especially useful for fonts to avoid a flash of unstyled text.
 
 Here's the configuration from my site:
 

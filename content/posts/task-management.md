@@ -1,5 +1,5 @@
 ---
-title: "Task Management ✅"
+title: "Task Management"
 description: "How I handle task management - a combination of software with pen and paper depending on the context."
 date: 2019-05-22T10:36:59+01:00
 draft: false
