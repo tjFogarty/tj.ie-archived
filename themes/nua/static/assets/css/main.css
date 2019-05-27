@@ -688,7 +688,7 @@ figcaption {
   color: var(--c-hero-highlight);
 }
 .c-hero__profile-image {
-  max-width: 300px;
+  width: 300px;
 }
 .c-sticky-list {
   position: relative;
