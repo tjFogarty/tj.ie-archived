@@ -16,16 +16,16 @@
     {{ partial "social-meta.html" . }}
 
     <!-- Preload assets -->
-    <link rel="preload" href="/js/main.js" as="script">
+    <link rel="preload" href="/assets/js/main.js" as="script">
     <link rel="preload" href="/fonts/pt-sans-v10-latin-regular.woff2" as="font" crossorigin>
     <link rel="preload" href="/fonts/pt-serif-v10-latin-700.woff2" as="font" crossorigin>
     <link rel="preload" href="/fonts/pt-serif-v10-latin-regular.woff2" as="font" crossorigin>
     <meta name="theme-color" content="#0881a3" />
 
     {{ if not .Site.BuildDrafts }}
-      <style>{{ readFile "public/css/main.css" | safeCSS }}</style>
+      <style>{{ readFile "public/assets/css/main.css" | safeCSS }}</style>
     {{ else }}
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
     {{ end }}
 
     {{ range .AlternativeOutputFormats -}}
@@ -42,7 +42,7 @@
 
     {{ partial "footer.html" . }}
 
-    <script src="/js/main.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 
     {{ if not .Site.BuildDrafts }}
     <script>

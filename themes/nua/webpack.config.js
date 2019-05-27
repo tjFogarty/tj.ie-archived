@@ -17,9 +17,9 @@ const WEBPACK_CONFIG = {
   },
   output: {
     publicPath: '/',
-    path: path.resolve(__dirname, 'static'),
+    path: path.resolve(__dirname, 'static/assets'),
     filename: 'js/[name].js',
-    chunkFilename: 'js/chunks/[name].js'
+    chunkFilename: 'assets/js/chunks/[name].js'
   },
   module: {
     rules: [
@@ -62,7 +62,7 @@ if (!isDev) {
         `${__dirname}/src/**/*.js`
       ]),
       whitelist: function() {
-        return ['splitting', 'wf-active', 'no-js']
+        return ['no-js']
       }
     }),
     new SWPrecacheWebpackPlugin({
@@ -71,8 +71,8 @@ if (!isDev) {
       minify: true,
       stripPrefix: 'static',
       staticFileGlobs: [
-        'static/js/main.js',
-        'static/js/chunks/*.js',
+        'static/assets/js/main.js',
+        'static/assets/js/chunks/*.js',
         'static/fonts/*.woff2',
       ]
     })
