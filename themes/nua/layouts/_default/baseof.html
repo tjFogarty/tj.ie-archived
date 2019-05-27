@@ -32,7 +32,7 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
   </head>
-  <body>
+  <body {{ with .Params.cover_image }}class="has-cover-image"{{ end }}>
     {{ partial "header.html" . }}
     {{ partial "icons.html" . }}
 

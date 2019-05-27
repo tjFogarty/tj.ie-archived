@@ -189,8 +189,9 @@
   top: 0;
   height: 70vh;
   overflow: hidden;
-  filter: blur(calc(var(--scrollY) * 20px));
-  will-change: filter;
+  filter: blur(calc(var(--scrollY) * 8px));
+  transform: translate(0, calc(var(--scrollY) * -150px));
+  will-change: filter, transform;
 }
 
 .c-post__body {

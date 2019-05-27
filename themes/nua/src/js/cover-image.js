@@ -11,7 +11,7 @@ export const CoverImage = {
   },
 
   updateValues({ scroll }) {
-    if (scroll.changed) {
+    if (scroll.changed && scroll.top) {
       let scrollOffset = scroll.top / this.coverImage.clientHeight
 
       scrollOffset = scrollOffset < 0 ? 0 : scrollOffset
