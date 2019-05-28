@@ -5,11 +5,11 @@ date: 2019-05-28T11:19:05+01:00
 draft: false
 ---
 
-I updated my site recently, and wanted to put a bit more focus on images. To do that, I included a space for cover images in articles. They take up a chunk of the top of the page, and I'll probably re-think this approach at some stage. Maybe I'll overlay the title and description over the image...
+I updated my site recently and wanted to put a bit more focus on images. To do that, I included a space for cover images in articles. They take up a chunk of the top of the page, and I'll probably re-think this approach at some stage. Maybe I'll overlay the title and description over the image...
 
 I wanted to include a bit of pizazz, and the image was the prime candidate. That's when I remembered {{< external-link href="https://tornis.robbowen.digital/" >}}Tornis{{< / external-link >}}, a library that lets you respond to changes in the viewport. I wanted it for the scroll position monitoring, and while I can add an event listener to `window` and do the same thing, I'm thinking of a few other use-cases for this library, so I figured why not give it a go.
 
-Here's a stripped down version of the code I used on my site. In reality I'm checking for the existence of the cover image before kicking anything off. I followed the examples on the Tornis site to get here.
+Here's a stripped down version of the code I used on my site. In reality, I'm checking for the existence of the cover image before kicking anything off. I followed the examples on the Tornis site to get here.
 
 {{< highlight javascript >}}
 const { watchViewport } = tornis
@@ -28,7 +28,7 @@ const updateValues = ({ scroll }) => {
 watchViewport(updateValues)
 {{< / highlight >}}
 
-I'm checking to see if we've scrolled past the cover image, and setting a value between 0 and 1 in the `scrollY` custom property. With this custom property I'm setting the `filter` and `transform` property of the custom image.
+I'm checking to see if we've scrolled past the cover image and setting a value between 0 and 1 in the `scrollY` custom property. With this custom property, I'm setting the `filter` and `transform` property of the custom image.
 
 I'm also using `position: sticky` so the image travels down the page with us.
 
@@ -43,9 +43,9 @@ I'm also using `position: sticky` so the image travels down the page with us.
 }
 {{< / highlight >}}
 
-For the blur I'm multiplying `scrollY` by 10 pixels. So when `scrollY` is `0.3` that'll evaluate to a `3px` blur. The transform behaves in the same fashion so that it slowly crawls in the opposite direction of the scroll.
+For the blur, I'm multiplying `scrollY` by 10 pixels. So when `scrollY` is `0.3` that'll evaluate to a `3px` blur. The transform behaves in the same fashion so that it slowly crawls in the opposite direction of the scroll.
 
-You can probably think of more creative uses, for example the amazing forest scrolling on the Tornis homepage.
+You can probably think of more creative uses, for example, the amazing forest scrolling on the Tornis homepage.
 
 <p class="codepen" data-height="474" data-theme-id="dark" data-default-tab="result" data-user="tjFogarty" data-slug-hash="qGyqwa" style="height: 474px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Tornis Parallax and Blur Demo">
   <span>See the Pen <a href="https://codepen.io/tjFogarty/pen/qGyqwa/">
