@@ -62,7 +62,7 @@ if (!isDev) {
         `${__dirname}/src/**/*.js`
       ]),
       whitelist: function() {
-        return ['no-js']
+        return ['no-js', 'cp_embed_wrapper']
       }
     }),
     new SWPrecacheWebpackPlugin({
