@@ -304,6 +304,9 @@ pre {
 .highlight pre {
   padding: 1rem;
 }
+.cp_embed_wrapper iframe {
+  min-height: 450px;
+}
 blockquote {
   border-left: 5px solid #af074d;
   border-left: 5px solid var(--c-primary);
