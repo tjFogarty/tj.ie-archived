@@ -16,7 +16,7 @@
 
 <div class="l-container">
   <div class="c-post">
-    {{ range .Site.RegularPages.GroupByDate "2006" "Section" "posts"}}
+    {{ range (where .Site.RegularPages "Section" "posts").GroupByDate "2006" }}
     <div class="c-sticky-list">
       <h2 class="c-sticky-list__title">{{ .Key }}</h2>
       <ul class="l-post-list">
