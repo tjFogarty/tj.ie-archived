@@ -313,9 +313,16 @@ const CoverImage = {
 
     if (!this.coverImage) return
 
+    this.setVariables(0, 0)
+
     this.updateValues = this.updateValues.bind(this)
 
     Object(tornis__WEBPACK_IMPORTED_MODULE_0__["watchViewport"])(this.updateValues)
+  },
+
+  setVariables(blur, ty) {
+    document.body.style.setProperty('--coverImageBlur', blur)
+    document.body.style.setProperty('--coverImageTranslateY', ty)
   },
 
   updateValues({ scroll }) {
@@ -324,7 +331,11 @@ const CoverImage = {
 
       scrollOffset = scrollOffset < 0 ? 0 : scrollOffset
       scrollOffset = scrollOffset > 1 ? 1 : scrollOffset
-      document.body.style.setProperty('--scrollY', scrollOffset)
+
+      const blur = `${(scrollOffset * 8).toFixed(1)}px`
+      const ty = `${(scrollOffset * -150).toFixed(1)}px`
+
+      this.setVariables(blur, ty)
     }
   }
 }

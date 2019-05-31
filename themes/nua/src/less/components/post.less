@@ -200,16 +200,27 @@
 .c-post__cover-image {
   position: sticky;
   top: 0;
-  height: 30vh;
+  height: 50vh;
   overflow: hidden;
-  filter: blur(calc(var(--scrollY) * 8px));
-  transform: translate(0, calc(var(--scrollY) * -150px));
-  will-change: filter, transform;
+  // filter: blur(var(--coverImageBlur)); // need to disable this as it kills performance on FireFox
+  transform: translateY(var(--coverImageTranslateY));
+  will-change: transform;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 @media @mq-md {
   .c-post__cover-image {
     height: 70vh;
+
+    img {
+      height: auto;
+      object-fit: initial;
+    }
   }
 }
 

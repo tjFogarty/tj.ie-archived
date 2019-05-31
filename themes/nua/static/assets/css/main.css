@@ -982,17 +982,26 @@ figcaption {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 30vh;
+  height: 50vh;
   overflow: hidden;
-  -webkit-filter: blur(calc(var(--scrollY) * 8px));
-          filter: blur(calc(var(--scrollY) * 8px));
-  -webkit-transform: translate(0, calc(var(--scrollY) * -150px));
-          transform: translate(0, calc(var(--scrollY) * -150px));
-  will-change: filter, transform;
+  -webkit-transform: translateY(var(--coverImageTranslateY));
+          transform: translateY(var(--coverImageTranslateY));
+  will-change: transform;
+}
+.c-post__cover-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media only screen and (min-width: 768px) {
   .c-post__cover-image {
     height: 70vh;
+  }
+  .c-post__cover-image img {
+    height: auto;
+    -o-object-fit: initial;
+       object-fit: initial;
   }
 }
 .c-post__body {
