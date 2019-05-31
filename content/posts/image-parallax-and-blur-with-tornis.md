@@ -5,6 +5,8 @@ date: 2019-05-28T11:19:05+01:00
 draft: false
 ---
 
+**Update:** Probably best to leave out the blur for larger things, as it _destroys_ performance on Firefox. The transform still works well.
+
 I updated my site recently and wanted to put a bit more focus on images. To do that, I included a space for cover images in articles. They take up a chunk of the top of the page, and I'll probably re-think this approach at some stage. Maybe I'll overlay the title and description over the image...
 
 I wanted to include a bit of pizazz, and the image was the prime candidate. That's when I remembered {{< external-link href="https://tornis.robbowen.digital/" >}}Tornis{{< / external-link >}}, a library that lets you respond to changes in the viewport. I wanted it for the scroll position monitoring, and while I can add an event listener to `window` and do the same thing, I'm thinking of a few other use-cases for this library, so I figured why not give it a go.
