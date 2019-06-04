@@ -3,6 +3,7 @@ title: "CodePen Job Search"
 description: "Using the CodePen Jobs json feed to write a small app with Svelte."
 date: 2019-06-04T18:28:01+01:00
 draft: false
+featured: true
 cover_image: "codepen-jobs.jpg"
 cover_image_alt: "CodePen Jobs Board"
 ---
