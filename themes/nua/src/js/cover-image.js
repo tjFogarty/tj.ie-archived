@@ -2,7 +2,7 @@ import { watchViewport } from 'tornis'
 
 export const CoverImage = {
   async init() {
-    this.coverImage = document.querySelector('.c-post__cover-image')
+    this.coverImage = document.querySelector('.js-cover-image')
 
     if (!this.coverImage) return
 

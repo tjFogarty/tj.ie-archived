@@ -74,6 +74,7 @@ if (!isDev) {
         'static/assets/js/main.js',
         'static/assets/js/chunks/*.js',
         'static/fonts/*.woff2',
+        'static/vendor/*.js',
       ]
     })
   )

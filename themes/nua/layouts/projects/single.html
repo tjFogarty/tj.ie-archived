@@ -4,7 +4,7 @@
   {{ $coverImageAlt := .Params.cover_image_alt }}
   {{ with $coverImage }}
   {{ with $coverImageAlt }}
-  <div class="c-post__cover-image">
+  <div class="c-post__cover-image js-cover-image">
     <img src="https://res.cloudinary.com/dab4jaczr/image/upload/w_1000,f_auto,q_auto/v1536498344/{{ $coverImage }}"
       sizes="100vw" srcset="https://res.cloudinary.com/dab4jaczr/image/upload/w_400,f_auto,q_auto/v1536498344/{{ $coverImage }} 400w,
           https://res.cloudinary.com/dab4jaczr/image/upload/w_600,f_auto,q_auto/v1536498344/{{ $coverImage }} 600w,
