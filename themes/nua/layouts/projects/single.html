@@ -1,21 +1,30 @@
 {{ define "main" }}
-<div class="l-container">
-  <article class="c-post" itemscope itemtype="http://schema.org/Article">
+<article itemscope itemtype="http://schema.org/Article">
+  {{ $coverImage := .Params.cover_image }}
+  {{ $coverImageAlt := .Params.cover_image_alt }}
+  {{ with $coverImage }}
+  {{ with $coverImageAlt }}
+  <div class="c-post__cover-image">
+    <img src="https://res.cloudinary.com/dab4jaczr/image/upload/w_1000,f_auto,q_auto/v1536498344/{{ $coverImage }}"
+      sizes="100vw" srcset="https://res.cloudinary.com/dab4jaczr/image/upload/w_400,f_auto,q_auto/v1536498344/{{ $coverImage }} 400w,
+          https://res.cloudinary.com/dab4jaczr/image/upload/w_600,f_auto,q_auto/v1536498344/{{ $coverImage }} 600w,
+          https://res.cloudinary.com/dab4jaczr/image/upload/w_900,f_auto,q_auto/v1536498344/{{ $coverImage }} 900w,
+          https://res.cloudinary.com/dab4jaczr/image/upload/w_1000,f_auto,q_auto/v1536498344/{{ $coverImage }} 1000w,
+          https://res.cloudinary.com/dab4jaczr/image/upload/w_1200,f_auto,q_auto/v1536498344/{{ $coverImage }} 1200w,
+          https://res.cloudinary.com/dab4jaczr/image/upload/w_1600,f_auto,q_auto/v1536498344/{{ $coverImage }} 1600w"
+      alt="{{ $coverImageAlt }}" loading="auto" />
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <div class="c-post__body">
     <div class="c-post__header">
 
       <h1 itemprop="name headline" class="c-post__headline">{{ .Title }}</h1>
 
-    </div>
-
-    <div class="c-post__content">
-      {{ .Content }}
-    </div>
-
-    <div class="c-share-container">
-
       {{ if .Params.Categories }}
       <div class="c-post__categories">
-        <small>Categories: &nbsp;</small>
+        <small class="c-post__categories-title">Categories: &nbsp;</small>
         <ul class="c-post__categories-list">
           {{ range .Params.Categories }}
           <li class="c-post__categories-item">
@@ -27,33 +36,40 @@
         </ul>
       </div>
       {{ end }}
+
     </div>
-  </article>
-</div>
-<div class="c-post__navigation">
-  {{ with .PrevInSection }}
-  <a rel="prev" href="{{ .Permalink }}" class="c-post__navigation-item">
-    {{ if .Params.cover_image }}
-    <img src="https://res.cloudinary.com/dab4jaczr/image/upload/w_200,f_auto,q_20/v1536498344/{{ .Params.cover_image }}"
-      alt="{{ .Params.cover_image_alt }}" class="c-post__navigation-image" loading="lazy">
+
+    <div class="c-post__content">
+      {{ .Content }}
+    </div>
+  </div>
+  <div class="c-post__navigation">
+    {{ with .PrevInSection }}
+    <a rel="prev" href="{{ .Permalink }}" class="c-post__navigation-item">
+      {{ if .Params.cover_image }}
+      <img
+        src="https://res.cloudinary.com/dab4jaczr/image/upload/w_200,f_auto,q_20/v1536498344/{{ .Params.cover_image }}"
+        alt="{{ .Params.cover_image_alt }}" class="c-post__navigation-image" loading="lazy">
+      {{ end }}
+      <div class="c-post__navigation-item-text">
+        <p>Previously...</p>
+        <p class="c-post__navigation-item-title">{{ .Title }}</p>
+      </div>
+    </a>
     {{ end }}
-    <div class="c-post__navigation-item-text">
-      <p>Previously...</p>
-      <p class="c-post__navigation-item-title">{{ .Title }}</p>
-    </div>
-  </a>
-  {{ end }}
-  {{ with .NextInSection }}
-  <a rel="next" href="{{ .Permalink }}" class="c-post__navigation-item">
-    {{ if .Params.cover_image }}
-    <img src="https://res.cloudinary.com/dab4jaczr/image/upload/w_200,f_auto,q_20/v1536498344/{{ .Params.cover_image }}"
-      alt="{{ .Params.cover_image_alt }}" class="c-post__navigation-image" loading="lazy">
+    {{ with .NextInSection }}
+    <a rel="next" href="{{ .Permalink }}" class="c-post__navigation-item">
+      {{ if .Params.cover_image }}
+      <img
+        src="https://res.cloudinary.com/dab4jaczr/image/upload/w_200,f_auto,q_20/v1536498344/{{ .Params.cover_image }}"
+        alt="{{ .Params.cover_image_alt }}" class="c-post__navigation-image" loading="lazy">
+      {{ end }}
+      <div class="c-post__navigation-item-text">
+        <p>Up Next...</p>
+        <p class="c-post__navigation-item-title">{{ .Title }}</p>
+      </div>
+    </a>
     {{ end }}
-    <div class="c-post__navigation-item-text">
-      <p>Up Next...</p>
-      <p class="c-post__navigation-item-title">{{ .Title }}</p>
-    </div>
-  </a>
-  {{ end }}
-</div>
+  </div>
+</article>
 {{ end }}
