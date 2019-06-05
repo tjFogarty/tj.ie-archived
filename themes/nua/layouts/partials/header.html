@@ -1,9 +1,7 @@
-<nav class="c-nav {{ if .IsHome }} is-fixed {{ end }}" role="navigation">
-  <div class="c-nav__title-container">
-    <a href="/" class="c-nav__logo-container">
-      <span class="c-nav__logo" aria-label="Home"></span>
-    </a>
-  </div>
+<nav class="c-nav {{ if .IsHome }} is-home {{ end }}" role="navigation">
+  <a href="/" class="c-nav__link">
+    TJ Fogarty
+  </a>
   <div class="c-nav__inner">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}

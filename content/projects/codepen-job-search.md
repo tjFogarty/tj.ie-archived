@@ -1,6 +1,6 @@
 ---
 title: "CodePen Job Search"
-description: "Using the CodePen Jobs json feed to write a small app with Svelte."
+description: "Using the CodePen Jobs json feed to write a small app with Svelte to search and filter jobs."
 date: 2019-06-04T18:28:01+01:00
 draft: false
 featured: true
