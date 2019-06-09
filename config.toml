@@ -1,6 +1,6 @@
 baseURL = "https://tj.ie/"
 languageCode = "en-ie"
-title = "TJ Fogarty | Web Developer"
+title = "TJ Fogarty | Performance Focused Web Development"
 theme = "nua"
 pygmentsStyle = "dracula"
 disableHugoGeneratorInject = "true"

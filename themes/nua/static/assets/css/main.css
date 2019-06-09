@@ -1068,8 +1068,8 @@ figcaption {
   text-decoration: none;
 }
 .c-footer__link:hover .c-footer__icon {
-  color: #7f5a83;
-  color: var(--c-secondary);
+  color: #c1accd;
+  color: var(--c-secondary-light);
 }
 @media only screen and (min-width: 576px) {
   .c-footer__inner {
