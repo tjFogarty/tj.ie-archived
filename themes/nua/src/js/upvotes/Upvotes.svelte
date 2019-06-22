@@ -10,26 +10,23 @@
     currentRecord = value
   })
 
-  async function getAllRecords() {
+  onMount(async () => {
     const response = await api.fetchUpvotes()
     const { results } = await response.json()
     records.set(results)
-  }
-
-  onMount(() => {
-    getAllRecords()
   })
 
-  async function handleClickUpvote() {
+  function handleClickUpvote() {
     const { pathname } = document.location
     hasBeenClicked = true
 
     if (!currentRecord) {
-      await api.createNewRecord(pathname)
-    } else {
-      const { rowIndex, url, votes } = currentRecord
-      await api.addUpvote({ rowIndex, url, votes: parseInt(votes, 10) + 1 })
+      api.createNewRecord(pathname)
+      return
     }
+
+    const { rowIndex, votes } = currentRecord
+    api.addUpvote({ rowIndex, votes: parseInt(votes, 10) + 1 })
   }
 </script>
 
@@ -38,7 +35,7 @@
     <svg class="c-upvote-button__icon">
       <use xlink:href="#heart"></use>
     </svg>
-    <span class="js-upvote-count">
+    <span>
       {#if currentRecord}
       {parseInt(currentRecord.votes, 10) + 1}
       {:else}
@@ -49,17 +46,18 @@
 {:else}
   <button
     on:click={handleClickUpvote}
-    class="c-upvote-button js-add-upvote"
-    class:is-active={hasBeenClicked}
+    class="c-upvote-button"
     type="button"
-    aria-label="Show your appreciation by tapping or clicking the heart"
+    aria-label="Show your appreciation by tapping or clicking"
     title="Like this post"
   >
     <svg class="c-upvote-button__icon">
       <use xlink:href="#heart"></use>
     </svg>
     {#if currentRecord}
-      <span class="js-upvote-count">{currentRecord.votes}</span>
+      <span>{currentRecord.votes}</span>
+    {:else}
+      <span>Be the first to like this!</span>
     {/if}
   </button>
 {/if}

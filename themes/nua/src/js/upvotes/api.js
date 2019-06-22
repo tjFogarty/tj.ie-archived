@@ -14,8 +14,8 @@ export function fetchUpvotes() {
   return fetch(request('?limit=100'))
 }
 
-export function addUpvote({ rowIndex, url, votes }) {
-  return fetch(request(`/${rowIndex}`, 'PUT', { url, votes }))
+export function addUpvote({ rowIndex, votes }) {
+  return fetch(request(`/${rowIndex}`, 'PUT', { votes }))
 }
 
 export function createNewRecord(url) {
