@@ -21,6 +21,9 @@ const WEBPACK_CONFIG = {
     filename: 'js/[name].js',
     chunkFilename: 'assets/js/chunks/[name].js'
   },
+  resolve: {
+    mainFields: ['svelte', 'browser', 'module', 'main']
+  },
   module: {
     rules: [
       {
@@ -35,6 +38,11 @@ const WEBPACK_CONFIG = {
       {
         test: /\.css$/,
         use: ['css-loader']
+      },
+      {
+        test: /\.(html|svelte)$/,
+        exclude: /node_modules/,
+        use: 'svelte-loader'
       }
     ]
   },

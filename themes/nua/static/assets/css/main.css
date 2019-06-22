@@ -1029,6 +1029,11 @@ figcaption {
     text-align: center;
   }
 }
+.c-post__upvotes {
+  display: flex;
+  justify-content: flex-end;
+  height: 24px;
+}
 .c-footer {
   background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
   background-image: linear-gradient(315deg, var(--c-secondary) 0%, var(--c-primary) 74%);
@@ -1199,6 +1204,50 @@ figcaption {
 .c-page-title {
   margin-top: 3rem;
   text-align: center;
+}
+.c-upvote-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+.c-upvote-button:hover,
+.c-upvote-button:focus,
+.c-upvote-button.is-active {
+  color: #f92986;
+}
+.c-upvote-button.is-active {
+  cursor: default;
+  -webkit-animation: heart ease 0.6s;
+          animation: heart ease 0.6s;
+}
+@-webkit-keyframes heart {
+  0% {
+    -webkit-filter: drop-shadow(0 0 0 #f92986);
+            filter: drop-shadow(0 0 0 #f92986);
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 -15px 4px rgba(249, 41, 134, 0));
+            filter: drop-shadow(0 -15px 4px rgba(249, 41, 134, 0));
+  }
+}
+@keyframes heart {
+  0% {
+    -webkit-filter: drop-shadow(0 0 0 #f92986);
+            filter: drop-shadow(0 0 0 #f92986);
+  }
+  100% {
+    -webkit-filter: drop-shadow(0 -15px 4px rgba(249, 41, 134, 0));
+            filter: drop-shadow(0 -15px 4px rgba(249, 41, 134, 0));
+  }
+}
+.c-upvote-button__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
 }
 .visuallyhidden {
   border: 0;
