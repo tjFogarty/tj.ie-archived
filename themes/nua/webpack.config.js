@@ -70,7 +70,13 @@ if (!isDev) {
         `${__dirname}/src/**/*.js`
       ]),
       whitelist: function() {
-        return ['no-js', 'cp_embed_wrapper']
+        return [
+          'no-js',
+          'cp_embed_wrapper',
+          'c-upvote-button',
+          'is-active',
+          'c-upvote-button__icon'
+        ]
       }
     }),
     new SWPrecacheWebpackPlugin({
@@ -82,7 +88,7 @@ if (!isDev) {
         'static/assets/js/main.js',
         'static/assets/js/chunks/*.js',
         'static/fonts/*.woff2',
-        'static/vendor/*.js',
+        'static/vendor/*.js'
       ]
     })
   )
