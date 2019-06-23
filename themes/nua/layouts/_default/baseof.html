@@ -22,6 +22,12 @@
     <link rel="preload" href="/fonts/pt-serif-v10-latin-regular.woff2" as="font" crossorigin>
     <meta name="theme-color" content="#0881a3" />
 
+    {{ if .IsPage }}
+      {{ if eq .Section "posts" }}
+      <link rel="dns-prefetch" href="https://api.sheetson.com/">
+      {{ end }}
+    {{ end }}
+
     {{ if not .Site.BuildDrafts }}
       <style>{{ readFile "public/assets/css/main.css" | safeCSS }}</style>
     {{ else }}
