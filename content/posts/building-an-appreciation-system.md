@@ -3,6 +3,8 @@ title: "Building an Appreciation System"
 description: "Using Google Sheets as a back-end, we can record likes on anything we want on a static site."
 date: 2019-06-22T22:54:57+01:00
 draft: false
+categories:
+  - JavaScript
 ---
 
 I've wanted to get around to building a little system for "liking" or "hearting" a post. A may be a small side project, but it's also a chance to experiment with new things. I wanted to display the number of upvotes a post has and let someone upvote it themselves with a tap or a click.
