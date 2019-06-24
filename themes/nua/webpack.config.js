@@ -16,9 +16,8 @@ const WEBPACK_CONFIG = {
     styles: './src/less/app.less'
   },
   output: {
-    publicPath: '/',
-    path: path.resolve(__dirname, 'static/assets'),
-    filename: 'js/[name].js',
+    path: path.resolve(__dirname, 'static'),
+    filename: 'assets/js/[name].js',
     chunkFilename: 'assets/js/chunks/[name].js'
   },
   resolve: {
@@ -48,7 +47,7 @@ const WEBPACK_CONFIG = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/main.css'
+      filename: 'assets/css/main.css'
     })
   ],
   devtool: 'source-map'

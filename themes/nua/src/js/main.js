@@ -3,7 +3,6 @@ import { TableOfContents } from './toc'
 import { CoverImage } from './cover-image'
 import Upvotes from './upvotes/Upvotes.svelte'
 
-
 ready(async () => {
   const selectNav = document.querySelector('.js-select-nav')
 
@@ -15,7 +14,12 @@ ready(async () => {
 
   CoverImage.init()
   TableOfContents.init()
-  new Upvotes({
-    target: document.querySelector('.js-upvotes')
-  })
+
+  const upvotesContainer = document.querySelector('.js-upvotes')
+
+  if (upvotesContainer) {
+    new Upvotes({
+      target: upvotesContainer
+    })
+  }
 })
