@@ -628,7 +628,6 @@ figcaption {
   background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
   background-image: linear-gradient(315deg, var(--c-secondary) 0%, var(--c-primary) 74%);
   background-size: 200%;
-  margin-bottom: 4rem;
   text-align: center;
   -webkit-animation: hero-bg cubic-bezier(0.455, 0.03, 0.515, 0.955) 1s forwards;
           animation: hero-bg cubic-bezier(0.455, 0.03, 0.515, 0.955) 1s forwards;
