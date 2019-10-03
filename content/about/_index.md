@@ -4,7 +4,7 @@ title: "About"
 
 I’m TJ, a web devel­op­er from {{< external-link href="https://en.wikipedia.org/wiki/Limerick" >}}Lim­er­ick, Ire­land{{< / external-link >}} 🇮🇪 and liv­ing in Water­ford. I have a BSc Hons in Multimedia Programming, and Design from the Limerick Institute of Technology.
 
-Pre­vi­ous­ly, I’ve worked for ResourceKraft as a Designer/​Developer, Mav­er­ick as the Lead Devel­op­er, and Emag­ine as the Tech­ni­cal Lead. At the moment I’m a UI Devel­op­er at Stitcher­Ads where I’m devel­op­ing a com­po­nent library and design system.
+I'm a Senior Software Engineer at Teamwork. Pre­vi­ous­ly, I’ve worked for ResourceKraft as a Designer/​Developer, Mav­er­ick as the Lead Devel­op­er, Emag­ine as the Tech­ni­cal Lead, and StitcherAds as a UI Devel­op­er.
 
 I enjoy work­ing with JavaScript (React and Vue), Node, PHP (Craft CMS, Word­Press, Lar­avel, Expres­sio­nEngine), and CSS (Sass, Less, good ‘ol vanil­la CSS). Spend­ing all these years work­ing with such fun tech­nolo­gies reminds me that just because you can do it, def­i­nite­ly means you should.
 

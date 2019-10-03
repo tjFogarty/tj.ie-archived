@@ -1,6 +1,6 @@
 <div class="l-post-list-container">
   <ul class="l-post-list l-post-list--grid-thirds">
-    {{ range where .Pages "Section" "projects" }}
+    {{ range where .Site.Pages "Section" "projects" }}
       {{ if .Params.featured }}
       <li class="l-post-list__item">
         <div class="c-post c-post--preview">

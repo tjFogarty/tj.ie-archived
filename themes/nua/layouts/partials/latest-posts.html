@@ -1,6 +1,6 @@
 <div class="l-post-list-container">
   <ul class="l-post-list l-post-list--grid-thirds">
-    {{ range first 3 (where .Pages "Section" "posts") }}
+    {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
     <li class="l-post-list__item">
       <div class="c-post c-post--preview">
         <div class="c-post-preview__heading c-post-preview__heading--stacked">
