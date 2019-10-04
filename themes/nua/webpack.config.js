@@ -66,7 +66,8 @@ if (!isDev) {
       paths: glob.sync([
         `${__dirname}/**/*.html`,
         `${__dirname}/**/*.md`,
-        `${__dirname}/src/**/*.js`
+        `${__dirname}/src/**/*.js`,
+        `${__dirname}/src/**/*.svelte`,
       ]),
       whitelist: function() {
         return [

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cd ./themes/nua && npm install && npm run production",
-    "hugo:dev": "hugo server --disableFastRender -D --renderToDisk --baseUrl http://tj.test"
+    "hugo:dev": "hugo server --disableFastRender -D --renderToDisk"
   },
   "repository": {
     "type": "git",
